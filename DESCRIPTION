@@ -9,3 +9,13 @@ Description: More about what it does (maybe more than one line)
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
+URL: https://pricelab.github.io/standardcor/
+RoxygenNote: 7.3.1
+Imports: 
+    Matrix,
+Depends: 
+    R (>= 2.10)
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
