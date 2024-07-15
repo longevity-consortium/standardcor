@@ -1,36 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://pricelab.github.io/standardcor/404.html</loc>
-  </url>
-  <url>
-    <loc>https://pricelab.github.io/standardcor/articles/Getting-Started.html</loc>
-  </url>
-  <url>
-    <loc>https://pricelab.github.io/standardcor/articles/index.html</loc>
-  </url>
-  <url>
-    <loc>https://pricelab.github.io/standardcor/authors.html</loc>
-  </url>
-  <url>
-    <loc>https://pricelab.github.io/standardcor/index.html</loc>
-  </url>
-  <url>
-    <loc>https://pricelab.github.io/standardcor/reference/SparsifiedRanks2.html</loc>
-  </url>
-  <url>
-    <loc>https://pricelab.github.io/standardcor/reference/estimateBetas.html</loc>
-  </url>
-  <url>
-    <loc>https://pricelab.github.io/standardcor/reference/euclidDistance.html</loc>
-  </url>
-  <url>
-    <loc>https://pricelab.github.io/standardcor/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>https://pricelab.github.io/standardcor/reference/powerDistance.html</loc>
-  </url>
-  <url>
-    <loc>https://pricelab.github.io/standardcor/reference/sigmoidDistance.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>/404.html</loc></url>
+<url><loc>/LICENSE-text.html</loc></url>
+<url><loc>/articles/Getting-Started.html</loc></url>
+<url><loc>/articles/index.html</loc></url>
+<url><loc>/authors.html</loc></url>
+<url><loc>/index.html</loc></url>
+<url><loc>/reference/SparsifiedRanks2.html</loc></url>
+<url><loc>/reference/estimateBetas.html</loc></url>
+<url><loc>/reference/euclidDistance.html</loc></url>
+<url><loc>/reference/index.html</loc></url>
+<url><loc>/reference/powerDistance.html</loc></url>
+<url><loc>/reference/sigmoidDistance.html</loc></url>
 </urlset>
+
