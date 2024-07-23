@@ -22,6 +22,7 @@
 #' @param cov when TRUE the covariance matrix is returned.
 #' @return A sparse matrix with ranks of non-zero entries
 #' @export
+#' @importFrom qlcMatrix corSparse
 SparseSpearmanCor2 <- function(X, Y = NULL, cov = FALSE) {
 
   # Get sparsified ranks
