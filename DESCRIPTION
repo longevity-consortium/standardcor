@@ -14,7 +14,7 @@ RoxygenNote: 7.3.2
 Imports: 
     Matrix
 Depends: 
-    R (>= 2.10)
+    R (>= 2.10),
 	qlcMatrix
 Suggests: 
     knitr,
