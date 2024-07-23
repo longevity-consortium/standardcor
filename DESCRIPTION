@@ -13,6 +13,7 @@ URL: https://pricelab.github.io/standardcor/
 RoxygenNote: 7.3.2
 Imports: 
     Matrix,
+	qlcMatrix
 Depends: 
     R (>= 2.10)
 Suggests: 
