@@ -17,9 +17,24 @@
 #'  https://github.com/saketkc/blog/blob/main/2022-03-10/SparseSpearmanCorrelation2.ipynb
 #' owned by Saket Choudhary of Mumbai, India
 #' 23 Mar 2024
-#' @param X A sparse matrix
+#' @param X A ranked sparse matrix
+#' @param Y A second ranked sparse matrix. If Y = NULL, correlations between the columns of X and itself will be taken. If Y is specified, the association between the columns of X and the columns of Y will be calculated.
+#' @param cov when TRUE the covariance matrix is returned.
 #' @return A sparse matrix with ranks of non-zero entries
 #' @export
+SparseSpearmanCor2 <- function(X, Y = NULL, cov = FALSE) {
+
+  # Get sparsified ranks
+  rankX <- SparsifiedRanks2(X)
+  if (is.null(Y)){
+    # Calculate pearson correlation on rank matrices
+    return (corSparse(X=rankX, cov=cov))
+  }
+  rankY <- SparsifiedRanks2(Y)
+  return(corSparse( X = rankX, Y = rankY, cov = cov))
+}
+
+#' Internal
 SparsifiedRanks2 <- function(X) {
   if (class(X)[1] != "dgCMatrix") {
     X <- as(object = X, Class = "dgCMatrix")
@@ -37,17 +52,4 @@ SparsifiedRanks2 <- function(X) {
   X.ranks <- X
   X.ranks@x <- sparsified_ranks
   return(X.ranks)
-}
-
-
-SparseSpearmanCor2 <- function(X, Y = NULL, cov = FALSE) {
-
-  # Get sparsified ranks
-  rankX <- SparsifiedRanks2(X)
-  if (is.null(Y)){
-    # Calculate pearson correlation on rank matrices
-    return (corSparse(X=rankX, cov=cov))
-  }
-  rankY <- SparsifiedRanks2(Y)
-  return(corSparse( X = rankX, Y = rankY, cov = cov))
 }

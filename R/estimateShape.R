@@ -95,6 +95,7 @@ estimateBetas <- function(corSet, left = 0, right = 0, plot=FALSE, fine = NULL, 
   return(c(v,w))
 }
 # Internal function
+#' @export
 density.in <- function(k,width,n,obs,data) {
   kk     <- k+width-1
   left  <- ifelse(k  > 1, (obs[k-1] + obs[k])   /2, 0)
