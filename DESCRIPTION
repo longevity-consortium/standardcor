@@ -1,11 +1,27 @@
 Package: standardcor
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Empirical Null Models of Pairwise Correlations--Estimation and Standardization
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Author: Max Robinson and Lance Pfleiger
+Maintainer: Max Robinson <max.robinson@isbscience.org>
+Description: This package addresses issues arising in using correlation coefficients
+    to determine adjacencies in network representations of systems of interacting variables,
+    such as measured quantities of gene transcripts, proteins, metabolites, microRNAs,
+    lipids, and any other related measurements collected by high-throughput technologies
+    employed in molecular biological research. The methods here are not specific to this
+    application, they are statistical and intended to be of practical value regardless of
+    the field of application; however, the package was motivated by issues arising in the
+    stated application.
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
+URL: https://pricelab.github.io/standardcor/
+RoxygenNote: 7.3.1
+Imports: 
+    Matrix,
+Depends: 
+    R (>= 2.10)
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
