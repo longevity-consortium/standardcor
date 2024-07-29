@@ -22,7 +22,7 @@ betaDistance <- function(r, v=1, w=1, mix=1, unsigned=TRUE) {
   if (unsigned) {
     d = dbeta((1+abs(r))/2, v, v) / dbeta(1/2, v, v)
     d = d + mix*(1-abs(r))
-  } else
+  } else {
     d = pbeta((1+r)/2, v, w, lower.tail = FALSE)
     d = d + mix*(1-r)/2
   }
