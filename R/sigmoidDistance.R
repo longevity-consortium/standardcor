@@ -10,22 +10,24 @@
 #' @return The distance(s) corresponding to the correlation coefficient(s)
 #'
 #' @export
-sigmoidDistance <- function(r, alpha, tau0, type="unsigned", stretch=FALSE) {
-  sigmoid <- function(r,alpha,tau0) { return (1 / (1 + exp(-alpha*(r - tau0)))) }
-  if (type == "unsigned") {
+sigmoidDistance <- function(r, alpha, tau0, unsigned=TRUE, stretch=FALSE) {
+  sigmoid <- function(r,alpha,tau0) { return (1 - (1 / (1 + exp(-alpha*(r - tau0))))) }
+  if (unsigned) {
     s <- sigmoid(abs(r), alpha, tau0)
   } else {
     s <- sigmoid( r, alpha, tau0)
   }
-  if (stretch & abs(s.max - s.min) > 1.0e-7) {
-    if (type == "unsigned") {
+  if (stretch) {
+    if (unsigned) {
       s.min <- sigmoid( 1 , alpha, tau0)
       s.max <- sigmoid( 0 , alpha, tau0)
     } else {
       s.min <- sigmoid( 1, alpha, tau0)
       s.max <- sigmoid(-1, alpha, tau0)
     }
-    s <- (s - s.min) / (s.max - s.min)
+    if (abs(s.max - s.min) > 1.0e-7) {
+      s <- (s - s.min) / (s.max - s.min)
+    }
   }
   return (s)
 }
