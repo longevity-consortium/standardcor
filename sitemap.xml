@@ -1,19 +1,20 @@
 <urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
-<url><loc>/404.html</loc></url>
-<url><loc>/LICENSE-text.html</loc></url>
-<url><loc>/articles/Getting-Started.html</loc></url>
-<url><loc>/articles/index.html</loc></url>
-<url><loc>/articles/introduction.html</loc></url>
-<url><loc>/authors.html</loc></url>
-<url><loc>/index.html</loc></url>
-<url><loc>/reference/SparseSpearmanCor2.html</loc></url>
-<url><loc>/reference/SparsifiedRanks2.html</loc></url>
-<url><loc>/reference/centerBeta.html</loc></url>
-<url><loc>/reference/estimateBetas.html</loc></url>
-<url><loc>/reference/euclidDistance.html</loc></url>
-<url><loc>/reference/index.html</loc></url>
-<url><loc>/reference/powerDistance.html</loc></url>
-<url><loc>/reference/sigmoidDistance.html</loc></url>
-<url><loc>/reference/standardcor-package.html</loc></url>
+<url><loc>https://pricelab.github.io/standardcor/404.html</loc></url>
+<url><loc>https://pricelab.github.io/standardcor/LICENSE-text.html</loc></url>
+<url><loc>https://pricelab.github.io/standardcor/articles/Getting-Started.html</loc></url>
+<url><loc>https://pricelab.github.io/standardcor/articles/index.html</loc></url>
+<url><loc>https://pricelab.github.io/standardcor/articles/introduction.html</loc></url>
+<url><loc>https://pricelab.github.io/standardcor/authors.html</loc></url>
+<url><loc>https://pricelab.github.io/standardcor/index.html</loc></url>
+<url><loc>https://pricelab.github.io/standardcor/reference/SparseSpearmanCor2.html</loc></url>
+<url><loc>https://pricelab.github.io/standardcor/reference/SparsifiedRanks2.html</loc></url>
+<url><loc>https://pricelab.github.io/standardcor/reference/betaDistance.html</loc></url>
+<url><loc>https://pricelab.github.io/standardcor/reference/centerBeta.html</loc></url>
+<url><loc>https://pricelab.github.io/standardcor/reference/estimateShape.html</loc></url>
+<url><loc>https://pricelab.github.io/standardcor/reference/euclidDistance.html</loc></url>
+<url><loc>https://pricelab.github.io/standardcor/reference/index.html</loc></url>
+<url><loc>https://pricelab.github.io/standardcor/reference/powerDistance.html</loc></url>
+<url><loc>https://pricelab.github.io/standardcor/reference/sigmoidDistance.html</loc></url>
+<url><loc>https://pricelab.github.io/standardcor/reference/standardcor-package.html</loc></url>
 </urlset>
 
