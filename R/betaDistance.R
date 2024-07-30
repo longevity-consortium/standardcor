@@ -20,13 +20,13 @@
 #' @export
 betaDistance <- function(r, v=1, w=1, mix=1, unsigned=TRUE) {
   if (unsigned) {
-    d = dbeta((1+abs(r))/2, v, v) / dbeta(1/2, v, v)
-    d = d + mix*(1-abs(r))
+    d = dbeta((1+abs(r))/2, v, v) 
+    d = (d + mix*(1-abs(r))) / (dbeta(1/2, v, v) + mix)
   } else {
     d = pbeta((1+r)/2, v, w, lower.tail = FALSE)
-    d = d + mix*(1-r)/2
+    d = (d + mix*(1-r)/2) / (1 + mix)
   }
-  return(d / (1 + mix))
+  return(d)
 }
 
 # end of betaDistance.R
