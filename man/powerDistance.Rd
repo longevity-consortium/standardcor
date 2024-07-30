@@ -4,21 +4,21 @@
 \alias{powerDistance}
 \title{Calculate power distance}
 \usage{
-powerDistance(mat, k, type = "unsigned")
+powerDistance(r, k, unsigned = TRUE)
 }
 \arguments{
-\item{mat}{A matrix of correlation coefficients}
+\item{r}{Correlation coefficient(s), -1 <= r <= 1.}
 
-\item{k}{The power to raise the distance to}
+\item{k}{The power parameter.}
 
-\item{type}{The type of distance to calculate. Either "unsigned" or "signed"}
+\item{unsigned}{If TRUE, this function computes distances based on unsigned associations (|r|), otherwise it computes distances based on signed correlations (r).}
 }
 \value{
 A matrix of distances
 }
 \description{
-Calculates distance network from correlation coefficient matrix using a power function.
+Calculates distances for WCNA from correlation coefficient(s) using a power function.
 }
 \details{
-Correlation and distance are transformed as follows: for type = "unsigned"= 1 - abs(r)^k; for type = "signed" = 1 - r)/2)^k
+Correlation and distance are transformed as follows: for type = "unsigned"= 1 - abs(r)^k; for type = "signed" = ((1 - r)/2)^k
 }

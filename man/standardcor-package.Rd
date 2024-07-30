@@ -4,9 +4,9 @@
 \name{standardcor-package}
 \alias{standardcor}
 \alias{standardcor-package}
-\title{standardcor: What the Package Does (Title Case)}
+\title{standardcor: Empirical Null Models of Pairwise Correlations--Estimation and Standardization}
 \description{
-More about what it does (maybe more than one line) Use four spaces when indenting paragraphs within the Description.
+This package addresses issues arising in using correlation coefficients to determine adjacencies in network representations of systems of interacting variables, such as measured quantities of gene transcripts, proteins, metabolites, microRNAs, lipids, and any other related measurements collected by high-throughput technologies employed in molecular biological research. The methods here are not specific to this application, they are statistical and intended to be of practical value regardless of the field of application; however, the package was motivated by issues arising in the stated application.
 }
 \seealso{
 Useful links:

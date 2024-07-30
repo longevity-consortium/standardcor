@@ -2,37 +2,24 @@
 % Please edit documentation in R/SparseSpearmanCor2.R
 \name{SparseSpearmanCor2}
 \alias{SparseSpearmanCor2}
-\title{Sparse Spearman Correlation}
+\title{Sparse implementation of Spearman Correlation}
 \usage{
 SparseSpearmanCor2(X, Y = NULL, cov = FALSE)
 }
 \arguments{
-\item{X}{A ranked sparse matrix}
+\item{X}{A sparse data matrix}
 
-\item{Y}{A second ranked sparse matrix. If Y = NULL, correlations between the columns of X and itself will be taken. If Y is specified, the association between the columns of X and the columns of Y will be calculated.}
+\item{Y}{A second sparse data matrix. If only X is provided, the columns of X will be correlated with each other; when Y is also specified, the columns of X are cross-correlated with the columns of Y.}
 
-\item{cov}{when TRUE the covariance matrix is returned.}
+\item{cov}{An optional covariance matrix to use in computing the correlations. Passed to qlcMatrix::corSparse().}
 }
 \value{
-A sparse matrix with ranks of non-zero entries
+A matrix M of Spearman correlations. When is.null(Y), M[i,j] = cor(X[,i],X[,j],method='s'), otherwise M[i,j] = cor(X[,i],Y[j],method='s'). This implementation is considerably faster than others when X and Y are sparse.
 }
 \description{
-Replace non-zero entries in a sparse entries with non-zero ranks
-}
-\details{
-This method creates a rank matrix for a sparse matrix X using the following approach:
-1. Use non-zero enries in a column to calculate the ranks
-2. Add (z-1)/2 to the ranks (only non-zero entries are changed). z is the number of zeros
-in the column
-Since all the entries are shifted by the same constant (the zeros
-are already shifted), the covariance matrix of this shifted matrix is
-the same as the rank matrix of the entire matrix (where the zeros would
-all also have a rank = (z+1)/2) where z is the number of zeros
-
-This rank matrix can then be used to calculate pearson correlation
-(pearson correlation )
- Copied without code changes, and only non-textual change to the comments, from the public blog repository
- https://github.com/saketkc/blog/blob/main/2022-03-10/SparseSpearmanCorrelation2.ipynb
+Computes Spearman correlations either among the columns of one sparse matrix (X) or between the columns of two sparse matrices (X, Y). This implementation is specific to Spearman correlation and highly efficient; the efficiency results from avoiding unnecessary computations involving the ranks of zero entries, as well as the equivalence of rank correlations when the ranks are shifted by a constant.
+Copied without code changes, and some textual change to the comments, from the public blog repository
+    https://github.com/saketkc/blog/blob/main/2022-03-10/SparseSpearmanCorrelation2.ipynb
 owned by Saket Choudhary of Mumbai, India
 23 Mar 2024
 }
