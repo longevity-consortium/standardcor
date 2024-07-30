@@ -1,17 +1,27 @@
-#' Estimate Beta parameters
+#' Estimate parameters of a Beta distribution null model
 #'
-#' This function estimates the Beta parameters for a distribution given the correlations.
+#' This function estimates the shape parameters v and w for a Beta(v,w) distribution to fit the bulk (background) distribution of a given set of correlations. The objective of the estimating process is to match the density of the distribution at the mode and the breadth of the distribution around the mode, with the goal of estimating a model of the bulk (null) distribution under the assumption that the correlation coefficents provided as corSet contains a modest number of values not drawn from the null distribution. Note that it is not possible to provide an infallible definition of the desired null model; this method is therefore necessarily heuristic and will not provide a satisfactory result in all cases. When this occurs, the user is encouraged to use the "left" and "right" parameters as needed to provide a satisfactory null model.
 #'
-#' @param corSet Table of correlation coefficients.
-#' @param left Left parameter for the Beta distribution.
-#' @param right Right parameter for the Beta distribution.
-#' @param plot If TRUE, a plot of the distribution is shown.
-#' @param fine Number of bins for the histogram.
-#' @param trim Proportion of the data to be trimmed.
-#' @return A vector with the two Beta parameters.
+#' @param corSet A vector of non-unique, non-self correlation coefficients.
+#' @param left  An adjustment to the estimated value of w. This parameter is provided so the effect of changing the estimated v parameter can be assessed in the plot. Note that the mean of Beta(v,w) is v/(v+w), adding to w moves the mean to the left.
+#' @param right An adjustment to the estimated value of v. Adding to the value of v moves the mean of the Beta distribution to the right; Adding to both v and w decreases the variance.
+#' @param plot If TRUE, a plot of the distribution is shown, along with the fitted distribution Beta(v,w). If ev and ew are the estimated parameters, v = ev + right, w = ew + left.
+#' @param fine Half the number of bins for the histogram. When fine = NULL (the default), an appropriate value between 5 and 100 is used.
+#' @param trim The mean of the correlations is estimated robustly by making an initial Beta model, then trimming values below quantile trim/2 and above quantile 1-trim/2 of the initial model (0 <= trim < 1). If trimming reduces the number of correlations that remain to less than five, trimming is disabled and the full set of correlations is used.
+#' @return A vector c(v, w) containing the two Beta parameters (see plot=TRUE above).
 #'
 #' @export
-estimateBetas <- function(corSet, left = 0, right = 0, plot=FALSE, fine = NULL, trim=0.01, ...) {
+estimateShape <- function(corSet, left = 0, right = 0, plot=FALSE, fine = NULL, trim=0.01, ...) {
+  density.in <- function(k,width,n,obs,data) {
+    kk    <- k+width-1
+    left  <- ifelse(k  > 1, (obs[k-1] + obs[k])   /2, 0)
+    right <- ifelse(kk < n, (obs[kk]  + obs[kk+1])/2, 1)
+    count <- length(which(left <= data & data <= right))
+    stopifnot(count > 0)
+    denom <- length(data)*(right - left)
+    stopifnot((! is.na(denom)) & (denom > 0))
+    return(count/denom)
+  }
   cors <- corSet[! is.na(corSet)]
   n    <- length(cors)
   good <- abs(cors) < n/(1+n) # exclude extreme values near +/-1
@@ -24,7 +34,7 @@ estimateBetas <- function(corSet, left = 0, right = 0, plot=FALSE, fine = NULL, 
   s2 <- mad(x[good])^2
   z1 <- mu*(1-mu)/s2 - 1
 
-  # Untrimmed method of moments estimate
+  # Minimally trimmed method of moments estimate
   v1 <- mu*z1
   w1 <- (1-mu)*z1
 
@@ -32,10 +42,10 @@ estimateBetas <- function(corSet, left = 0, right = 0, plot=FALSE, fine = NULL, 
   obs   <- sort(unique(round(x[good],3)))
   n.obs <- length(obs)
   width <- round(min(max(5,min(sqrt(n.obs),100))))
-  # println("evw: ", width, n.obs, length(x[good]))
+  # println("estimateShape: ", width, n.obs, length(x[good]))
   obs.density <- unlist(sapply(c(1:(1+n.obs-width)),
                                density.in,width,n.obs,obs,x[good]))
-  # println("evw: ",length(obs.density), length(which(is.na(obs.density))))
+  # println("estimateShape: ",length(obs.density), length(which(is.na(obs.density))))
   k <- which.max(obs.density)
   mode.density <- obs.density[k]
   mode.region <- c(k:(k+width-1))
@@ -51,7 +61,7 @@ estimateBetas <- function(corSet, left = 0, right = 0, plot=FALSE, fine = NULL, 
     if (abs(f-1) < 0.01) break
     z2 <- max(z2/f,2)
     if (10 == tries) { # optimization failed
-      println("evw: warning suboptimal",round(100*f,2),
+      println("estimateShape: WARNING suboptimal fit,",round(100*f,2),
               "%, v+w",round(z1,2),",",round(z2,2))
     }
   }
@@ -75,8 +85,8 @@ estimateBetas <- function(corSet, left = 0, right = 0, plot=FALSE, fine = NULL, 
   w3   <- (1-mu)* z3 + left
 
   # Final estimate
-  v <- (v2+v3)/2
-  w <- (w2+w3)/2
+  v <- (v2 + v3) / 2
+  w <- (w2 + w3) / 2
 
   if (plot) {
     if (is.null(fine)) {
@@ -93,15 +103,4 @@ estimateBetas <- function(corSet, left = 0, right = 0, plot=FALSE, fine = NULL, 
     lines(r, dbeta((1+r)/2,v,w)/2, lwd=3,col='MediumBlue')
   }
   return(c(v,w))
-}
-# Internal function
-#' @export
-density.in <- function(k,width,n,obs,data) {
-  kk     <- k+width-1
-  left  <- ifelse(k  > 1, (obs[k-1] + obs[k])   /2, 0)
-  right <- ifelse(kk < n, (obs[kk]  + obs[kk+1])/2, 1)
-  count  <- length(which(left <= data & data <= right))
-  denom  <- length(data)*(right - left)
-  stopifnot((! is.na(denom)) | (count > 0) | (! is.na(denom)) | (denom > 0))
-  return(count/denom)
 }
