@@ -44,10 +44,11 @@ nullModelAdjacencyTable <- function(uniqueCor, v, scale = 2, bins=100) {
 
   A <- sort(abs(uniqueCor))
   n <- length(A)
+  m <- round((1+sqrt(1 + 8*n))/2)
   IQR <- 2*qbeta(p=c(1,3)/4, v, v) - 1
   outside <- length(which(uniqueCor < IQR[1] | IQR[2] < uniqueCor))
-  n.bg <- 2*(n - outside)
-  est.outliers <- scale * (n - n.bg)
+  n.bg <- (n - outside)
+  est.outliers <- scale * m * (1 - n.bg / n)
   Bs   <- (c(1:bins)-1/2) / bins
   adj  <- rep(1,bins)
   for (i in c(1:bins)) {
