@@ -10,11 +10,12 @@
 #' we estimate that the number of false negatives equals the number of false positives.
 #'
 #' @param uniqueCor A numeric object containing the full set of non-self, unique correlation values to consider. If the analyte-analyte correlation matrix is Z, the non-self, unique correlations can be found using Z[row(Z) < col(Z)].
-#' @param nu The parameter for the null model of random correlations, Pr{r | null model} = Pr{x <= Beta(nu, nu) | x = (1+r)/2}.
+#' @param v The parameter for the null model of random correlations, Pr{r | null model} = Pr{x <= Beta(v, v) | x = (1+r)/2}.
+#' @param scale Center of the soft threshold relative to the estimated number of correlations beyond those that fit the null model. Defaults to 2; higher values increase the connectivity of the network model, lower values decrease it.
 #' @return A data frame with 2 columns, x and y, tabulating y as a function of x with -1 <= x <= 1 and 0 <= y <= 1.
 #'
 #' @export
-nullModelAdjacencyTable <- function(uniqueCor, nu, bins=100) {
+nullModelAdjacencyTable <- function(uniqueCor, v, scale = 2, bins=100) {
 
   quickSearch <- function(x,L,n) {
     lo <- 1
@@ -43,17 +44,17 @@ nullModelAdjacencyTable <- function(uniqueCor, nu, bins=100) {
 
   A <- sort(abs(uniqueCor))
   n <- length(A)
-  IQR <- 2*qbeta(p=c(1,3)/4,nu,nu)-1
+  IQR <- 2*qbeta(p=c(1,3)/4, v, v) - 1
   outside <- length(which(uniqueCor < IQR[1] | IQR[2] < uniqueCor))
   n.bg <- 2*(n - outside)
-  est.outliers <- n - n.bg
+  est.outliers <- scale * (n - n.bg)
   Bs   <- (c(1:bins)-1/2) / bins
   adj  <- rep(1,bins)
   for (i in c(1:bins)) {
     k  <- mean(quickSearch(Bs[i], A, n))
     P  <- 1 + n - k
     k  <- round(k)
-    FP <- n.bg * pbeta((1 + A[k])/2, nu, nu, lower.tail=FALSE)
+    FP <- n.bg * pbeta((1 + A[k])/2, v, v, lower.tail=FALSE)
     FN <- max(est.outliers - max(0, n - (k + FP)), 1)
     adj[i] <- FN / (FN + FP)
   }
