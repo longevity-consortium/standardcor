@@ -4,12 +4,14 @@
 \alias{nullModelAdjacencyTable}
 \title{Compute soft threshold adjacency table for unsigned correlations from a symmetric Beta distribution null model}
 \usage{
-nullModelAdjacencyTable(uniqueCor, nu, bins = 100)
+nullModelAdjacencyTable(uniqueCor, v, scale = 2, bins = 100)
 }
 \arguments{
 \item{uniqueCor}{A numeric object containing the full set of non-self, unique correlation values to consider. If the analyte-analyte correlation matrix is Z, the non-self, unique correlations can be found using Z[row(Z) < col(Z)].}
 
-\item{nu}{The parameter for the null model of random correlations, Pr{r | null model} = Pr{x <= Beta(nu, nu) | x = (1+r)/2}.}
+\item{v}{The parameter for the null model of random correlations, Pr{r | null model} = Pr{x <= Beta(v, v) | x = (1+r)/2}.}
+
+\item{scale}{Center of the soft threshold relative to the estimated number of correlations beyond those that fit the null model. Defaults to 2; higher values increase the connectivity of the network model, lower values decrease it.}
 }
 \value{
 A data frame with 2 columns, x and y, tabulating y as a function of x with -1 <= x <= 1 and 0 <= y <= 1.
