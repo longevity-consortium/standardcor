@@ -12,7 +12,7 @@ interpolatedAdjacency(r, adjTable)
 \item{adjTable}{A tabulated soft-threshold adjacency function, as produced by nullModelAdjacencyTable()}
 }
 \value{
-A numeric object containing the adjacencies for a correlation network
+A numeric object containing adjacencies for a correlation network model
 }
 \description{
 Interpolates an adjacency value in 0..1 from a correlation value -1 <= r <= 1
