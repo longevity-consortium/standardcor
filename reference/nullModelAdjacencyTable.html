@@ -63,7 +63,7 @@ we estimate that the number of false negatives equals the number of false positi
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">nullModelAdjacencyTable</span><span class="op">(</span><span class="va">uniqueCor</span>, <span class="va">nu</span>, bins <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">nullModelAdjacencyTable</span><span class="op">(</span><span class="va">uniqueCor</span>, <span class="va">v</span>, scale <span class="op">=</span> <span class="fl">2</span>, bins <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -74,8 +74,12 @@ we estimate that the number of false negatives equals the number of false positi
 <dd><p>A numeric object containing the full set of non-self, unique correlation values to consider. If the analyte-analyte correlation matrix is Z, the non-self, unique correlations can be found using Z[row(Z) &lt; col(Z)].</p></dd>
 
 
-<dt id="arg-nu">nu<a class="anchor" aria-label="anchor" href="#arg-nu"></a></dt>
-<dd><p>The parameter for the null model of random correlations, Prr | null model = Prx &lt;= Beta(nu, nu) | x = (1+r)/2.</p></dd>
+<dt id="arg-v">v<a class="anchor" aria-label="anchor" href="#arg-v"></a></dt>
+<dd><p>The parameter for the null model of random correlations, Prr | null model = Prx &lt;= Beta(v, v) | x = (1+r)/2.</p></dd>
+
+
+<dt id="arg-scale">scale<a class="anchor" aria-label="anchor" href="#arg-scale"></a></dt>
+<dd><p>Center of the soft threshold relative to the estimated number of correlations beyond those that fit the null model. Defaults to 2; higher values increase the connectivity of the network model, lower values decrease it.</p></dd>
 
 </dl></div>
     <div class="section level2">
