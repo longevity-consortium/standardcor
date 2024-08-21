@@ -1,0 +1,7 @@
+"0","N <- dim(synth_LC[['Metabolomics']])[2]"
+"0","Met <- as.matrix(synth_LC[['Metabolomics']][,2:N])"
+"0","rownames(Met) <- synth_LC[['Metabolomics']]$subjectID"
+"0",""
+"0","N <- dim(synth_LC[['Proteomics']])[2]"
+"0","Prot <- as.matrix(synth_LC[['Proteomics']][,2:N])"
+"0","rownames(Prot) <- synth_LC[['Proteomics']]$subjectID"

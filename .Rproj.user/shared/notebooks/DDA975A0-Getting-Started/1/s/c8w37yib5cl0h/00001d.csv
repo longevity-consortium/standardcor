@@ -1,0 +1,4 @@
+"0","text(x=0.5,y=c(2.1,2),"
+"0","     labels=c(""Method of Moments"",paste(""Beta("",round(v.mm, 2),"","",round(w.mm,2),"")"",sep='')),"
+"0","     col='forestgreen',adj = 1/2)"
+"0",""

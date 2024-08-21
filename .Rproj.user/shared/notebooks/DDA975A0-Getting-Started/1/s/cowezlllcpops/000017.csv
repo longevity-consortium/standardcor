@@ -1,0 +1,5 @@
+"0","v <- mean(beta.shape) # Expect v = (D-1)/2 = 24.5"
+"0","v.name <- paste(""Beta("",paste(round(c(v,v),2),collapse="", ""),"")"",sep='')"
+"0","plot(R,betaDistance(R, v, v, mix=0), type='l',lwd=3,"
+"0","     xlab=""Correlation coefficient"", ylab=""Distance Penalty"","
+"0","    main = paste(v.name,""penalty""))"

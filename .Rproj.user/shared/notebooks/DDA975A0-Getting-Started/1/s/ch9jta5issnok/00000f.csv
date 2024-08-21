@@ -1,0 +1,3 @@
+"0","data('synth_LC')"
+"0","names(synth_LC) <- c('Metadata','Metabolomics','Proteomics')"
+"0",""

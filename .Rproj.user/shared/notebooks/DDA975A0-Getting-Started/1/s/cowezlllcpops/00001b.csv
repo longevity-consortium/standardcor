@@ -1,0 +1,5 @@
+"0",""
+"0","plot(R,betaDistance(R, v, v, mix=1),type='l',lwd=3,"
+"0","     xlab=""Correlation coefficient"", ylab=""Relative Distance"","
+"0","    main = c(""Euclidean distance squared mixed with"","
+"0","             paste(v.name, ""penalty"")))"

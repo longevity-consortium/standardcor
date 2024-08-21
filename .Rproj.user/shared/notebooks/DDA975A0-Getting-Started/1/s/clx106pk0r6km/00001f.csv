@@ -1,0 +1,7 @@
+"0","v.std <- 32"
+"0","Z <- standardizeFromModel(L$modelL, L$analyteL, v.std)"
+"0","adjTable1 <- nullModelAdjacencyTable(Z[row(Z) < col(Z)], v.std, scale=1)"
+"0","adjTable2 <- nullModelAdjacencyTable(Z[row(Z) < col(Z)], v.std)"
+"0","adjTable3 <- nullModelAdjacencyTable(Z[row(Z) < col(Z)], v.std, scale=3)"
+"0",""
+"0","shape <- estimateShape(Z[row(Z) < col(Z)], plot=TRUE, main = ""Standardized"", fine=30)"

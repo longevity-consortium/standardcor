@@ -1,0 +1,6 @@
+"0","Samples <- 1000"
+"0","Dimensions <- 50"
+"0","M <- Matrix(rnorm(Dimensions*Samples),nrow=Dimensions,ncol=Samples,sparse=TRUE)"
+"0","Z <- SparseSpearmanCor2(M)"
+"0",""
+"0","beta.shape <- estimateShape(Z[row(Z) < col(Z)], plot=TRUE)"

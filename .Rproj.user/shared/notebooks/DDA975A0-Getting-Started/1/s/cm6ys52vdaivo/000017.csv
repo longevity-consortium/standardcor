@@ -1,0 +1,8 @@
+"0","Samples <- 1000"
+"0","Dimensions <- 50"
+"0","M <- Matrix(rnorm(Dimensions*Samples),nrow=Dimensions,ncol=Samples,sparse=TRUE)"
+"0","Altered <- 200 # This 5% of the samples are officially ""outliers"""
+"0","r <- 0.5"
+"0","M[,c(1:Altered)] <- (1-r) * M[,c(1:Altered)] + r*M[,Altered+1]"
+"0","Z <- SparseSpearmanCor2(M)"
+"0","beta.shape <- estimateShape(Z[row(Z) < col(Z)], plot=TRUE)"

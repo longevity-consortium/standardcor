@@ -1,0 +1,2 @@
+"0","Bs <- c(-100:100)/100"
+"0","lines(Bs,interpolatedAdjacency(Bs,adjTable1),lwd=3,col='orangered')"

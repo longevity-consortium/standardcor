@@ -1,0 +1,11 @@
+"0","par(mfrow=c(2,2))"
+"0","L <- multiOmicModel(list(met = Met, prot = Prot), plot=TRUE, annotate=TRUE, fine=30)"
+"2","Garbage collection 1509 = 1298"
+"2","+162"
+"2","+49"
+"2"," (level 2) ... "
+"2","
+148.4 Mbytes of cons cells used (64%)
+"
+"2","259.3 Mbytes of vectors used (39%)
+"
