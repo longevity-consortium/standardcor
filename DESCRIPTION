@@ -15,7 +15,7 @@ Description: This package addresses issues arising in using correlation coeffici
 License: GLP-3.0
 Encoding: UTF-8
 LazyData: true
-URL: https://pricelab.github.io/standardcor/
+URL: https://longevity-consortium.github.io/standardcor/
 RoxygenNote: 7.3.2
 Imports: 
     Matrix
