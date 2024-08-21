@@ -11,7 +11,7 @@ This package addresses issues arising in using correlation coefficients to deter
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://pricelab.github.io/standardcor/}
+  \item \url{https://longevity-consortium.github.io/standardcor/}
 }
 
 }
