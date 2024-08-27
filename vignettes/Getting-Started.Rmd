@@ -18,8 +18,6 @@ knitr::opts_chunk$set(
 library(standardcor)
 ```
 
-# Getting Started
-
 ```{r}
 ls("package:standardcor")
 ```
@@ -27,7 +25,7 @@ ls("package:standardcor")
 
 # Estimate Shapes
 
-The first example estimates the parameters of an (asymmetric) Beta distribution ${\rm Beta}(v,w)$ from data generated entirely from a null distribution of correlations among vectors of length $D = 50$. Theoretically, this distribution should be ${\rm Beta}(v,v), v = D/2 - 1 = 24$; This example shows that estimateShape() does a good job of fitting this data.
+The first example estimates the parameters of an (asymmetric) Beta distribution $Beta(v,w)$ from data generated entirely from a null distribution of correlations among vectors of length $D = 50$. Theoretically, this distribution should be $Beta(v,v), v = D/2 - 1 = 24$; This example shows that estimateShape() does a good job of fitting this data.
 
 ```{r}
 Samples <- 1000
@@ -49,7 +47,7 @@ v.mm <- x.mu * z.mm
 w.mm <- (1-x.mu) * z.mm
 
 lines(R,dbeta((1+R)/2, v.mm, w.mm)/2, lwd=3, col='forestgreen')
-text(x=0.5,y=c(2.1,2),
+text(x=0.5,y=c(2.3,2),
      labels=c("Method of Moments",paste("Beta(",round(v.mm, 2),",",round(w.mm,2),")",sep='')),
      col='forestgreen',adj = 1/2)
 
@@ -79,7 +77,7 @@ v.mm <- x.mu * z.mm
 w.mm <- (1-x.mu) * z.mm
 
 lines(R,dbeta((1+R)/2, v.mm, w.mm)/2, lwd=3, col='forestgreen')
-text(x=0.5,y=c(2.1,2),
+text(x=0.5,y=c(2.3,2),
      labels=c("Method of Moments",paste("Beta(",round(v.mm, 2),",",round(w.mm,2),")",sep='')),
      col='forestgreen',adj = 1/2)
 
@@ -126,10 +124,11 @@ title(paste('Metabolite correlations',paste(round(shape.Met,2),collapse=", ")),l
 
 ```{r}
 Z.prot <- SparseSpearmanCor2(as.matrix(synth_LC[['Proteomics']]))
-paste("Proteomics correlation matrix",paste(dim(Z.prot),collapse=' x '))
-paste(length(which(is.na(Z.prot))),'na values')
-paste(paste(range(Z.prot,na.rm=TRUE),collapse=" <= cor <= "))
 ```
+
+`r paste("Proteomics correlation matrix",paste(dim(Z.prot),collapse=' x '))` \
+`r paste(length(which(is.na(Z.prot))),'na values')` \
+`r paste(paste(range(Z.prot,na.rm=TRUE),collapse=" <= cor <= "))`
 
 ```{r}
 shape.prot <- estimateShape(Z.prot[row(Z.prot) < col(Z.prot)], plot=TRUE)
@@ -146,8 +145,8 @@ Prot <- as.matrix(synth_LC[['Proteomics']][,2:N])
 rownames(Prot) <- synth_LC[['Proteomics']]$subjectID
 ```
 
-```{r, width=8, height=8}
-par(mar = c(0, 0, 0, 0))
+```{r, fig.width=8, fig.height=8}
+par(mar = c(2, 2, 4, 2), mfrow=c(2,2))
 L <- multiOmicModel(list(met = Met, prot = Prot), plot=TRUE, annotate=TRUE, fine=30)
 
 v.std <- 32
@@ -167,15 +166,10 @@ lines(Bs,interpolatedAdjacency(Bs,adjTable3),lwd=3,col='dodgerblue')
 
 # Beta distance function
 
-```{r}
-?standardcor::betaDistance
-```
-
-
-```{r}
+```{r, fig.width=6, fig.height=6}
 R <- c(-100:100)/100 ; R <- ifelse(R < -1, -1, ifelse(1 < R, 1, R))
 
-par(mar = c(0, 0, 0, 0))
+par(mar = c(2, 2, 4, 2), mfrow=c(2,2))
 
 plot(R,betaDistance(R,1,1,mix=0,unsigned=FALSE),type='l',lwd=3, ylim=c(0,1),
      xlab="Correlation coefficient", ylab="Beta Distance",
@@ -200,10 +194,10 @@ abline(h=c(-1:1),col='grey') ; abline(v=c(0,1),col='grey')
 
 
 
-```{r}
+```{r, fig.width=6, fig.height=6}
 R <- c(-100:100)/100 ; R <- ifelse(R < -1, -1, ifelse(1 < R, 1, R))
 
-par(mar = c(0, 0, 0, 0))
+par(mar = c(2, 2, 4, 2), mfrow=c(2,2))
 
 plot(R,betaDistance(R,1,1,mix=1,unsigned=FALSE),type='l',lwd=3,
      xlab="Correlation coefficient", ylab="Beta Distance",
@@ -226,10 +220,10 @@ plot(R,betaDistance(R, 30, 30,mix=1,unsigned=FALSE),type='l',lwd=3,
 abline(h=c(-1:1),col='grey') ; abline(v=c(0,1),col='grey')
 ```
 
-```{r}
+```{r, fig.width=6, fig.height=6}
 R <- c(-100:100)/100 ; R <- ifelse(R < -1, -1, ifelse(1 < R, 1, R))
 
-par(mar = c(0, 0, 0, 0))
+par(mar = c(2, 2, 4, 2), mfrow=c(2,2))
 
 plot(R,betaDistance(R,1,1,mix=0),type='l',lwd=3, ylim=c(0,1),
      xlab="Correlation coefficient", ylab="Beta Distance",
@@ -252,10 +246,10 @@ plot(R,betaDistance(R, 30, 30,mix=0),type='l',lwd=3, ylim=c(0,1),
 abline(h=c(-1:1),col='grey') ; abline(v=c(0,1),col='grey')
 ```
 
-```{r}
+```{r, fig.width=6, fig.height=6}
 R <- c(-100:100)/100 ; R <- ifelse(R < -1, -1, ifelse(1 < R, 1, R))
 
-par(mar = c(0, 0, 0, 0))
+par(mar = c(2, 2, 4, 2), mfrow=c(2,2))
 
 plot(R,betaDistance(R,1,1),type='l',lwd=3, ylim=c(0,1),
      xlab="Correlation coefficient", ylab="Beta Distance",
@@ -281,14 +275,10 @@ abline(h=c(-1:1),col='grey') ; abline(v=c(0,1),col='grey')
 
 # Power distance function
 
-```{r}
-?standardcor::powerDistance
-```
-
-```{r}
+```{r, fig.width=6, fig.height=6}
 R <- c(-100:100)/100 ; R <- ifelse(R < -1, -1, ifelse(1 < R, 1, R))
 
-par(mar = c(0, 0, 0, 0))
+par(mar = c(2, 2, 4, 2), mfrow=c(2,2))
 
 plot(R,powerDistance(R,k=3,unsigned=FALSE),type='l',lwd=3, ylim=c(0,1),
      xlab="Correlation coefficient", ylab="Power Distance",
@@ -311,10 +301,10 @@ plot(R,powerDistance(R,k=0.5, unsigned=FALSE),type='l',lwd=3, ylim=c(0,1),
 abline(h=c(-1:1),col='grey') ; abline(v=c(0,1),col='grey')
 ```
 
-```{r}
+```{r, fig.width=6, fig.height=6}
 R <- c(-100:100)/100 ; R <- ifelse(R < -1, -1, ifelse(1 < R, 1, R))
 
-par(mar = c(0, 0, 0, 0))
+par(mar = c(2, 2, 4, 2), mfrow=c(2,2))
 
 plot(R,powerDistance(R,k=3),type='l',lwd=3, ylim=c(0,1),
      xlab="Correlation coefficient", ylab="Power Distance",
@@ -339,14 +329,10 @@ abline(h=c(-1:1),col='grey') ; abline(v=c(0,1),col='grey')
 
 # Sigmoid distance function
 
-```{r}
-?standardcor::sigmoidDistance
-```
-
-```{r}
+```{r, fig.width=6, fig.height=6}
 R <- c(-100:100)/100 ; R <- ifelse(R < -1, -1, ifelse(1 < R, 1, R))
 
-par(mar = c(0, 0, 0, 0))
+par(mar = c(2, 2, 4, 2), mfrow=c(2,2))
 
 plot(R,sigmoidDistance(R,alpha=5,tau0 = 0,unsigned=FALSE),type='l',lwd=3,
      xlab="Correlation coefficient", ylab="Sigmoid Distance",
@@ -374,10 +360,10 @@ abline(h=0.5, lty=2, col='grey')
 
 ```
 
-```{r}
+```{r, fig.width=6, fig.height=6}
 R <- c(-100:100)/100 ; R <- ifelse(R < -1, -1, ifelse(1 < R, 1, R))
 
-par(mar = c(0, 0, 0, 0))
+par(mar = c(2, 2, 4, 2), mfrow=c(2,2))
 
 plot(R,sigmoidDistance(R,alpha=4,tau0 = 1/4,unsigned=FALSE),type='l',lwd=3,
      xlab="Correlation coefficient", ylab="Sigmoid Distance",
@@ -405,10 +391,10 @@ abline(h=0.5, lty=2, col='grey')
 
 ```
 
-```{r}
+```{r, fig.width=6, fig.height=6}
 R <- c(-100:100)/100 ; R <- ifelse(R < -1, -1, ifelse(1 < R, 1, R))
 
-par(mar = c(0, 0, 0, 0))
+par(mar = c(2, 2, 4, 2), mfrow=c(2,2))
 
 plot(R,sigmoidDistance(R,alpha=1,tau0 = 1/2,unsigned=TRUE,stretch=TRUE),type='l',lwd=3,
      xlab="Correlation coefficient", ylab="Sigmoid Distance",
