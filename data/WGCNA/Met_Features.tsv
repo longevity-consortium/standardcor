@@ -1,0 +1,1183 @@
+metID	annotation	assay
+met_1	zolpidem	lipidomics
+met_3	xylose	primary metabolism
+met_4	xylitol	primary metabolism
+met_5	xanthine	primary metabolism
+met_6	vitamin K1	lipidomics
+met_7	vitamin e succinate	lipidomics
+met_8	venlafaxine	lipidomics
+met_10	valine, ethyl ester	biogenic amines (HILIC)
+met_11	valine betaine	biogenic amines (HILIC)
+met_12	valine	primary metabolism
+met_13	Val-Ser	biogenic amines (HILIC)
+met_14	Val-Asp	biogenic amines (HILIC)
+met_15	Val-Arg	biogenic amines (HILIC)
+met_16	Val-Ala	biogenic amines (HILIC)
+met_19	uridine	primary metabolism
+met_20	uric acid	primary metabolism
+met_21	urea, 1-cyanoacetyl-3-methyl-	biogenic amines (HILIC)
+met_22	urea, 1-cyanoacetyl-3-methyl- b	biogenic amines (HILIC)
+met_23	UDP-glucuronic acid	primary metabolism
+met_24	tyrosine	primary metabolism
+met_25	tryptophan	primary metabolism
+met_26	tris(2,4-ditert-butylphenyl)phosphate	lipidomics
+met_27	tris(2-butoxyethyl) phosphate	lipidomics
+met_28	triphenylphosphine oxide	biogenic amines (HILIC)
+met_31	trigonelline	biogenic amines (HILIC)
+met_32	tridecylamine	biogenic amines (HILIC)
+met_34	tri-C12:0-methylammonium	lipidomics
+met_35	trans-4-hydroxyproline	primary metabolism
+met_36	trans-3-hydroxycotinine	biogenic amines (HILIC)
+met_37	tramadol	biogenic amines (HILIC)
+met_39	tocopherol alpha-	primary metabolism
+met_40	TMAO	biogenic amines (HILIC)
+met_41	threonine	primary metabolism
+met_42	threoninamide	biogenic amines (HILIC)
+met_43	threonic acid	primary metabolism
+met_44	threitol	primary metabolism
+met_47	TG O-18:1_16:0_18:1	lipidomics
+met_48	TG 54:7	lipidomics
+met_49	TG 20:4_20:4_20:4	lipidomics
+met_51	TG 18:3_18:3_18:3 b	lipidomics
+met_52	TG 18:3_18:3_18:3	lipidomics
+met_54	TG 18:2_20:4_20:5	lipidomics
+met_55	TG 18:2_20:4_20:4 b	lipidomics
+met_56	TG 18:2_20:4_20:4	lipidomics
+met_57	TG 18:2_20:3_22:0	lipidomics
+met_58	TG 18:2_18:3_22:6 b	lipidomics
+met_59	TG 18:2_18:3_22:6	lipidomics
+met_60	TG 18:2_18:3_18:3 b	lipidomics
+met_61	TG 18:2_18:3_18:3	lipidomics
+met_62	TG 18:2_18:2_22:6	lipidomics
+met_63	TG 18:2_18:2_20:5	lipidomics
+met_64	TG 18:2_18:2_20:4	lipidomics
+met_65	TG 18:2_18:2_18:3 b	lipidomics
+met_66	TG 18:2_18:2_18:3	lipidomics
+met_67	TG 18:2_18:2_18:2	lipidomics
+met_68	TG 18:1_20:4_22:6 b	lipidomics
+met_69	TG 18:1_20:4_22:6	lipidomics
+met_70	TG 18:1_20:4_20:4	lipidomics
+met_71	TG 18:1_18:2_24:1	lipidomics
+met_72	TG 18:1_18:2_22:5	lipidomics
+met_73	TG 18:1_18:2_22:0	lipidomics
+met_74	TG 18:1_18:2_20:4	lipidomics
+met_75	TG 18:1_18:2_20:1	lipidomics
+met_76	TG 18:1_18:2_18:3	lipidomics
+met_77	TG 18:1_18:2_18:2 b	lipidomics
+met_78	TG 18:1_18:2_18:2	lipidomics
+met_79	TG 18:1_18:1_22:6	lipidomics
+met_80	TG 18:1_18:1_22:0	lipidomics
+met_81	TG 18:1_18:1_20:4	lipidomics
+met_82	TG 18:1_18:1_20:3 b	lipidomics
+met_83	TG 18:1_18:1_20:3	lipidomics
+met_84	TG 18:1_18:1_20:1	lipidomics
+met_85	TG 18:1_18:1_20:0	lipidomics
+met_86	TG 18:1_18:1_18:2 b	lipidomics
+met_87	TG 18:1_18:1_18:2	lipidomics
+met_88	TG 18:1_18:1_18:1 b	lipidomics
+met_89	TG 18:1_18:1_18:1	lipidomics
+met_90	TG 18:1_18:1_16:0	lipidomics
+met_91	TG 18:0_18:2_19:1	lipidomics
+met_92	TG 18:0_18:1_22:6 minor02	lipidomics
+met_93	TG 18:0_18:1_22:4	lipidomics
+met_94	TG 18:0_18:1_20:4	lipidomics
+met_95	TG 18:0_18:1_20:1	lipidomics
+met_96	TG 18:0_18:1_19:1	lipidomics
+met_97	TG 18:0_18:1_18:1 c	lipidomics
+met_98	TG 18:0_18:1_18:1 b	lipidomics
+met_99	TG 18:0_18:1_18:1	lipidomics
+met_100	TG 18:0_18:0_20:4 minor	lipidomics
+met_101	TG 18:0_18:0_18:1 b	lipidomics
+met_102	TG 18:0_18:0_18:1 a	lipidomics
+met_103	TG 17:1_18:2_18:3	lipidomics
+met_104	TG 17:0_18:2_18:3	lipidomics
+met_105	TG 17:0_18:1_18:3	lipidomics
+met_106	TG 17:0_18:1_18:2 b	lipidomics
+met_107	TG 17:0_18:1_18:2	lipidomics
+met_108	TG 17:0_18:1_18:1 b	lipidomics
+met_109	TG 17:0_18:1_18:1	lipidomics
+met_110	TG 17:0_18:0_18:1 b	lipidomics
+met_111	TG 17:0_18:0_18:1	lipidomics
+met_112	TG 17:0_17:1_17:1	lipidomics
+met_113	TG 17:0_17:0_17:1	lipidomics
+met_114	TG 16:2_18:2_18:3	lipidomics
+met_115	TG 16:1_18:3_18:3 b	lipidomics
+met_116	TG 16:1_18:3_18:3	lipidomics
+met_117	TG 16:1_18:2_18:3	lipidomics
+met_118	TG 16:1_18:2_18:2	lipidomics
+met_119	TG 16:1_18:1_18:2 minor	lipidomics
+met_120	TG 16:1_18:1_18:1	lipidomics
+met_121	TG 16:1_16:1_18:1	lipidomics
+met_122	TG 16:0_22:6_22:6	lipidomics
+met_123	TG 16:0_20:5_20:5	lipidomics
+met_124	TG 16:0_18:3_22:6	lipidomics
+met_125	TG 16:0_18:3_18:3	lipidomics
+met_126	TG 16:0_18:2_22:6	lipidomics
+met_127	TG 16:0_18:2_18:3 b	lipidomics
+met_128	TG 16:0_18:2_18:3	lipidomics
+met_129	TG 16:0_18:2_18:2	lipidomics
+met_130	TG 16:0_18:1_22:6	lipidomics
+met_131	TG 16:0_18:1_22:5	lipidomics
+met_132	TG 16:0_18:1_22:4	lipidomics
+met_133	TG 16:0_18:1_21:0	lipidomics
+met_134	TG 16:0_18:1_20:0	lipidomics
+met_135	TG 16:0_18:1_18:2 minor	lipidomics
+met_136	TG 16:0_18:1_18:2	lipidomics
+met_137	TG 16:0_18:1_18:1 c	lipidomics
+met_138	TG 16:0_18:1_18:1 b	lipidomics
+met_139	TG 16:0_18:1_18:1	lipidomics
+met_140	TG 16:0_18:0_22:6 minor	lipidomics
+met_141	TG 16:0_18:0_18:1 b	lipidomics
+met_142	TG 16:0_18:0_18:1	lipidomics
+met_143	TG 16:0_18:0_18:0	lipidomics
+met_144	TG 16:0_17:1_18:1	lipidomics
+met_145	TG 16:0_17:1_18:0	lipidomics
+met_146	TG 16:0_17:0_18:0 b	lipidomics
+met_147	TG 16:0_17:0_18:0	lipidomics
+met_148	TG 16:0_16:1_22:6	lipidomics
+met_149	TG 16:0_16:1_18:1	lipidomics
+met_150	TG 16:0_16:0_22:6	lipidomics
+met_151	TG 16:0_16:0_20:4	lipidomics
+met_152	TG 16:0_16:0_18:2	lipidomics
+met_153	TG 16:0_16:0_18:1 b	lipidomics
+met_154	TG 16:0_16:0_18:1 a	lipidomics
+met_155	TG 16:0_16:0_18:1	lipidomics
+met_156	TG 16:0_16:0_18:0 b	lipidomics
+met_157	TG 16:0_16:0_18:0	lipidomics
+met_158	TG 16:0_16:0_17:0	lipidomics
+met_159	TG 16:0_16:0_16:1	lipidomics
+met_160	TG 16:0_16:0_16:0 b	lipidomics
+met_161	TG 16:0_16:0_16:0	lipidomics
+met_162	TG 15:1_18:2_18:3	lipidomics
+met_163	TG 15:1_17:0_19:0	lipidomics
+met_164	TG 15:1_16:1_16:1	lipidomics
+met_165	TG 15:1_16:0_16:1	lipidomics
+met_166	TG 15:0_18:2_20:5	lipidomics
+met_167	TG 15:0_18:2_18:3	lipidomics
+met_168	TG 15:0_18:2_18:2	lipidomics
+met_169	TG 15:0_18:1_22:6	lipidomics
+met_170	TG 15:0_18:1_18:2 b	lipidomics
+met_171	TG 15:0_18:1_18:2	lipidomics
+met_172	TG 15:0_18:1_18:1	lipidomics
+met_173	TG 15:0_17:1_17:1	lipidomics
+met_174	TG 15:0_17:0_19:2	lipidomics
+met_175	TG 15:0_16:0_18:3	lipidomics
+met_176	TG 15:0_16:0_18:2	lipidomics
+met_177	TG 15:0_16:0_16:0)	lipidomics
+met_178	TG 14:0_18:3_18:3	lipidomics
+met_179	TG 14:0_18:2_18:3	lipidomics
+met_180	TG 14:0_18:2_18:2	lipidomics
+met_181	TG 14:0_16:1_20:4	lipidomics
+met_182	TG 14:0_16:0_22:6	lipidomics
+met_183	TG 14:0_16:0_20:4	lipidomics
+met_184	TG 14:0_16:0_18:4	lipidomics
+met_185	TG 14:0_16:0_18:2	lipidomics
+met_186	TG 14:0_16:0_18:1	lipidomics
+met_187	TG 14:0_16:0_16:0	lipidomics
+met_188	TG 14:0_15:0_18:1	lipidomics
+met_189	TG 14:0_15:0_16:1	lipidomics
+met_190	TG 14:0_15:0_16:0	lipidomics
+met_191	TG 14:0_14:0_18:2	lipidomics
+met_192	TG 14:0_14:0_18:1	lipidomics
+met_193	TG 14:0_14:0_16:1 minor	lipidomics
+met_194	TG 14:0_14:0_15:0	lipidomics
+met_195	TG 13:0_14:0_16:1	lipidomics
+met_196	TG 12:0_18:2_20:5	lipidomics
+met_197	TG 12:0_18:2_20:4	lipidomics
+met_198	TG 12:0_18:2_18:3	lipidomics
+met_199	TG 12:0_18:1_18:3	lipidomics
+met_200	TG 12:0_18:1_18:2	lipidomics
+met_201	TG 12:0_18:1_18:1	lipidomics
+met_202	TG 12:0_16:1_22:6	lipidomics
+met_203	TG 12:0_16:1_18:0	lipidomics
+met_204	TG 12:0_16:0_16:0	lipidomics
+met_205	TG 12:0_15:0_18:3	lipidomics
+met_206	TG 12:0_14:1_18:2	lipidomics
+met_207	TG 12:0_14:0_18:3	lipidomics
+met_208	TG 12:0_14:0_18:1	lipidomics
+met_209	TG 12:0_14:0_18:0	lipidomics
+met_210	TG 12:0_14:0_16:0 b	lipidomics
+met_211	TG 12:0_14:0_16:0	lipidomics
+met_212	TG 12:0_12:0_18:2	lipidomics
+met_213	TG 12:0_12:0_18:1	lipidomics
+met_214	TG 12:0_12:0_14:0	lipidomics
+met_215	TG 12:0_12:0_12:0	lipidomics
+met_216	TG 10:0_18:2_18:3	lipidomics
+met_217	TG 10:0_18:2_18:2	lipidomics
+met_218	TG 10:0_12:0_18:0	lipidomics
+met_219	TG 08:0_16:1_18:1	lipidomics
+met_220	TG 08:0_10:0_18:1	lipidomics
+met_222	tetramethyl-4-piperidone b	biogenic amines (HILIC)
+met_223	tetramethyl-4-piperidone	biogenic amines (HILIC)
+met_224	tetrahydroquinolin-5-amine	biogenic amines (HILIC)
+met_226	tetradecyldiethanolamine	biogenic amines (HILIC)
+met_227	tetradecylamine	biogenic amines (HILIC)
+met_228	tetradecasphingosine	biogenic amines (HILIC)
+met_229	tetrabutylammonium	biogenic amines (HILIC)
+met_230	terephthalic acid	primary metabolism
+met_232	taurine	primary metabolism
+met_234	tagatose	primary metabolism
+met_236	sucrose	primary metabolism
+met_237	succinic acid	primary metabolism
+met_239	stylopine	biogenic amines (HILIC)
+met_241	stearic acid	primary metabolism
+met_242	squalene	primary metabolism
+met_245	SM d43:1	lipidomics
+met_246	SM d42:0	lipidomics
+met_247	SM d41:2	lipidomics
+met_248	SM d41:1	lipidomics
+met_249	SM d40:2	lipidomics
+met_250	SM d39:1	lipidomics
+met_251	SM d38:1	lipidomics
+met_252	SM d36:3	lipidomics
+met_253	SM d33:1	lipidomics
+met_254	SM d32:1	lipidomics
+met_255	SM d24:1_18:0	lipidomics
+met_256	SM d23:1_18:2	lipidomics
+met_257	SM d22:2_20:2	lipidomics
+met_258	SM d22:0_21:0	lipidomics
+met_259	SM d22:0_18:0	lipidomics
+met_260	SM d21:1_14:1	lipidomics
+met_261	SM d21:0_18:0	lipidomics
+met_262	SM d21:0_18:0	lipidomics
+met_263	SM d20:3_8:1	lipidomics
+met_264	SM d20:0_24:3	lipidomics
+met_265	SM d20:0_18:0	lipidomics
+met_266	SM d19:2_22:6	lipidomics
+met_267	SM d19:1_24:5	lipidomics
+met_268	SM d19:1_24:2	lipidomics
+met_269	SM d19:1_24:1	lipidomics
+met_270	SM d19:1_24:0	lipidomics
+met_271	SM d19:1_12:0	lipidomics
+met_272	SM d19:0_22:0	lipidomics
+met_273	SM d18:3_26:2	lipidomics
+met_274	SM d18:3_18:2	lipidomics
+met_275	SM d18:2_26:6	lipidomics
+met_276	SM d18:2_24:1	lipidomics
+met_277	SM d18:2_24:0	lipidomics
+met_278	SM d18:2_23:0	lipidomics
+met_279	SM d18:2_22:0	lipidomics
+met_280	SM d18:2_20:0	lipidomics
+met_281	SM d18:2_18:1	lipidomics
+met_282	SM d18:2_16:0 b	lipidomics
+met_283	SM d18:2_16:0	lipidomics
+met_284	SM d18:2_15:0	lipidomics
+met_285	SM d18:1_26:1	lipidomics
+met_286	SM d18:1_26:0	lipidomics
+met_287	SM d18:1_25:0	lipidomics
+met_288	SM d18:1_24:6	lipidomics
+met_289	SM d18:1_24:1 c	lipidomics
+met_290	SM d18:1_24:1 b	lipidomics
+met_291	SM d18:1_24:1	lipidomics
+met_292	SM d18:1_24:0 b	lipidomics
+met_293	SM d18:1_24:0	lipidomics
+met_294	SM d18:1_23:1 minor	lipidomics
+met_295	SM d18:1_23:0 minor	lipidomics
+met_296	SM d18:1_23:0 b	lipidomics
+met_297	SM d18:1_22:0 b	lipidomics
+met_298	SM d18:1_22:0	lipidomics
+met_299	SM d18:1_21:1	lipidomics
+met_300	SM d18:1_20:4	lipidomics
+met_301	SM d18:1_19:0	lipidomics
+met_302	SM d18:1_18:0 minor2	lipidomics
+met_303	SM d18:1_18:0 minor1	lipidomics
+met_304	SM d18:1_18:0	lipidomics
+met_305	SM d18:1_17:0	lipidomics
+met_306	SM d18:1_16:0	lipidomics
+met_307	SM d18:1_15:0	lipidomics
+met_308	SM d18:1_14:0	lipidomics
+met_309	SM d18:1_12:0	lipidomics
+met_310	SM d18:0_24:3	lipidomics
+met_311	SM d18:0_24:0	lipidomics
+met_312	SM d18:0_22:0	lipidomics
+met_313	SM d18:0_18:0	lipidomics
+met_314	SM d18:0_16:0	lipidomics
+met_315	SM d17:1_28:4	lipidomics
+met_316	SM d16:1_23:0	lipidomics
+met_317	SM d16:1_22:0	lipidomics
+met_318	SM d16:0_16:0	lipidomics
+met_319	SM 44:5;3O	lipidomics
+met_320	SM 42:7;3O b	lipidomics
+met_321	SM 42:7;3O	lipidomics
+met_322	SM 42:6;3O	lipidomics
+met_323	SM 42:5;3O	lipidomics
+met_324	SM 42:4;3O	lipidomics
+met_325	SM 42:3;3O	lipidomics
+met_326	SM 42:2;3O c	lipidomics
+met_327	SM 42:2;3O b	lipidomics
+met_328	SM 42:2;3O	lipidomics
+met_329	SM 42:1;3O	lipidomics
+met_330	SM 42:0;3O	lipidomics
+met_331	SM 40:7;3O	lipidomics
+met_332	SM 40:6;3O	lipidomics
+met_333	SM 40:5;3O b	lipidomics
+met_334	SM 40:5;3O	lipidomics
+met_335	SM 40:4;3O	lipidomics
+met_336	SM 40:3;3O	lipidomics
+met_337	SM 40:2;3O	lipidomics
+met_338	SM 39:4;3O	lipidomics
+met_339	SM 38:6;3O	lipidomics
+met_340	SM 38:5;3O	lipidomics
+met_341	SM 38:4;3O	lipidomics
+met_342	SM 38:3;3O b	lipidomics
+met_343	SM 38:3;3O	lipidomics
+met_344	SM 38:2;3O	lipidomics
+met_345	SM 38:1;3O	lipidomics
+met_346	SM 36:2;3O b	lipidomics
+met_347	SM 36:2;3O	lipidomics
+met_348	SM 36:1;3O	lipidomics
+met_349	SM 35:3;3O	lipidomics
+met_350	SM 35:1;3O	lipidomics
+met_351	SM 34:2;3O	lipidomics
+met_352	SM 34:1;3O b	lipidomics
+met_353	SM 34:1;3O	lipidomics
+met_354	SM 34:0;3O	lipidomics
+met_355	SM 32:4;2O(FA 16:3)	lipidomics
+met_356	SM 32:4;2O(FA 14:0)	lipidomics
+met_357	SM 32:3;2O(FA 16:3)	lipidomics
+met_358	SM 30:1;2O(FA 14:1)	lipidomics
+met_359	SM 12:0;2O/32:9	lipidomics
+met_360	SM 10:0;2O/30:3	lipidomics
+met_361	SHexCer d18:1_22:0	lipidomics
+met_362	serotonin	biogenic amines (HILIC)
+met_363	serine	primary metabolism
+met_366	salicylic acid	primary metabolism
+met_367	rivanicline	biogenic amines (HILIC)
+met_368	rimantadine	lipidomics
+met_369	ribose	primary metabolism
+met_370	ribonic acid	primary metabolism
+met_371	ribitol	primary metabolism
+met_374	retinol	lipidomics
+met_376	quinidine	lipidomics
+met_377	pyruvic acid	biogenic amines (HILIC)
+met_378	pyrimidine	biogenic amines (HILIC)
+met_379	pyridoxal	biogenic amines (HILIC)
+met_381	pyrazole-4-ethanol, 1,3,5-trimethyl-	biogenic amines (HILIC)
+met_382	putrescine	primary metabolism
+met_383	psicosyl-lysine	biogenic amines (HILIC)
+met_384	pseudoephedrine_minor	biogenic amines (HILIC)
+met_386	pseudoecgonine	biogenic amines (HILIC)
+met_387	pseudo uridine	primary metabolism
+met_388	propylene glycol dibenzoate	lipidomics
+met_389	propranolol	lipidomics
+met_391	promethazine sulfoxide	lipidomics
+met_392	proline betaine_minor	biogenic amines (HILIC)
+met_393	proline betaine	biogenic amines (HILIC)
+met_394	proline	primary metabolism
+met_395	Pro-Val	biogenic amines (HILIC)
+met_397	Pro-Leu	biogenic amines (HILIC)
+met_398	Pro-Ile	biogenic amines (HILIC)
+met_399	Pro-Arg-Asp	lipidomics
+met_400	prima-1	biogenic amines (HILIC)
+met_401	pregabalin	biogenic amines (HILIC)
+met_402	piperine	lipidomics
+met_403	piperidine	biogenic amines (HILIC)
+met_404	piperazine-2-carboxylic acid	biogenic amines (HILIC)
+met_405	pipenzolate	biogenic amines (HILIC)
+met_406	pipecolinic acid	primary metabolism
+met_407	pipecolic acid	biogenic amines (HILIC)
+met_409	PI 38:5	lipidomics
+met_410	PI 34:2	lipidomics
+met_411	PI 20:4_16:0	lipidomics
+met_412	PI 20:2_18:3	lipidomics
+met_413	PI 18:2_18:1	lipidomics
+met_414	PI 18:1_18:1	lipidomics
+met_415	PI 18:0_20:4	lipidomics
+met_416	PI 16:1_22:2	lipidomics
+met_417	PI 10:0_26:4	lipidomics
+met_418	PI 08:0_26:1	lipidomics
+met_419	phthalic anhydride	biogenic amines (HILIC)
+met_420	phthalate, monoisobutyl-	lipidomics
+met_421	phthalate, diheptyl	lipidomics
+met_422	phrenosin	lipidomics
+met_423	phosphate	primary metabolism
+met_424	phenylpropanolamine	biogenic amines (HILIC)
+met_426	phenylalanine betaine	biogenic amines (HILIC)
+met_427	phenylalanine	primary metabolism
+met_428	phenylacetylglutamine	biogenic amines (HILIC)
+met_429	Phe-Phe	biogenic amines (HILIC)
+met_430	Phe-Arg	biogenic amines (HILIC)
+met_431	pergascript black 2C	biogenic amines (HILIC)
+met_432	pentitol, 1,4-anhydro-3-deoxy-	biogenic amines (HILIC)
+met_433	pentaerythritol, cyclic phosphate	biogenic amines (HILIC)
+met_434	pentadecanoic acid	primary metabolism
+met_435	pelargonic acid	primary metabolism
+met_436	PE P-20:0_20:4	lipidomics
+met_437	PE P-18:1_22:6 b	lipidomics
+met_438	PE P-18:1_22:6	lipidomics
+met_439	PE P-18:0_22:6	lipidomics
+met_440	PE P-18:0_22:5	lipidomics
+met_441	PE P-18:0_22:4	lipidomics
+met_442	PE P-18:0_20:4	lipidomics
+met_443	PE P-18:0_20:3	lipidomics
+met_444	PE P-18:0_20:2	lipidomics
+met_445	PE P-18:0_18:2	lipidomics
+met_446	PE P-18:0_18:1	lipidomics
+met_447	PE P-16:0_22:6	lipidomics
+met_448	PE P-16:0_22:4	lipidomics
+met_449	PE P-16:0_20:4	lipidomics
+met_450	PE P-16:0_18:2	lipidomics
+met_451	PE P-16:0_18:1	lipidomics
+met_452	PE O-22:2_20:4	lipidomics
+met_453	PE O-20:1_18:3	lipidomics
+met_454	PE O-18:2_20:4	lipidomics
+met_455	PE 36:1	lipidomics
+met_456	PE 18:2_20:4	lipidomics
+met_457	PE 18:2_18:2	lipidomics
+met_458	PE 18:2_16:0	lipidomics
+met_459	PE 18:1_20:5 b	lipidomics
+met_460	PE 18:1_20:5	lipidomics
+met_461	PE 18:0_20:4	lipidomics
+met_462	PE 18:0_20:3	lipidomics
+met_463	PE 18:0_18:2	lipidomics
+met_464	PE 18:0_18:1	lipidomics
+met_465	PE 16:0_20:5	lipidomics
+met_466	PE 16:0_18:2	lipidomics
+met_467	PC P-18:0_22:6 b	lipidomics
+met_468	PC P-18:0_22:6	lipidomics
+met_469	PC P-18:0_20:4 b	lipidomics
+met_470	PC P-18:0_20:4	lipidomics
+met_471	PC P-18:0_18:1 b	lipidomics
+met_472	PC P-18:0_18:1	lipidomics
+met_473	PC P-16:0_20:5 b	lipidomics
+met_474	PC P-16:0_20:5	lipidomics
+met_475	PC P-16:0_18:3	lipidomics
+met_476	PC P-14:0_18:1	lipidomics
+met_477	PC O-46:8	lipidomics
+met_478	PC O-44:8	lipidomics
+met_479	PC O-41:5	lipidomics
+met_480	PC O-40:3	lipidomics
+met_481	PC O-39:8	lipidomics
+met_482	PC O-39:2	lipidomics
+met_483	PC O-36:1	lipidomics
+met_484	PC O-36:0	lipidomics
+met_485	PC O-33:1	lipidomics
+met_486	PC O-22:6_24:0 b	lipidomics
+met_487	PC O-22:6_24:0	lipidomics
+met_488	PC O-22:6_18:5	lipidomics
+met_489	PC O-22:4_24:4	lipidomics
+met_490	PC O-22:4_20:3	lipidomics
+met_491	PC O-22:4_16:3	lipidomics
+met_492	PC O-22:4_13:0	lipidomics
+met_493	PC O-22:3_24:4	lipidomics
+met_494	PC O-22:3_24:2	lipidomics
+met_495	PC O-22:3_22:5	lipidomics
+met_496	PC O-22:3_22:4	lipidomics
+met_497	PC O-22:3_22:3 b	lipidomics
+met_498	PC O-22:3_22:3	lipidomics
+met_499	PC O-22:3_22:0	lipidomics
+met_500	PC O-22:3_20:2	lipidomics
+met_501	PC O-20:5_24:0	lipidomics
+met_502	PC O-20:5_20:3	lipidomics
+met_503	PC O-20:3_22:1 b	lipidomics
+met_504	PC O-20:3_22:1	lipidomics
+met_505	PC O-20:3_14:0	lipidomics
+met_506	PC O-20:0_20:4	lipidomics
+met_507	PC O-20:0_16:0	lipidomics
+met_508	PC O-18:2_24:4 b	lipidomics
+met_509	PC O-18:2_24:4	lipidomics
+met_510	PC O-18:2_02:0	lipidomics
+met_511	PC O-18:1:24:1	lipidomics
+met_512	PC O-18:1_21:2	lipidomics
+met_513	PC O-18:1_18:0	lipidomics
+met_514	PC O-18:1_15:0	lipidomics
+met_515	PC O-18:0_26:4 b	lipidomics
+met_516	PC O-18:0_26:4	lipidomics
+met_517	PC O-18:0_22:6 b	lipidomics
+met_518	PC O-18:0_22:6	lipidomics
+met_519	PC O-18:0_22:5 minor	lipidomics
+met_520	PC O-18:0_22:5	lipidomics
+met_521	PC O-18:0_20:4 b	lipidomics
+met_522	PC O-18:0_20:4	lipidomics
+met_523	PC O-18:0_20:3	lipidomics
+met_524	PC O-18:0_20:0	lipidomics
+met_525	PC O-18:0_19:1	lipidomics
+met_526	PC O-16:1_23:0	lipidomics
+met_527	PC O-16:1_18:2	lipidomics
+met_528	PC O-16:0_26:1	lipidomics
+met_529	PC O-16:0_22:6	lipidomics
+met_530	PC O-16:0_22:4	lipidomics
+met_531	PC O-16:0_20:5 b	lipidomics
+met_532	PC O-16:0_20:5	lipidomics
+met_533	PC O-16:0_20:4 minor	lipidomics
+met_534	PC O-16:0_20:4 b	lipidomics
+met_535	PC O-16:0_20:4	lipidomics
+met_536	PC O-16:0_20:3 b	lipidomics
+met_537	PC O-16:0_20:3 a	lipidomics
+met_538	PC O-16:0_20:3	lipidomics
+met_539	PC O-16:0_18:2 b	lipidomics
+met_540	PC O-16:0_18:2	lipidomics
+met_541	PC O-16:0_18:1 b	lipidomics
+met_542	PC O-16:0_18:1	lipidomics
+met_543	PC O-16:0_18:0	lipidomics
+met_544	PC O-16:0_16:1 b	lipidomics
+met_545	PC O-16:0_16:1	lipidomics
+met_546	PC O-16:0_16:0	lipidomics
+met_547	PC O-16:0_14:0	lipidomics
+met_548	PC O-16:0_02:0 minor	lipidomics
+met_549	PC O-14:0_17:0	lipidomics
+met_550	PC 40:7	lipidomics
+met_551	PC 39:3	lipidomics
+met_552	PC 22:6_16:0	lipidomics
+met_553	PC 22:5__18:0	lipidomics
+met_554	PC 22:4_20:2	lipidomics
+met_555	PC 21:2_17:1	lipidomics
+met_556	PC 21:1_20:4	lipidomics
+met_557	PC 21:1_17:1	lipidomics
+met_558	PC 20:5_20:2	lipidomics
+met_559	PC 20:4_22:6	lipidomics
+met_560	PC 20:4_20:5 b	lipidomics
+met_561	PC 20:4_20:5	lipidomics
+met_562	PC 20:4_20:4 b	lipidomics
+met_563	PC 20:4_20:4	lipidomics
+met_564	PC 20:3_22:6	lipidomics
+met_565	PC 20:3_18:2	lipidomics
+met_566	PC 20:1_22:6	lipidomics
+met_567	PC 20:1_20:1	lipidomics
+met_568	PC 20:1_14:1	lipidomics
+met_569	PC 19:2_18:5	lipidomics
+met_570	PC 19:0_20:4	lipidomics
+met_571	PC 18:3_18:3 b	lipidomics
+met_572	PC 18:3_18:3	lipidomics
+met_573	PC 18:2_24:1	lipidomics
+met_574	PC 18:2_24:0	lipidomics
+met_575	PC 18:2_18:3	lipidomics
+met_576	PC 18:2_18:2	lipidomics
+met_577	PC 18:2_18:1_c	lipidomics
+met_578	PC 18:2_18:1 b	lipidomics
+met_579	PC 18:1_22:6	lipidomics
+met_580	PC 18:1_22:5	lipidomics
+met_581	PC 18:1_20:4 c	lipidomics
+met_582	PC 18:1_20:4 b	lipidomics
+met_583	PC 18:1_20:4	lipidomics
+met_584	PC 18:1_19:1	lipidomics
+met_585	PC 18:1_18:3 b	lipidomics
+met_586	PC 18:1_18:3	lipidomics
+met_587	PC 18:1_18:2	lipidomics
+met_588	PC 18:1_18:1 b	lipidomics
+met_589	PC 18:1_18:1	lipidomics
+met_590	PC 18:1_16:0	lipidomics
+met_591	PC 18:1_14:0	lipidomics
+met_592	PC 18:0_22:6 b	lipidomics
+met_593	PC 18:0_22:6	lipidomics
+met_594	PC 18:0_22:5	lipidomics
+met_595	PC 18:0_22:4	lipidomics
+met_596	PC 18:0_22:3	lipidomics
+met_597	PC 18:0_20:4 minor	lipidomics
+met_598	PC 18:0_20:4	lipidomics
+met_599	PC 18:0_20:4	lipidomics
+met_600	PC 18:0_20:3 b	lipidomics
+met_601	PC 18:0_20:3	lipidomics
+met_602	PC 18:0_20:2 b	lipidomics
+met_603	PC 18:0_20:2	lipidomics
+met_604	PC 18:0_19:1	lipidomics
+met_605	PC 18:0_18:1 minor	lipidomics
+met_606	PC 18:0_18:1 b	lipidomics
+met_607	PC 18:0_18:1	lipidomics
+met_608	PC 18:0_18:0 b	lipidomics
+met_609	PC 18:0_18:0	lipidomics
+met_610	PC 17:2_18:3	lipidomics
+met_611	PC 17:1_22:6 b	lipidomics
+met_612	PC 17:1_22:6	lipidomics
+met_613	PC 17:1_20:4 c	lipidomics
+met_614	PC 17:0_22:6	lipidomics
+met_615	PC 17:0_20:5 b	lipidomics
+met_616	PC 17:0_20:5	lipidomics
+met_617	PC 17:0_20:4 minor	lipidomics
+met_618	PC 17:0_20:4	lipidomics
+met_619	PC 17:0_20:3	lipidomics
+met_620	PC 17:0_18:3	lipidomics
+met_621	PC 17:0_18:2	lipidomics
+met_622	PC 16:2_18:2 b	lipidomics
+met_623	PC 16:2_18:2	lipidomics
+met_624	PC 16:1_22:6 b	lipidomics
+met_625	PC 16:1_22:6	lipidomics
+met_626	PC 16:1_18:3	lipidomics
+met_627	PC 16:1_18:2	lipidomics
+met_628	PC 16:0_7-oxoheptanoic acid	lipidomics
+met_629	PC 16:0_5-oxovaleryl	lipidomics
+met_630	PC 16:0_24:4	lipidomics
+met_631	PC 16:0_23:5 b	lipidomics
+met_632	PC 16:0_23:5	lipidomics
+met_633	PC 16:0_22:6 major	lipidomics
+met_634	PC 16:0_20:5 a	lipidomics
+met_635	PC 16:0_20:5	lipidomics
+met_636	PC 16:0_18:3	lipidomics
+met_637	PC 16:0_18:2 b	lipidomics
+met_638	PC 16:0_18:2	lipidomics
+met_639	PC 16:0_18:1 minor	lipidomics
+met_640	PC 16:0_18:1 c	lipidomics
+met_641	PC 16:0_18:1	lipidomics
+met_642	PC 16:0_18:0 a	lipidomics
+met_643	PC 16:0_18:0	lipidomics
+met_644	PC 16:0_17:0	lipidomics
+met_645	PC 16:0_16:0 b	lipidomics
+met_646	PC 16:0_16:0	lipidomics
+met_647	PC 16:0_14:0	lipidomics
+met_649	PC 16:0_09:0(CHO)	lipidomics
+met_650	PC 15:0_22:6 c	lipidomics
+met_651	PC 15:0_22:6 b	lipidomics
+met_652	PC 15:0_22:6	lipidomics
+met_653	PC 15:0_20:5	lipidomics
+met_654	PC 15:0_20:4	lipidomics
+met_655	PC 15:0_18:3 b	lipidomics
+met_656	PC 15:0_18:3	lipidomics
+met_657	PC 15:0_18:2	lipidomics
+met_658	PC 15:0_18:1 b	lipidomics
+met_659	PC 15:0_18:1	lipidomics
+met_660	PC 15:0_16:1 b	lipidomics
+met_661	PC 15:0_16:1	lipidomics
+met_662	PC 15:0_16:0	lipidomics
+met_663	PC 14:1_22:2	lipidomics
+met_664	PC 14:1_20:2	lipidomics
+met_665	PC 14:1_16:1	lipidomics
+met_666	PC 14:0_22:5	lipidomics
+met_667	PC 14:0_20:5	lipidomics
+met_668	PC 14:0_20:4	lipidomics
+met_669	PC 14:0_18:3	lipidomics
+met_670	PC 14:0_16:1	lipidomics
+met_671	PC 14:0_16:0	lipidomics
+met_672	PC 14:0_14:0	lipidomics
+met_673	PC 12:0_16:0	lipidomics
+met_674	PC 12:0_12:0	lipidomics
+met_676	parabanic acid	primary metabolism
+met_677	pantothenol	biogenic amines (HILIC)
+met_678	pantothenic acid	biogenic amines (HILIC)
+met_679	palmitoleic acid	primary metabolism
+met_680	palmitic acid	primary metabolism
+met_681	p-acetamidophenol, 4-(octyloxy)-	biogenic amines (HILIC)
+met_682	ornithine	primary metabolism
+met_684	oleic acid	primary metabolism
+met_685	oleamide	primary metabolism
+met_686	oleamide	lipidomics
+met_687	octadecylamine	lipidomics
+met_688	octadecanol	primary metabolism
+met_689	O-desmethyltramadol	lipidomics
+met_690	noruron	lipidomics
+met_691	norquetiapine	lipidomics
+met_692	norcyclobenzaprine	lipidomics
+met_693	norcotinine	biogenic amines (HILIC)
+met_694	nicotinic acid	primary metabolism
+met_695	nicotine	biogenic amines (HILIC)
+met_696	nicotinamide riboside	biogenic amines (HILIC)
+met_697	neomycin	lipidomics
+met_698	naugard XL-1	lipidomics
+met_700	N2,N2-dimethylguanosine	biogenic amines (HILIC)
+met_701	N2,N2-dimethylguanine	biogenic amines (HILIC)
+met_702	N1, N12-bis(ethyl)spermine b	biogenic amines (HILIC)
+met_703	N1, N12-bis(ethyl)spermine	biogenic amines (HILIC)
+met_704	N1-acetylspermidine	biogenic amines (HILIC)
+met_705	N(6),N(6)-dimethyl-lysine	biogenic amines (HILIC)
+met_706	N(6)-methyllysine	biogenic amines (HILIC)
+met_707	N(2)-acetyllysine	biogenic amines (HILIC)
+met_708	N'-benzoyl-N,N-diethylthiourea	biogenic amines (HILIC)
+met_710	N,N-dimethyl-proline-proline betaine b	biogenic amines (HILIC)
+met_711	N,N-dimethyl-proline-proline betaine	biogenic amines (HILIC)
+met_712	N,N-dimethyl-4-vinylaniline	biogenic amines (HILIC)
+met_713	N,N-diethylglycine	biogenic amines (HILIC)
+met_714	N,N-diethyl-m-toluamide	biogenic amines (HILIC)
+met_715	N,N-dicyclohexylamine	biogenic amines (HILIC)
+met_716	N,N-bis(2-hydroxyethyl)tridecylamine	lipidomics
+met_717	N-pentadecylamine	lipidomics
+met_718	N-mMethylpyrrolidin-2-one	biogenic amines (HILIC)
+met_719	N-methyltryptamine	biogenic amines (HILIC)
+met_720	N-methylisoleucine	biogenic amines (HILIC)
+met_721	N-methylalanine	primary metabolism
+met_722	N-methyl-proline	biogenic amines (HILIC)
+met_723	N-methyl pipecolic acid	biogenic amines (HILIC)
+met_724	N-lauryldiethanolamine	biogenic amines (HILIC)
+met_727	N-formylpiperidine	biogenic amines (HILIC)
+met_728	N-formylmethionine	biogenic amines (HILIC)
+met_729	N-ethylglycine	biogenic amines (HILIC)
+met_730	N-desmethylvenlafaxine	biogenic amines (HILIC)
+met_731	N-desmethylcitalopram	lipidomics
+met_732	N-desfuranoyl prazosin	biogenic amines (HILIC)
+met_733	N-carbamoylvaline	biogenic amines (HILIC)
+met_734	N-butylbenzenesulfonamide	biogenic amines (HILIC)
+met_735	N-benzylformamide	biogenic amines (HILIC)
+met_736	N-benzyl-N,N-dimethyl-1-tetradecanaminium	lipidomics
+met_737	N-benzyl-N,N-dimethyl-1-hexadecanaminium	lipidomics
+met_738	N-alpha-methylhistamine	biogenic amines (HILIC)
+met_739	N-acetyltyramine	biogenic amines (HILIC)
+met_741	N-acetylornithine b	biogenic amines (HILIC)
+met_742	N-acetylglycine	primary metabolism
+met_743	N-acetyl-lysine a	biogenic amines (HILIC)
+met_744	N-acetyl-lactosamine	biogenic amines (HILIC)
+met_745	N-acetyl-beta-alanine	biogenic amines (HILIC)
+met_746	N-6-trimethyllysine	biogenic amines (HILIC)
+met_747	N-[4-[[2-[1-(2-methoxyethyl)-2,5-dimethyl-3-pyrrolyl]-2-oxoethyl]thio]phenyl]acetamide	biogenic amines (HILIC)
+met_749	N-(4-methoxyphenyl)acetamide	lipidomics
+met_751	N-(2-hydroxyethyl)-1-hydroxymethylpropylamine	biogenic amines (HILIC)
+met_753	myristic acid	primary metabolism
+met_754	myristamine oxide	lipidomics
+met_755	myo-inositol	primary metabolism
+met_758	miltefosine	lipidomics
+met_759	MG 18:2	lipidomics
+met_760	MG 18:0	biogenic amines (HILIC)
+met_763	methylguanine	biogenic amines (HILIC)
+met_764	methylbetain b	biogenic amines (HILIC)
+met_765	methylbetain	biogenic amines (HILIC)
+met_766	methyl nicotinamide isomer	biogenic amines (HILIC)
+met_767	methyl 5-Methylnicotinate	biogenic amines (HILIC)
+met_768	methyl 1-methylpyrrole-2-carboxylate	biogenic amines (HILIC)
+met_769	methionine sulfoxide	primary metabolism
+met_770	methionine	primary metabolism
+met_771	methanolphosphate	primary metabolism
+met_772	mepiquat	biogenic amines (HILIC)
+met_774	mannose	primary metabolism
+met_776	mannitol	primary metabolism
+met_777	maltose	primary metabolism
+met_778	malic acid	primary metabolism
+met_779	maleimide	primary metabolism
+met_780	lyxitol	primary metabolism
+met_781	lysine lactam	biogenic amines (HILIC)
+met_782	lysine	primary metabolism
+met_783	Lys-Pro-Ile	biogenic amines (HILIC)
+met_785	lupinine	biogenic amines (HILIC)
+met_786	lupanine	biogenic amines (HILIC)
+met_787	LPE 22:6	lipidomics
+met_788	LPE 18:2	lipidomics
+met_789	LPE 18:1	lipidomics
+met_790	LPE 18:0	lipidomics
+met_791	LPC P-18:0	lipidomics
+met_792	LPC P-16:0	lipidomics
+met_794	LPC O-22:1	lipidomics
+met_795	LPC O-20:3	lipidomics
+met_796	LPC O-18:1	lipidomics
+met_797	LPC O-18:0	lipidomics
+met_798	LPC O-16:0	lipidomics
+met_799	LPC 24:0	lipidomics
+met_800	LPC 22:6	lipidomics
+met_801	LPC 22:5	lipidomics
+met_802	LPC 22:4	lipidomics
+met_803	LPC 22:0	lipidomics
+met_804	LPC 20:5 b	lipidomics
+met_805	LPC 20:5	lipidomics
+met_806	LPC 20:4	lipidomics
+met_807	LPC 20:3 minor	lipidomics
+met_808	LPC 20:3	lipidomics
+met_809	LPC 20:2	lipidomics
+met_810	LPC 20:1	lipidomics
+met_811	LPC 20:0	lipidomics
+met_812	LPC 19:0	lipidomics
+met_813	LPC 18:4	lipidomics
+met_814	LPC 18:3	lipidomics
+met_815	LPC 18:2 b	lipidomics
+met_816	LPC 18:2	lipidomics
+met_817	LPC 18:1 minor2	lipidomics
+met_818	LPC 18:1 minor1	lipidomics
+met_819	LPC 18:1	lipidomics
+met_820	LPC 18:0 c	lipidomics
+met_821	LPC 18:0	lipidomics
+met_822	LPC 17:1	lipidomics
+met_823	LPC 17:0	lipidomics
+met_825	LPC 16:1	lipidomics
+met_826	LPC 16:0 minor	lipidomics
+met_827	LPC 16:0	lipidomics
+met_828	LPC 15:0	lipidomics
+met_829	LPC 14:0	lipidomics
+met_830	LNAPE 22:4_N-02:0	lipidomics
+met_831	LNAPE 02:0_N-20:2	lipidomics
+met_832	linoleic acid	primary metabolism
+met_833	lignoceric acid	primary metabolism
+met_834	lidocaine N-oxide	lipidomics
+met_835	lidocaine	lipidomics
+met_836	levoglucosan	primary metabolism
+met_837	levetiracetam	biogenic amines (HILIC)
+met_838	leucine ethylamide	biogenic amines (HILIC)
+met_839	leucine	primary metabolism
+met_841	lenticin	biogenic amines (HILIC)
+met_842	lauroyl-ethanolamide	biogenic amines (HILIC)
+met_843	lauroyl diethanolamide	lipidomics
+met_844	lauric acid	primary metabolism
+met_845	lactose	primary metabolism
+met_846	lactic acid	primary metabolism
+met_847	LacCer d18:1_16:0	lipidomics
+met_848	kynurenine	primary metabolism
+met_849	ketoisoleucine	primary metabolism
+met_851	isothreonic acid	primary metabolism
+met_852	isopyridoxal	biogenic amines (HILIC)
+met_853	isoputreanine	biogenic amines (HILIC)
+met_854	isopropanolamine	biogenic amines (HILIC)
+met_855	isoleucine	primary metabolism
+met_856	isoglutamine	biogenic amines (HILIC)
+met_857	isocitric acid	primary metabolism
+met_858	inositol-4-monophosphate	primary metabolism
+met_859	inosine	primary metabolism
+met_860	indoxyl sulfate	primary metabolism
+met_861	indole-3-propionic acid	primary metabolism
+met_862	indole-3-lactate	primary metabolism
+met_863	indole-3-carboxaldehyde	biogenic amines (HILIC)
+met_864	indole-3-acetate	primary metabolism
+met_865	indole-1-propionamide	biogenic amines (HILIC)
+met_866	indol-2-ol	biogenic amines (HILIC)
+met_867	imiloxan	biogenic amines (HILIC)
+met_868	imidazoleglycerol phosphate	biogenic amines (HILIC)
+met_869	imidazole-4-acetic acid	biogenic amines (HILIC)
+met_870	imidazo-pyridine	biogenic amines (HILIC)
+met_871	imazapic	biogenic amines (HILIC)
+met_873	hypoxanthine	primary metabolism
+met_874	hypotaurine	primary metabolism
+met_875	hydroxyproline dipeptide	primary metabolism
+met_876	hydroxyethyl tetramethylpiperidinol	biogenic amines (HILIC)
+met_877	hydroxychloroquine	lipidomics
+met_879	homoectoine	biogenic amines (HILIC)
+met_880	homocitrulline	biogenic amines (HILIC)
+met_881	homoarginine	biogenic amines (HILIC)
+met_882	homarine	biogenic amines (HILIC)
+met_883	histidinol_minor	biogenic amines (HILIC)
+met_884	histidine	primary metabolism
+met_885	histidinamide_b	biogenic amines (HILIC)
+met_886	histidinamide	biogenic amines (HILIC)
+met_887	histamine-C23:1	lipidomics
+met_888	His-Leu b	biogenic amines (HILIC)
+met_889	His-Leu	biogenic amines (HILIC)
+met_891	hippuric acid	primary metabolism
+met_893	Hex3Cer d18:1_16:0	lipidomics
+met_894	Hex3Cer 18:2;2O/24:0	lipidomics
+met_895	Hex2Cer d18:1_24:1	lipidomics
+met_896	heptadecanoic acid	primary metabolism
+met_897	guanosine	primary metabolism
+met_898	guanidoacetic acid	biogenic amines (HILIC)
+met_899	guanidinosuccinic acid	biogenic amines (HILIC)
+met_900	glycyl-glycine	primary metabolism
+met_901	glycolic acid	primary metabolism
+met_902	glycol, triethylene-, monobutyl ether	biogenic amines (HILIC)
+met_903	glycol, triethylene- hexyloxy-	lipidomics
+met_905	glycol, triethylene bis(2-ethylhexanoate)	lipidomics
+met_906	glycol, tetraethylene-	biogenic amines (HILIC)
+met_907	glycol, tetraethylene monomethyl ether	biogenic amines (HILIC)
+met_908	glycol, tetraethylene  dimethacrylate	lipidomics
+met_910	glycol, pentaethylene-	lipidomics
+met_912	glycol methyl ether, tetraethylene-	biogenic amines (HILIC)
+met_914	glycodeoxycholic acid	biogenic amines (HILIC)
+met_917	glycine	primary metabolism
+met_918	glycerol-alpha-phosphate	primary metabolism
+met_919	glycerol-3-galactoside	primary metabolism
+met_920	glycerol	primary metabolism
+met_922	glycero-3-phosphocholine	biogenic amines (HILIC)
+met_923	glyceric acid	primary metabolism
+met_925	glutaric acid	primary metabolism
+met_926	glutamine	primary metabolism
+met_927	glutamic acid	primary metabolism
+met_928	glucuronic acid	primary metabolism
+met_929	glucose-1-phosphate	primary metabolism
+met_930	glucose	primary metabolism
+met_931	gluconic acid	primary metabolism
+met_932	Glu-Val	biogenic amines (HILIC)
+met_933	Glu-Gln	biogenic amines (HILIC)
+met_934	GlcCer d18:1_23:0	lipidomics
+met_935	GlcCer d18:1_22:0	lipidomics
+met_936	gamma-aminobutyric acid	biogenic amines (HILIC)
+met_937	GalCer d18:1_24:1	lipidomics
+met_938	GalCer d18:1_24:0 b	lipidomics
+met_939	GalCer d18:1_24:0	lipidomics
+met_940	GalCer d18:1_16:0	lipidomics
+met_941	galactosamine	biogenic amines (HILIC)
+met_942	gabapentin	lipidomics
+met_943	fumaric acid	primary metabolism
+met_944	fucose	primary metabolism
+met_945	fructose	primary metabolism
+met_946	formyllysine	biogenic amines (HILIC)
+met_947	fluconazole	lipidomics
+met_948	flecainide	lipidomics
+met_949	ferimzone	biogenic amines (HILIC)
+met_950	fenproporex	biogenic amines (HILIC)
+met_951	ethyl-threoninate	biogenic amines (HILIC)
+met_952	ethyl 3-phenylpropionate	lipidomics
+met_953	ethanolamine	primary metabolism
+met_954	ethanolamide_palmitoyl	lipidomics
+met_955	erythrose major	primary metabolism
+met_957	erythritol	primary metabolism
+met_959	epsilon-caprolactam	primary metabolism
+met_960	eplerenone	lipidomics
+met_962	dodecanol	primary metabolism
+met_963	dodecanediamide	lipidomics
+met_966	dimethylarginine	biogenic amines (HILIC)
+met_967	dimethyl sulfoxide	biogenic amines (HILIC)
+met_968	dim-tolyl p-tolyl phosphate	lipidomics
+met_969	diltiazem	biogenic amines (HILIC)
+met_970	diisopropanolamine	biogenic amines (HILIC)
+met_971	diisononyl phthalate	biogenic amines (HILIC)
+met_972	diethylhexyl adipate	lipidomics
+met_973	diethanolamine	biogenic amines (HILIC)
+met_974	didodecyl 3,3'-thiodipropionate oxide	lipidomics
+met_975	dicinnamoyl-lupeol	lipidomics
+met_976	dibutyl phthalate	lipidomics
+met_977	dibucaine	biogenic amines (HILIC)
+met_978	DG O-16:2_18:2	lipidomics
+met_979	DG 18:1_20:4	lipidomics
+met_980	DG 18:1_20:3	lipidomics
+met_981	DG 18:1_18:2	lipidomics
+met_982	DG 18:1_18:1	lipidomics
+met_983	DG 18:0_20:1	lipidomics
+met_984	DG 18:0_18:0	lipidomics
+met_985	DG 16:0_18:2	lipidomics
+met_986	DG 16:0_18:1	lipidomics
+met_987	DG 16:0_16:0	lipidomics
+met_989	desvenlafaxine	lipidomics
+met_991	deoxypentitol	primary metabolism
+met_992	delta-valerobetaine	biogenic amines (HILIC)
+met_993	delta-guanidinovaleric acid	biogenic amines (HILIC)
+met_995	decamethylcyclopentasiloxane c	lipidomics
+met_996	decamethylcyclopentasiloxane b	lipidomics
+met_997	decamethylcyclopentasiloxane	lipidomics
+met_999	cytosine monophosphate	biogenic amines (HILIC)
+met_1000	cytosine b	biogenic amines (HILIC)
+met_1001	cytosine	biogenic amines (HILIC)
+met_1002	cystine	primary metabolism
+met_1004	cysteine	primary metabolism
+met_1005	cyclomethicone 7	biogenic amines (HILIC)
+met_1006	cyclohexylamine	biogenic amines (HILIC)
+met_1007	cucurbitine	biogenic amines (HILIC)
+met_1008	creatinine	biogenic amines (HILIC)
+met_1009	creatine	biogenic amines (HILIC)
+met_1010	cotinine-glucuronide	biogenic amines (HILIC)
+met_1011	cotinine	biogenic amines (HILIC)
+met_1012	coronaridine	biogenic amines (HILIC)
+met_1013	conduritol-beta-epoxide 2	primary metabolism
+met_1014	coenzyme Q10	lipidomics
+met_1015	clozapine	lipidomics
+met_1018	citrulline	primary metabolism
+met_1019	citric acid	primary metabolism
+met_1020	citalopram	lipidomics
+met_1021	cinnamic acid	lipidomics
+met_1022	choline phosphate	biogenic amines (HILIC)
+met_1023	choline	biogenic amines (HILIC)
+met_1024	cholesterol	primary metabolism
+met_1025	chlormequat	biogenic amines (HILIC)
+met_1026	cetirizine	lipidomics
+met_1027	Cer d19:1_24:1	lipidomics
+met_1028	Cer d19:1_24:0	lipidomics
+met_1029	Cer d18:2_24:1	lipidomics
+met_1030	Cer d18:2_23:0	lipidomics
+met_1031	Cer d18:2_22:0	lipidomics
+met_1032	Cer d18:1_24:1	lipidomics
+met_1033	Cer d18:1_24:0	lipidomics
+met_1034	Cer d18:1_23:0	lipidomics
+met_1035	Cer d18:1_22:0	lipidomics
+met_1036	Cer d18:1_20:0	lipidomics
+met_1038	Cer d18:0_24:1 minor	lipidomics
+met_1039	Cer d18:0_24:1	lipidomics
+met_1040	Cer d18:0_24:0	lipidomics
+met_1041	Cer d18:0_23:0	lipidomics
+met_1042	Cer d18:0_22:0	lipidomics
+met_1043	Cer d16:1_23:0	lipidomics
+met_1044	CE 9-HODE	lipidomics
+met_1045	CE 22:6	lipidomics
+met_1046	CE 20:5	lipidomics
+met_1047	CE 20:4	lipidomics
+met_1048	CE 18:2	lipidomics
+met_1049	CE 18:1	lipidomics
+met_1050	carnitine	biogenic amines (HILIC)
+met_1052	caprylic acid	primary metabolism
+met_1053	capric acid	primary metabolism
+met_1055	C17 sphingosine	lipidomics
+met_1057	butylamine	primary metabolism
+met_1058	butanal	biogenic amines (HILIC)
+met_1059	bupivacaine	lipidomics
+met_1060	brachystemidine F	biogenic amines (HILIC)
+met_1061	bis(p-methylbenzylidene)sorbitol	lipidomics
+met_1062	bis(2,4-di-tert-butylphenylphosphate	lipidomics
+met_1063	bis(2-ethylhexyl)phthalate	biogenic amines (HILIC)
+met_1065	biliverdin c	biogenic amines (HILIC)
+met_1067	biliverdin a	biogenic amines (HILIC)
+met_1068	bilirubin	lipidomics
+met_1069	betonicine b	biogenic amines (HILIC)
+met_1070	betonicine	biogenic amines (HILIC)
+met_1071	betaine aldehyde a	biogenic amines (HILIC)
+met_1072	betaine aldehyde	biogenic amines (HILIC)
+met_1073	betaine	biogenic amines (HILIC)
+met_1074	beta-homotryptophan	biogenic amines (HILIC)
+met_1075	beta-carotene	lipidomics
+met_1076	beta-alanine	primary metabolism
+met_1077	benzylamine	biogenic amines (HILIC)
+met_1078	benzoic acid	primary metabolism
+met_1079	benzoguanamine	biogenic amines (HILIC)
+met_1080	benzimidazole	biogenic amines (HILIC)
+met_1081	benzamide, 4-allyloxy-3,5-dimethyl-	lipidomics
+met_1082	behenic acid	primary metabolism
+met_1083	azelaic acid	primary metabolism
+met_1084	atrolactic acid	biogenic amines (HILIC)
+met_1086	aspartic acid	primary metabolism
+met_1087	asparagine b	biogenic amines (HILIC)
+met_1088	asparagine	primary metabolism
+met_1090	arginine	biogenic amines (HILIC)
+met_1091	arachidonic acid	primary metabolism
+met_1092	arachidic acid	primary metabolism
+met_1093	arabitol	primary metabolism
+met_1094	antipyrine_minor	biogenic amines (HILIC)
+met_1096	aminoisobutyric acid	biogenic amines (HILIC)
+met_1097	amino-cyclopropyl-acetic acid	biogenic amines (HILIC)
+met_1098	alpha-tocopherol	lipidomics
+met_1099	alanine	primary metabolism
+met_1100	Ala-beta-Ala	biogenic amines (HILIC)
+met_1101	adipic acid	primary metabolism
+met_1102	adenine isomer	biogenic amines (HILIC)
+met_1103	acylcarnitine, succinyl- b	biogenic amines (HILIC)
+met_1104	acylcarnitine, glutaryl-	biogenic amines (HILIC)
+met_1105	acylcarnitine, 3-methylglutaryl- minor	biogenic amines (HILIC)
+met_1106	acylcarnitine, 3-methylglutaryl-	biogenic amines (HILIC)
+met_1107	acylcarnitine, 3-hydroxyisovaleryl	biogenic amines (HILIC)
+met_1108	acylcarnitine, 3-hydroxybutyryl-	biogenic amines (HILIC)
+met_1109	acylcarnitine, 10:1	biogenic amines (HILIC)
+met_1110	acylcarnitine malonyl-	biogenic amines (HILIC)
+met_1111	acylcarnitine 26:1	lipidomics
+met_1112	acylcarnitine 24:0	lipidomics
+met_1114	acylcarnitine 20:1	lipidomics
+met_1115	acylcarnitine 2-methyl-butyryl	biogenic amines (HILIC)
+met_1116	acylcarnitine 18:2	lipidomics
+met_1117	acylcarnitine 18:1	lipidomics
+met_1118	acylcarnitine 18:0	lipidomics
+met_1119	acylcarnitine 16:2 a	biogenic amines (HILIC)
+met_1120	acylcarnitine 16:1	lipidomics
+met_1121	acylcarnitine 16:0	lipidomics
+met_1122	acylcarnitine 14:3	biogenic amines (HILIC)
+met_1125	acylcarnitine 14:2	biogenic amines (HILIC)
+met_1126	acylcarnitine 14:1 c	biogenic amines (HILIC)
+met_1127	acylcarnitine 14:1	lipidomics
+met_1128	acylcarnitine 14:0 a	biogenic amines (HILIC)
+met_1130	acylcarnitine 13:0 a	biogenic amines (HILIC)
+met_1132	acylcarnitine 12:2 a	biogenic amines (HILIC)
+met_1133	acylcarnitine 12:1 c	biogenic amines (HILIC)
+met_1134	acylcarnitine 12:1 b	biogenic amines (HILIC)
+met_1135	acylcarnitine 12:1 a	biogenic amines (HILIC)
+met_1136	acylcarnitine 12:0	biogenic amines (HILIC)
+met_1138	acylcarnitine 11:1	biogenic amines (HILIC)
+met_1139	acylcarnitine 11:0	biogenic amines (HILIC)
+met_1140	acylcarnitine 10:2 a	biogenic amines (HILIC)
+met_1142	acylcarnitine 10:1 b	biogenic amines (HILIC)
+met_1143	acylcarnitine 10:0	biogenic amines (HILIC)
+met_1144	acylcarnitine 09:0 b	biogenic amines (HILIC)
+met_1145	acylcarnitine 09:0	biogenic amines (HILIC)
+met_1146	acylcarnitine 08:2	biogenic amines (HILIC)
+met_1147	acylcarnitine 08:1	biogenic amines (HILIC)
+met_1148	acylcarnitine 08:0	biogenic amines (HILIC)
+met_1151	acylcarnitine 04:0	biogenic amines (HILIC)
+met_1152	acylcarnitine 03:0	biogenic amines (HILIC)
+met_1153	acylcarnitine 02:0	biogenic amines (HILIC)
+met_1155	aconitic acid	primary metabolism
+met_1156	acetylthiocholine	biogenic amines (HILIC)
+met_1157	acetyl tributyl citrate	lipidomics
+met_1158	acetophenone	biogenic amines (HILIC)
+met_1159	acetaminophen glucuronide	primary metabolism
+met_1160	acetaminophen	biogenic amines (HILIC)
+met_1162	9,10-epoxystearic acid	biogenic amines (HILIC)
+met_1163	9-myristoleate	primary metabolism
+met_1164	8-HODE	biogenic amines (HILIC)
+met_1166	7,9-dihydroxy-3-(hydroxymethyl)-1,1,6,8-tetramethyl-5-oxo-decahydro-9-cyclopropa[3,4]benzo[1,2-e]azulen-9a-yl acetate_minor	biogenic amines (HILIC)
+met_1167	7-methylguanine	biogenic amines (HILIC)
+met_1168	7-acetyloxy-6-hydroxy-2-methyl-10-oxo-2,3,6,7,8,9-hexahydrooxecin-3-yl] (E)-but-2-enoate	biogenic amines (HILIC)
+met_1170	6-methoxypurine a	biogenic amines (HILIC)
+met_1171	6-methoxypurine	biogenic amines (HILIC)
+met_1174	6-deoxyglucose	primary metabolism
+met_1176	5'-methylthioadenosine	biogenic amines (HILIC)
+met_1177	5-oxoproline_minor isomer	biogenic amines (HILIC)
+met_1178	5-oxoproline_minor	biogenic amines (HILIC)
+met_1179	5-methoxytryptamine	primary metabolism
+met_1181	5-methoxy-2-methylindole	biogenic amines (HILIC)
+met_1182	5-hydroxypipecolic acid	biogenic amines (HILIC)
+met_1183	5-hydroxynorvaline	primary metabolism
+met_1186	5-aminonicotinic acid	biogenic amines (HILIC)
+met_1188	5-(methylamino)pentanoic acid	biogenic amines (HILIC)
+met_1189	5-(dimethylamino)pentanoic acid	biogenic amines (HILIC)
+met_1190	5-(3,4-dimethoxyphenyl)-3,4-dimethyloxolan-2-one	lipidomics
+met_1191	4,5,6,7-tetrahydrobenzo[b]thiophene-2-carboxylic acid	biogenic amines (HILIC)
+met_1193	4-pyridoxic acid b	biogenic amines (HILIC)
+met_1194	4-pyridoxic acid	biogenic amines (HILIC)
+met_1195	4-pyridineacetic acid	biogenic amines (HILIC)
+met_1197	4-methylpyrimidine	biogenic amines (HILIC)
+met_1198	4-methylpyridine	biogenic amines (HILIC)
+met_1199	4-methylcinnamonitrile	biogenic amines (HILIC)
+met_1200	4-methyl-5-pyridin-2-yl-4H-1,2,4-triazole-3-thiol	biogenic amines (HILIC)
+met_1201	4-hydroxy-6-methylnicotinic acid b	biogenic amines (HILIC)
+met_1202	4-aminopyrrolidine-2,4-dicarboxylic acid	biogenic amines (HILIC)
+met_1203	4-aminobutanamide	biogenic amines (HILIC)
+met_1204	4-amino-4-methylpentanoic acid	biogenic amines (HILIC)
+met_1205	4-amino-1-butanol	biogenic amines (HILIC)
+met_1206	4-[1-hydroxy-2-(methylamino)propyl]phenol	biogenic amines (HILIC)
+met_1209	3,6-anhydro-D-galactose	primary metabolism
+met_1210	3,4-dimethylbenzaldehyde	biogenic amines (HILIC)
+met_1211	3-pyridinemethanol a	biogenic amines (HILIC)
+met_1212	3-pyridinemethanol	biogenic amines (HILIC)
+met_1214	3-piperidineacetic acid	biogenic amines (HILIC)
+met_1215	3-methylhistidine	biogenic amines (HILIC)
+met_1216	3-methylhistamine	biogenic amines (HILIC)
+met_1217	3-methylaspartic acid b	biogenic amines (HILIC)
+met_1218	3-methylaspartic acid	biogenic amines (HILIC)
+met_1219	3-methylamino-1,2-propanediol	biogenic amines (HILIC)
+met_1221	3-hydroxypyridine	biogenic amines (HILIC)
+met_1222	3-hydroxybutyric acid	primary metabolism
+met_1224	3-hydroxy-2-methylpyridine	biogenic amines (HILIC)
+met_1225	3-ethyl-1H-indole	biogenic amines (HILIC)
+met_1226	3-dehydroxycarnitine	biogenic amines (HILIC)
+met_1227	3-dehydrocarnitine	biogenic amines (HILIC)
+met_1228	3-Aminopiperidine-2,6-dione	primary metabolism
+met_1229	3-aminoisobutyric acid	primary metabolism
+met_1230	3-(cysteine-S-yl)acetaminophen	biogenic amines (HILIC)
+met_1231	3-(1-pyrazolyl)-L-alanine	primary metabolism
+met_1233	3-(1-hydroxyethyl)pyridine	biogenic amines (HILIC)
+met_1234	3-(1-hydroxyethyl)-2,3,6,7,8,8a-hexahydropyrrolo[1,2-a]pyrazine-1,4-dione	biogenic amines (HILIC)
+met_1235	3-((2-hydroxyethyl)amino)propanol	biogenic amines (HILIC)
+met_1236	2,6-diaminopimelic acid	biogenic amines (HILIC)
+met_1237	2,6-bis(tert-butyl)-4-(4-morpholinylmethyl)phenol	lipidomics
+met_1239	2,4-dimethylbenzylamine	biogenic amines (HILIC)
+met_1240	2,4-diaminopyrimidine-5-carboxylic acid	biogenic amines (HILIC)
+met_1241	2,4-diaminobutyric acid	biogenic amines (HILIC)
+met_1242	2,3-dihydroxypyridine	primary metabolism
+met_1243	2,3-dihydroxybutanoic acid	primary metabolism
+met_1244	2-picolinic acid	primary metabolism
+met_1245	2-phenylacetamide	biogenic amines (HILIC)
+met_1248	2-O-methylcytosine	biogenic amines (HILIC)
+met_1249	2-nitroaminoimidazoline	biogenic amines (HILIC)
+met_1250	2-naphthylamine	biogenic amines (HILIC)
+met_1251	2-methylcholine	biogenic amines (HILIC)
+met_1253	2-methyl-1-pyrroline	biogenic amines (HILIC)
+met_1255	2-ketoisocaproic acid	primary metabolism
+met_1256	2-hydroxyvaleric acid	primary metabolism
+met_1257	2-hydroxysaclofen	lipidomics
+met_1258	2-hydroxyquinoline	biogenic amines (HILIC)
+met_1259	2-hydroxypyridine	biogenic amines (HILIC)
+met_1260	2-hydroxyisovaleric acid	primary metabolism
+met_1261	2-hydroxyhippuric acid	primary metabolism
+met_1262	2-hydroxybutanoic acid	primary metabolism
+met_1263	2-furaldehyde N-ethylthiosemicarbazone	biogenic amines (HILIC)
+met_1265	2-deoxytetronic acid	primary metabolism
+met_1266	2-deoxyerythritol	primary metabolism
+met_1267	2-aminoindanol	biogenic amines (HILIC)
+met_1268	2-aminobutyric acid	primary metabolism
+met_1269	2-amino-4-methylpentanoic acid	biogenic amines (HILIC)
+met_1270	2-amino-4-fluoro-6-phenoxypyrimidine	biogenic amines (HILIC)
+met_1272	2-acetyl-3-methylpyrazine_minor	biogenic amines (HILIC)
+met_1273	2-acetamido-N-methylacetamide	biogenic amines (HILIC)
+met_1274	2-(tetradecylamino)ethanol	biogenic amines (HILIC)
+met_1275	2-(phenylamino)acetonitrile b	biogenic amines (HILIC)
+met_1276	2-(phenylamino)acetonitrile	biogenic amines (HILIC)
+met_1277	2-(octadecylamino)ethanol	lipidomics
+met_1278	2-(indol-1-yl)acetamide	biogenic amines (HILIC)
+met_1279	2-(hexadecylamino)ethanol	lipidomics
+met_1280	2-(2,6-dimethyl-4-morpholinyl)ethanol	biogenic amines (HILIC)
+met_1282	10-hydroxynortriptyline	lipidomics
+met_1283	1,8-diazabicyclo[5.4.0]undec-7-ene b	biogenic amines (HILIC)
+met_1284	1,8-diazabicyclo[5.4.0]undec-7-ene	biogenic amines (HILIC)
+met_1285	1,6-diisopropylnaphthalene #2 no RI	primary metabolism
+met_1286	1,5-naphthalenediamine	lipidomics
+met_1287	1,5-diazabicyclo[4.3.0]non-5-ene	biogenic amines (HILIC)
+met_1288	1,3-diphenylurea	biogenic amines (HILIC)
+met_1291	1,2-diamino-2-methylpropane	biogenic amines (HILIC)
+met_1292	1-piperidinecarboxamide	biogenic amines (HILIC)
+met_1293	1-monopalmitin	primary metabolism
+met_1295	1-methylnicotinamide, 1,4-dihydro-4-oxo-	biogenic amines (HILIC)
+met_1296	1-methylhistidine minor	biogenic amines (HILIC)
+met_1297	1-methylhistamine	biogenic amines (HILIC)
+met_1299	1-methylgalactose	primary metabolism
+met_1300	1-methyladenosine	biogenic amines (HILIC)
+met_1301	1-methyl-5-imidazoleacetic acid_minor	biogenic amines (HILIC)
+met_1302	1-methyl-5-imidazoleacetic acid	biogenic amines (HILIC)
+met_1303	1-methyl nicotinamide	biogenic amines (HILIC)
+met_1304	1-hydroxybenzotriazole	biogenic amines (HILIC)
+met_1305	1-hexanol, 6-(dimethylamino)-	biogenic amines (HILIC)
+met_1306	1-hexadecylamine	biogenic amines (HILIC)
+met_1308	1-ethylpiperidin-3-amine	biogenic amines (HILIC)
+met_1311	1-[3-[4-(4-fluorophenyl)piperazin-1-yl]propyl]pyrrolidin-2-one	biogenic amines (HILIC)
+met_1312	(6-methylpyridin-3-yl)methanamine	biogenic amines (HILIC)
