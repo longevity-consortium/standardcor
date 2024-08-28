@@ -24,5 +24,7 @@ Depends:
 	qlcMatrix
 Suggests: 
     knitr,
-    rmarkdown
+    rmarkdown,
+	WGCNA,
+	tidyverse
 VignetteBuilder: knitr
