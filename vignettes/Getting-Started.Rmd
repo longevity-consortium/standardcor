@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 
 ```{r setup}
 library(standardcor)
+set.seed(11)
 ```
 
 This vignette introduces the principal functions provided by package ${\rm standardcor}$, which are intended to support correlation-based analysis of the *columns* of a data matrix.
@@ -84,14 +85,15 @@ One standard way to estimate the parameters of a ${\rm Beta}$ distribution, by c
 outliers, the two methods produce very similar estimates. There are $1225$ unique, non-identical correlations in $M$, and theoretically the parameters of this distribution should be
 $v = w = `r Samples`/2 - 1 = `r Samples/2-1`$; the estimates are reasonably close to this value, as seen in the fit of the curves to the data.
 
-```{r fig.width==8, fig.height=8}
+```{r fig.width=5.5, fig.height=5.5}
 # row(Z) < col(Z): the correlation matrix is square and symmetric, with diagonal 1.
 # This condition limits the set of correlations that are modeled to the upper right triangle, which
 # constitutes the nonredundant, non-self correlations among the variables.
-beta.shape <- estimateShape(Z[row(Z) < col(Z)], plot=TRUE, ylim=c(0,14), fine=100,
-                            main=paste(Samples,"samples,",Dimensions,"variables"))
+beta.shape <- estimateShape(Z[row(Z) < col(Z)], plot=TRUE, ylim=c(0,7), fine=60,
+                            main=c(paste(Samples,"samples,",Genes,"features"),
+                                   "all correlations purely spurious"))
 title(paste(round(beta.shape,2),collapse=", "),line=-1)
-#text(x=-0.5,y=2.0,labels=paste("D/2 - 1 = ",round(Dimensions/2-1, 2)),adj = 1/2)
+#text(x=-0.5,y=2.0,labels=paste("D/2 - 1 = ",round(Genes/2-1, 2)),adj = 1/2)
 
 R <- c(-100:100)/100 ; R <-ifelse(-1 < R, ifelse(R < 1, R, 1), -1) # Ensure R in [-1,1]
 
@@ -109,27 +111,31 @@ text(x=0.5,y=c(2.5,2),
 
 ```
 
-For the second example we modify the test data, mixing a Bias variable (copied the required number of times) with the first $20\%$ of the variables. The first 20% of the variables are
-therefore intercorrelated, in this case with a correlation coefficient of $r = 0.5$ (in addition to whatever spurious correlation they had to start with). Pairwise correlations among these
-variables are not purely spurious correlations, and they affect $20\% \times 20\% = 4\%$ of the unique, non-identical pairs; the remaining 96% of the pairs represent purely spurious
+```{r}
+corr <- 0.5
+pct <- 20
+```
+For the second example we modify the test data, mixing a Bias vector (copied the required number of times) with the first $`r pct`\%$ of the features. The biased features are
+therefore correlated by the weight given to the Bias vector, in this case $r = `r corr`$, in addition to $`r 100*(1-corr)`\%$ of their original spurious correlation. The pairwise correlations among these
+features, which are roughly $`r pct`\% \times `r pct`\% = `r pct*pct/100`\%$ of the unique, non-identical pairs, are a simulated "signal" relative to the remaining roughly $`r 100 - pct*pct/100`\%$ purely spurious
 correlations. This example shows why the Method of Moments could not be used to estimate the null model in the presence of outliers.
 
-```{r, fig.width=8, fig.height=8}
+```{r, fig.width=5.5, fig.height=5.5}
 
 # Adjusted Step 1
 M2 <- M
-Altered <- round(Dimensions*0.2) # The first Altered variables will be intercorrelated
+Altered <- round(Genes*pct/100) # The first Altered variables will be intercorrelated
 Bias <- matrix(rep(rnorm(Samples),Altered),nrow=Samples,ncol=Altered)
 
-r <- 0.5  # the amount of correlation
-M2[,c(1:Altered)] <- (1-r) * M2[,c(1:Altered)] + r*Bias
+M2[,c(1:Altered)] <- (1-corr) * M2[,c(1:Altered)] + corr*Bias
 Z2 <- SparseSpearmanCor2(M2)
 
 # Repeat Step 2
-beta.shape <- estimateShape(Z2[row(Z2) < col(Z2)], plot=TRUE, ylim=c(0,14), fine=100,
-                            main=paste(Samples,"samples,",Dimensions,"variables,",Altered,"intercorrelated with r =",r))
+beta.shape <- estimateShape(Z2[row(Z2) < col(Z2)], plot=TRUE, ylim=c(0,7), fine=60,
+                            main=c(paste(Samples,"samples,",Genes,"features"),
+                                   paste(Altered,"correlated features, r =",corr)))
 title(paste(round(beta.shape,2),collapse=", "),line=-1)
-#text(x=-0.5,y=2.0,labels=paste("D/2 - 1 = ",round(Dimensions/2-1, 2)),adj = 1/2)
+#text(x=-0.5,y=2.0,labels=paste("D/2 - 1 = ",round(Genes/2-1, 2)),adj = 1/2)
 
 R <- c(-100:100)/100 ; R <-ifelse(-1 < R, ifelse(R < 1, R, 1), -1) # Ensure R in [-1,1]
 
@@ -141,7 +147,7 @@ v.mm <- x.mu * z.mm
 w.mm <- (1-x.mu) * z.mm
 
 lines(R,dbeta((1+R)/2, v.mm, w.mm)/2, lwd=3, col='forestgreen')
-text(x=0.5,y=c(3,2),
+text(x=0.5,y=c(5,4.25),
      labels=c("Method of Moments",paste("Beta(",round(v.mm, 2),",",round(w.mm,2),")",sep='')),
      col='forestgreen',adj = 1/2)
 
@@ -149,7 +155,7 @@ text(x=0.5,y=c(3,2),
 
 In our third example, we show the difference between using the null model directly as a distance versus using the null model as a penalty on top of the typical Euclidean distance corresponding to a corrolation coefficient. The betaDistance() function penalizes correlation coefficients which are likely under the null model, but doesn't penalize correlation coefficients which are larger than those predicted by the null model. Without including the Euclidean distance, there is essentially no distance between highly correlated pairs; but by including the Euclidean distance, highly correlated pairs can still be separated by their degree of correlation.
 
-```{r}
+```{r, fig.width=5.5, fig.height=5.5}
 v <- mean(beta.shape) # Expect v = (D-1)/2 = 24.5
 v.name <- paste("Beta(",paste(round(c(v,v),2),collapse=", "),")",sep='')
 plot(R,betaDistance(R, v, v, mix=0), type='l',lwd=3,
@@ -180,7 +186,7 @@ length(which(is.na(Z.met)))
 range(Z.met,na.rm=TRUE)
 ```
 
-```{r}
+```{r, fig.width=5.5, fig.height=5.5}
 shape.Met <- estimateShape(Z.met[row(Z.met) < col(Z.met)], plot=TRUE)
 title(paste('Metabolite correlations',paste(round(shape.Met,2),collapse=", ")),line=0.5)
 
@@ -194,7 +200,7 @@ Z.prot <- SparseSpearmanCor2(as.matrix(synth_LC[['Proteomics']]))
 `r paste(length(which(is.na(Z.prot))),'na values')` \
 `r paste(paste(range(Z.prot,na.rm=TRUE),collapse=" <= cor <= "))`
 
-```{r}
+```{r, fig.width=5.5, fig.height=5.5}
 shape.prot <- estimateShape(Z.prot[row(Z.prot) < col(Z.prot)], plot=TRUE)
 title(paste('Protein correlations',paste(round(shape.prot,2),collapse=", ")),line=0.5)
 ```
@@ -209,7 +215,7 @@ Prot <- as.matrix(synth_LC[['Proteomics']][,2:N])
 rownames(Prot) <- synth_LC[['Proteomics']]$subjectID
 ```
 
-```{r, fig.width=8, fig.height=8}
+```{r, fig.width=5.5, fig.height=5.5}
 par(mar = c(2, 2, 4, 2), mfrow=c(2,2))
 L <- multiOmicModel(list(met = Met, prot = Prot), plot=TRUE, annotate=TRUE, fine=30)
 
@@ -230,7 +236,7 @@ lines(Bs,interpolatedAdjacency(Bs,adjTable3),lwd=3,col='dodgerblue')
 
 # Beta distance function
 
-```{r, fig.width=6, fig.height=6}
+```{r, fig.width=5.5, fig.height=5.5}
 R <- c(-100:100)/100 ; R <- ifelse(R < -1, -1, ifelse(1 < R, 1, R))
 
 par(mar = c(2, 2, 4, 2), mfrow=c(2,2))
@@ -258,7 +264,7 @@ abline(h=c(-1:1),col='grey') ; abline(v=c(0,1),col='grey')
 
 
 
-```{r, fig.width=6, fig.height=6}
+```{r, fig.width=5.5, fig.height=5.5}
 R <- c(-100:100)/100 ; R <- ifelse(R < -1, -1, ifelse(1 < R, 1, R))
 
 par(mar = c(2, 2, 4, 2), mfrow=c(2,2))
@@ -284,7 +290,7 @@ plot(R,betaDistance(R, 30, 30,mix=1,unsigned=FALSE),type='l',lwd=3,
 abline(h=c(-1:1),col='grey') ; abline(v=c(0,1),col='grey')
 ```
 
-```{r, fig.width=6, fig.height=6}
+```{r, fig.width=5.5, fig.height=5.5}
 R <- c(-100:100)/100 ; R <- ifelse(R < -1, -1, ifelse(1 < R, 1, R))
 
 par(mar = c(2, 2, 4, 2), mfrow=c(2,2))
@@ -310,7 +316,7 @@ plot(R,betaDistance(R, 30, 30,mix=0),type='l',lwd=3, ylim=c(0,1),
 abline(h=c(-1:1),col='grey') ; abline(v=c(0,1),col='grey')
 ```
 
-```{r, fig.width=6, fig.height=6}
+```{r, fig.width=5.5, fig.height=5.5}
 R <- c(-100:100)/100 ; R <- ifelse(R < -1, -1, ifelse(1 < R, 1, R))
 
 par(mar = c(2, 2, 4, 2), mfrow=c(2,2))
@@ -339,7 +345,7 @@ abline(h=c(-1:1),col='grey') ; abline(v=c(0,1),col='grey')
 
 # Power distance function
 
-```{r, fig.width=6, fig.height=6}
+```{r, fig.width=5.5, fig.height=5.5}
 R <- c(-100:100)/100 ; R <- ifelse(R < -1, -1, ifelse(1 < R, 1, R))
 
 par(mar = c(2, 2, 4, 2), mfrow=c(2,2))
@@ -365,7 +371,7 @@ plot(R,powerDistance(R,k=0.5, unsigned=FALSE),type='l',lwd=3, ylim=c(0,1),
 abline(h=c(-1:1),col='grey') ; abline(v=c(0,1),col='grey')
 ```
 
-```{r, fig.width=6, fig.height=6}
+```{r, fig.width=5.5, fig.height=5.5}
 R <- c(-100:100)/100 ; R <- ifelse(R < -1, -1, ifelse(1 < R, 1, R))
 
 par(mar = c(2, 2, 4, 2), mfrow=c(2,2))
@@ -393,7 +399,7 @@ abline(h=c(-1:1),col='grey') ; abline(v=c(0,1),col='grey')
 
 # Sigmoid distance function
 
-```{r, fig.width=6, fig.height=6}
+```{r, fig.width=5.5, fig.height=5.5}
 R <- c(-100:100)/100 ; R <- ifelse(R < -1, -1, ifelse(1 < R, 1, R))
 
 par(mar = c(2, 2, 4, 2), mfrow=c(2,2))
@@ -424,7 +430,7 @@ abline(h=0.5, lty=2, col='grey')
 
 ```
 
-```{r, fig.width=6, fig.height=6}
+```{r, fig.width=5.5, fig.height=5.5}
 R <- c(-100:100)/100 ; R <- ifelse(R < -1, -1, ifelse(1 < R, 1, R))
 
 par(mar = c(2, 2, 4, 2), mfrow=c(2,2))
@@ -455,7 +461,7 @@ abline(h=0.5, lty=2, col='grey')
 
 ```
 
-```{r, fig.width=6, fig.height=6}
+```{r, fig.width=5.5, fig.height=5.5}
 R <- c(-100:100)/100 ; R <- ifelse(R < -1, -1, ifelse(1 < R, 1, R))
 
 par(mar = c(2, 2, 4, 2), mfrow=c(2,2))
