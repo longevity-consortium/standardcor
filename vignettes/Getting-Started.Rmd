@@ -18,23 +18,79 @@ knitr::opts_chunk$set(
 library(standardcor)
 ```
 
+This vignette introduces the principal functions provided by package ${\rm standardcor}$, which are intended to support correlation-based analysis of the *columns* of a data matrix.
+Our motivating interest is in correlations among the features of a set of samples, so our data matrix is oriented with the samples in rows and the features in columns; however you
+can analyze correlations among the samples by simply transposing the data matrix. We are therefore considering correlations among the features, each of which can be viewed as a
+data vector with as many dimensions as there are samples.
+
+# Null models of spurious correlations
+
 ```{r}
-ls("package:standardcor")
+Samples <- 200
+Genes <- 500
+```
+
+We make the assumption that the relationship among most features is not of interest; that is, the bulk of the pairwise correlations between features in the data is likely to be _spurious_, either
+due to correlations produced by the measurement process or due to ordinary variation in the data. Our analysis will begin by trying to characterize the distribution of the spurious correlations
+with a null model. As explained in our paper, there is a strong argument that due to the mathematical formula defining Pearson (and therefore Spearman) correlations, spurious correlations should
+produce a ${\rm Beta}$ distribution on the range of possible correlation values ($[-1,1]$). Since the typical range of the ${\rm Beta}$ distribution is $[0,1]$, we can represent a distribution
+over this range as ${\rm Beta}$ distribution $r \thicksim 2 {\rm Beta}(v,w) - 1$, where $v$ and $w$ are the shape parameters of the ${\rm Beta}$ distribution. The intuition behind this model
+is that $v$ and $w$ are the expected number of yesses and nos among a total of $v+w$ votes, respectively, where yesses are votes for pure positive correlation ($1$) and nos are votes for pure
+negative correlation ($-1$).
+
+We will start by simulating a toy dataset containing only spurious correlation, in which the data are $200$ samples measured on $500$ features, with each data value sampled independently
+from a standard Normal distribution. One could consider the data matrix $M = \{m_{sg}\} = \{x_g[s]\}$ to contain normalized transcript abundances from a transcriptomics experiment, with the
+measured abundance $k_g[s]$ of gene $g$ on each sample $s$ following a gene-specific Lognormal distribution, after log transformation and scale normalization,
+$x_g[s] = \log{k_g[s]} - \overline{\log{k_g}}$. There is no signal to detect in this data, only noise; later we will make the data more complex to illustrate the working of the package.
+
+```{r}
+M <- Matrix(rnorm(Samples*Genes),nrow=Samples,ncol=Genes,sparse=TRUE)
+colnames(M) <- paste("G",c(1:Genes))
+rownames(M) <- paste("S",c(1:Samples))
+dim(M)
 ```
 
 
-# Estimate Shapes
+## Step 1: Computing Correlations
 
-The first example estimates the parameters of an (asymmetric) Beta distribution $Beta(v,w)$ from data generated entirely from a null distribution of correlations among vectors of length $D = 50$. Theoretically, this distribution should be $Beta(v,v), v = D/2 - 1 = 24$; This example shows that estimateShape() does a good job of fitting this data.
+We provide the function ${\rm standardcor::SparseSpearmanCor2}()$ to compute the correlation matrix primarily for efficiency, as these data matrices can be quite large; the number of transcripts
+can easily be $20,000$ or more. The algorithm in ${\rm SparseSpearmanCor2()}$, due to Saket Choudhary of Mumbai, India (https://github.com/saketkc/blog/blob/main/2022-03-10/SparseSpearmanCorrelation2.ipynb),
+is highly efficient compared to other methods of computing Spearman correlations. Despite its sparse implementation, we find it is at least as efficient as other common methods even on dense
+data matrices. Use of this function is entirely optional, the rest of the ${\rm standardcor}$ package does not depend on how the correlations are computed. Although it is our opinion that
+'omics data collected from biological samples tends to have enough meaningful outliers that rank correlation is preferable, the theory on which this package is based is perfectly appropriate
+for Pearson correlations as well.
 
-```{r}
-Samples <- 1000
-Dimensions <- 50
-M <- Matrix(rnorm(Dimensions*Samples),nrow=Dimensions,ncol=Samples,sparse=TRUE)
+``` {r}
 Z <- SparseSpearmanCor2(M)
+dim(Z)
+colnames(Z) <- colnames(M)
+rownames(Z) <- colnames(Z)
+```
 
-beta.shape <- estimateShape(Z[row(Z) < col(Z)], plot=TRUE)
-title(paste(round(beta.shape,2),collapse=", "),line=0.5)
+We now have a data matrix $M$ and the corresponding correlation matrix $Z$.
+
+## Step 2: Estimating the distribution of spurious correlations
+
+We provide the function ${\rm standardcor::estimateShape}()$ for this purpose. Under the assumption that the correlations between most pairs of variables are spurious, this heuristic function 
+estimates the parameters of a Beta distribution $2 {\rm Beta}(v,w) - 1$ which fits the bulk of the correlations; that is, it attempts to fit the distribution best in the vicinity of the mode.
+This is similar to making a robust estimate, as it is intended to work in the presence of outliers; however in real data whether any particular value should be considered an outlier is
+rarely known, and this function therefore attempts to solve an ill-defined problem. For use in subsequent steps, what is important is that the shape parameters $v$ and $w$ provide an
+excellent fit to the correlation values the researcher considers spurious, not whether this function is used to find them. To permit the behavior of this function to be adjusted and
+evaluated, we provide parameters ${\rm left}$ and ${\rm right}$, which shift the fitted mode in the indicated direction. As rough guidelines for adjustments, the mode of $2 {\rm Beta}(v,w) - 1$
+is $2 {v-1 \over v+w-2}-1$, and for a given mode, the sum $v+w$ governs the width of the distribution in proportion to $1 \over \sqrt{v+w}$, i.e taller and narrower as the sum increases.
+Increasing or decreasing ${\rm right}$ increases or decreases $v$, and likewise ${\rm left}$ adjusts $w$. The effect of the adjustments can be assessed using parameter ${\rm plot = TRUE}$.
+
+One standard way to estimate the parameters of a ${\rm Beta}$ distribution, by computing the mean and variance, is shown for comparison. Since this dataset was simulated with no
+outliers, the two methods produce very similar estimates. There are $1225$ unique, non-identical correlations in $M$, and theoretically the parameters of this distribution should be
+$v = w = `r Samples`/2 - 1 = `r Samples/2-1`$; the estimates are reasonably close to this value, as seen in the fit of the curves to the data.
+
+```{r fig.width==8, fig.height=8}
+# row(Z) < col(Z): the correlation matrix is square and symmetric, with diagonal 1.
+# This condition limits the set of correlations that are modeled to the upper right triangle, which
+# constitutes the nonredundant, non-self correlations among the variables.
+beta.shape <- estimateShape(Z[row(Z) < col(Z)], plot=TRUE, ylim=c(0,14), fine=100,
+                            main=paste(Samples,"samples,",Dimensions,"variables"))
+title(paste(round(beta.shape,2),collapse=", "),line=-1)
 #text(x=-0.5,y=2.0,labels=paste("D/2 - 1 = ",round(Dimensions/2-1, 2)),adj = 1/2)
 
 R <- c(-100:100)/100 ; R <-ifelse(-1 < R, ifelse(R < 1, R, 1), -1) # Ensure R in [-1,1]
@@ -47,29 +103,37 @@ v.mm <- x.mu * z.mm
 w.mm <- (1-x.mu) * z.mm
 
 lines(R,dbeta((1+R)/2, v.mm, w.mm)/2, lwd=3, col='forestgreen')
-text(x=0.5,y=c(2.3,2),
+text(x=0.5,y=c(2.5,2),
      labels=c("Method of Moments",paste("Beta(",round(v.mm, 2),",",round(w.mm,2),")",sep='')),
      col='forestgreen',adj = 1/2)
 
 ```
 
-The second example below estimates the parameters of a null model for the same data, except that 20% of the vectors are now 50% correlated to each other. These correlations, which are not from the null model, involve 4% of all unique, non-identical pairs. The null model, representing the other 96% of the pairs, should be identical to the previous example. In this example, we can see that the Method of Moments estimate, which is perfectly appropriate for the first example, tries to include all correlations rather than just those from the null model. As a result, the fitted distribution does not reflect the null model very well. In contrast, estimateShape() does much better at modeling just the correlations that are truly from the null model.
+For the second example we modify the test data, mixing a Bias variable (copied the required number of times) with the first $20\%$ of the variables. The first 20% of the variables are
+therefore intercorrelated, in this case with a correlation coefficient of $r = 0.5$ (in addition to whatever spurious correlation they had to start with). Pairwise correlations among these
+variables are not purely spurious correlations, and they affect $20\% \times 20\% = 4\%$ of the unique, non-identical pairs; the remaining 96% of the pairs represent purely spurious
+correlations. This example shows why the Method of Moments could not be used to estimate the null model in the presence of outliers.
 
-```{r}
-Samples <- 1000
-Dimensions <- 50
-M <- Matrix(rnorm(Dimensions*Samples),nrow=Dimensions,ncol=Samples,sparse=TRUE)
-Altered <- 200 # This 5% of the samples are officially "outliers"
-r <- 0.5
-M[,c(1:Altered)] <- (1-r) * M[,c(1:Altered)] + r*M[,Altered+1]
-Z <- SparseSpearmanCor2(M)
-beta.shape <- estimateShape(Z[row(Z) < col(Z)], plot=TRUE)
-title(paste("Beta(",paste(round(beta.shape,2),collapse=", "),")",sep=''),line=0.5)
+```{r, fig.width=8, fig.height=8}
+
+# Adjusted Step 1
+M2 <- M
+Altered <- round(Dimensions*0.2) # The first Altered variables will be intercorrelated
+Bias <- matrix(rep(rnorm(Samples),Altered),nrow=Samples,ncol=Altered)
+
+r <- 0.5  # the amount of correlation
+M2[,c(1:Altered)] <- (1-r) * M2[,c(1:Altered)] + r*Bias
+Z2 <- SparseSpearmanCor2(M2)
+
+# Repeat Step 2
+beta.shape <- estimateShape(Z2[row(Z2) < col(Z2)], plot=TRUE, ylim=c(0,14), fine=100,
+                            main=paste(Samples,"samples,",Dimensions,"variables,",Altered,"intercorrelated with r =",r))
+title(paste(round(beta.shape,2),collapse=", "),line=-1)
 #text(x=-0.5,y=2.0,labels=paste("D/2 - 1 = ",round(Dimensions/2-1, 2)),adj = 1/2)
 
 R <- c(-100:100)/100 ; R <-ifelse(-1 < R, ifelse(R < 1, R, 1), -1) # Ensure R in [-1,1]
 
-x     <- (1+Z[row(Z) < col(Z)])/2
+x     <- (1+Z2[row(Z2) < col(Z2)])/2
 x.mu  <- mean(x)
 x.var <- var(x)
 z.mm <- x.mu*(1-x.mu) / x.var - 1
@@ -77,7 +141,7 @@ v.mm <- x.mu * z.mm
 w.mm <- (1-x.mu) * z.mm
 
 lines(R,dbeta((1+R)/2, v.mm, w.mm)/2, lwd=3, col='forestgreen')
-text(x=0.5,y=c(2.3,2),
+text(x=0.5,y=c(3,2),
      labels=c("Method of Moments",paste("Beta(",round(v.mm, 2),",",round(w.mm,2),")",sep='')),
      col='forestgreen',adj = 1/2)
 
