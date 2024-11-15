@@ -5,13 +5,14 @@
 #' @param corSet A vector of non-unique, non-self correlation coefficients.
 #' @param left  An adjustment to the estimated value of w. This parameter is provided so the effect of changing the estimated v parameter can be assessed in the plot. Note that the mean of Beta(v,w) is v/(v+w), adding to w moves the mean to the left.
 #' @param right An adjustment to the estimated value of v. Adding to the value of v moves the mean of the Beta distribution to the right; Adding to both v and w decreases the variance.
+#' @param outlier.f An estimate (default = 0) of the fraction of the observed distribution that are outliers. When adjusting the fit using 'left' and 'right', this parameter causes the displayed, fitted distribution to fit only (1-outlier.f) of the observed distribution, allowing the user to better estimate the agreement of the density at the mode and the breadth of the distribution at half the observed density at the mode, under the assumed fraction of outliers.
 #' @param plot If TRUE, a plot of the distribution is shown, along with the fitted distribution Beta(v,w). If ev and ew are the estimated parameters, v = ev + right, w = ew + left.
 #' @param fine Half the number of bins for the histogram. When fine = NULL (the default), an appropriate value between 5 and 100 is used.
 #' @param trim The mean of the correlations is estimated robustly by making an initial Beta model, then trimming values below quantile trim/2 and above quantile 1-trim/2 of the initial model (0 <= trim < 1). If trimming reduces the number of correlations that remain to less than five, trimming is disabled and the full set of correlations is used.
 #' @return A vector c(v, w) containing the two Beta parameters (see plot=TRUE above).
 #'
 #' @export
-estimateShape <- function(corSet, left = 0, right = 0, plot=FALSE, fine = NULL, trim=0.01, ...) {
+estimateShape <- function(corSet, left = 0, right = 0, outlier.f=0, plot=FALSE, fine = NULL, trim=0.01, ...) {
   density.in <- function(k,width,n,obs,data) {
     kk    <- k+width-1
     left  <- ifelse(k  > 1, (obs[k-1] + obs[k])   /2, 0)
@@ -100,7 +101,7 @@ estimateShape <- function(corSet, left = 0, right = 0, plot=FALSE, fine = NULL, 
     abline(h=0)
     abline(v=0)
     abline(v=2*qq-1,lty=2,col='gray')
-    lines(r, dbeta((1+r)/2,v,w)/2, lwd=3,col='MediumBlue')
+    lines(r, (1-outlier.f)*dbeta((1+r)/2,v,w)/2, lwd=3,col='MediumBlue')
   }
   return(c(v,w))
 }
