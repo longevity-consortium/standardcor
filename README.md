@@ -20,12 +20,10 @@ This package therefore supports correlation-based clustering by providing a conc
 distribution of spurious correlations, methods for standardizing correlation values across 'omics platforms, and new methods for converting
 correlations to distances or network adjacencies.
 
-## Installation:
+## Installation in R:
 ```
-{
 if (!require("remotes", quietly = TRUE))
    install.packages("remotes")
  remotes::install_github("longevity-consortium/standardcor")
-}
 ```
 
