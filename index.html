@@ -58,13 +58,11 @@
 <p>The most important contribution of this package, though, is for co-clustering datasets collected with different high-throughput (’omics) technologies, for which the distribution of spurious correlations in general have different statistical characteristics. By fitting each distribution separately, this package provides a means to standardize correlation values across the different technologies, as well as the cross-correlations between data measured on different technologies. This standardization addresses differences in the variance of spurious correlations (noise levels) across ’omics platforms, reducing the observed tendency for correlations on noisier platforms to drive clustering more than correlations on less noisy platforms, and more than correlations across platforms.</p>
 <p>This package therefore supports correlation-based clustering by providing a conceptual framework, methods for fitting the distribution of spurious correlations, methods for standardizing correlation values across ’omics platforms, and new methods for converting correlations to distances or network adjacencies.</p>
 <div class="section level2">
-<h2 id="installation">Installation:<a class="anchor" aria-label="anchor" href="#installation"></a>
+<h2 id="installation-in-r">Installation in R:<a class="anchor" aria-label="anchor" href="#installation-in-r"></a>
 </h2>
-<pre><code><span><span class="op">{</span></span>
-<span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">require</a></span><span class="op">(</span><span class="st"><a href="https://remotes.r-lib.org" class="external-link">"remotes"</a></span>, quietly <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span>
+<pre><code><span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">require</a></span><span class="op">(</span><span class="st"><a href="https://remotes.r-lib.org" class="external-link">"remotes"</a></span>, quietly <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span>
 <span>   <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"remotes"</span><span class="op">)</span></span>
-<span> <span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"longevity-consortium/standardcor"</span><span class="op">)</span></span>
-<span><span class="op">}</span></span></code></pre>
+<span> <span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"longevity-consortium/standardcor"</span><span class="op">)</span></span></code></pre>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="license">
