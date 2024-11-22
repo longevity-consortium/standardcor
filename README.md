@@ -21,8 +21,11 @@ distribution of spurious correlations, methods for standardizing correlation val
 correlations to distances or network adjacencies.
 
 ## Installation:
-`if (!require("remotes", quietly = TRUE))
-
+```
+{
+if (!require("remotes", quietly = TRUE))
    install.packages("remotes")
-   
- remotes::install_github("longevity-consortium/standardcor")`
+ remotes::install_github("longevity-consortium/standardcor")
+}
+```
+
