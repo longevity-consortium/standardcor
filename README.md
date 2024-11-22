@@ -1,3 +1,4 @@
+# StandardCor
 This package provides utilities for interpreting correlation coefficients as distances or adjacency weights for clustering.
 Pairwise correlations have a geometric interpretation as the cosine of an angle between two vectors of length N, and it is
 important to note that regardless how large N is, an angle is an inherently 2-dimensional concept.  The standard approaches
@@ -18,3 +19,8 @@ noisier platforms to drive clustering more than correlations on less noisy platf
 This package therefore supports correlation-based clustering by providing a conceptual framework, methods for fitting the
 distribution of spurious correlations, methods for standardizing correlation values across 'omics platforms, and new methods for converting
 correlations to distances or network adjacencies.
+
+## Installation:
+`if (!require("remotes", quietly = TRUE))
+   install.packages("remotes")
+ remotes::install_github("longevity-consortium/standardcor")`
