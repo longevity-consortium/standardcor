@@ -19,6 +19,7 @@
 #' @return A sparse matrix with ranks of non-zero entries
 #' @export
 SparsifiedRanks2 <- function(X) {
+  X <- as(X, "sparseMatrix")
   if (class(X)[1] != "dgCMatrix") {
     X <- as(object = X, Class = "dgCMatrix")
   }
