@@ -17,9 +17,8 @@
 #' @export
 standardizeFromModel <- function(modelL, analyteL, v.std = 32) {
   cacheL <- list()
-  Analytes <- unlist(analyteL,use.names = FALSE)
+  Analytes <- unique(unlist(analyteL,use.names = FALSE))
   N <- length(Analytes)
-  stopifnot(N == length(unique(Analytes)))
   Z <- matrix(0, nrow=N, ncol=N)
   rownames(Z) <- Analytes
   colnames(Z) <- Analytes
