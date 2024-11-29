@@ -34,8 +34,8 @@ standardizeFromModel <- function(modelL, analyteL, v.std = 32) {
       #  -- the name of an RDS file containing the correlation coefficients
       #  -- the analytes do not need to be all of the entries in the matrix
       ###
-      if ((! is.null(dim(matrixOrFile))) &
-           ('numeric' %in% class(matrixOrFile))) {
+      if ((! is.null(dim(dataSpec))) &
+           ('numeric' %in% class(dataSpec))) {
         Zij <- dataSpec
       } else {
         if (! dataSpec %in% names(cacheL)) {
