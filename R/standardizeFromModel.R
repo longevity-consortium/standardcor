@@ -50,7 +50,7 @@ standardizeFromModel <- function(modelL, analyteL, v.std = 32) {
         if ('none' == shape) { # Skip standardization
           Zc <- Zij[Analytes.i,Analytes.j]
         } else {
-          Zc <- centerBeta(Zij[Analytes.i,Analytes.j], shape[1], shape[2], v.std)
+          Zc <- centerBeta(Zij[Analytes.i,Analytes.j], shape[1], shape[1], v.std)
         }
       } else {
         Zc <- centerBeta(Zij[Analytes.i,Analytes.j], shape[1], shape[2], v.std)
