@@ -16,6 +16,7 @@
 #'
 #' @export
 standardizeFromModel <- function(modelL, analyteL, v.std = 32) {
+  cacheL <- list()
   Analytes <- unlist(analyteL,use.names = FALSE)
   N <- length(Analytes)
   stopifnot(N == length(unique(Analytes)))
@@ -26,9 +27,27 @@ standardizeFromModel <- function(modelL, analyteL, v.std = 32) {
     Analytes.i <- analyteL[[ds.i]]
     for (ds.j in names(modelL[[ds.i]])) {
       Analytes.j <- analyteL[[ds.j]]
-      Zij <- modelL[[ds.i]][[ds.j]][['cor']]
+      dataSpec <- modelL[[ds.i]][[ds.j]][['cor']]
+      ###
+      #  dataSpec can be:
+      #  -- a matrix of correlation coefficients
+      #  -- the name of an RDS file containing the correlation coefficients
+      #  -- the analytes do not need to be all of the entries in the matrix
+      ###
+      if ((! is.null(dim(matrixOrFile))) &
+           ('numeric' %in% class(matrixOrFile))) {
+        Zij <- dataSpec
+      } else {
+        if (! dataSpec %in% names(cacheL)) {
+          cacheL[[dataSpec]] <- readRDS(dataSpec)
+        }
+        Zij <- cacheL[[dataSpec]]
+      }
       shape <- modelL[[ds.i]][[ds.j]][['shape']]
-      Zc <- centerBeta(Zij, shape[1], shape[2], v.std)
+      if (1 == length(shape)) {
+        shape <- c(shape, shape)
+      }
+      Zc <- centerBeta(Zij[Analytes.i,Analytes.j], shape[1], shape[2], v.std)
       if (ds.i == ds.j) {
         Z[Analytes.i, Analytes.i] <- Zc
       } else {
@@ -37,6 +56,7 @@ standardizeFromModel <- function(modelL, analyteL, v.std = 32) {
       }
     }
   }
+  rm(cacheL)
   return(Z)
 }
 
