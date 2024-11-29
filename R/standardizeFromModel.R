@@ -34,14 +34,16 @@ standardizeFromModel <- function(modelL, analyteL, v.std = 32) {
       #  -- the name of an RDS file containing the correlation coefficients
       #  -- the analytes do not need to be all of the entries in the matrix
       ###
-      if ((! is.null(dim(dataSpec))) &
-           ('numeric' %in% class(dataSpec))) {
-        Zij <- dataSpec
-      } else {
+      if ('character' %in% class(dataSpec)) {
+        print(paste("standardizeFromModel: file",dataSpec))
         if (! dataSpec %in% names(cacheL)) {
           cacheL[[dataSpec]] <- readRDS(dataSpec)
         }
         Zij <- cacheL[[dataSpec]]
+        print(paste("standardizeFromModel: file",dataSpec,"size",paste(dim(Zij),collapse=" x ")))
+      } else {
+        Zij <- dataSpec
+        print(paste("standardizeFromModel: size",paste(dim(Zij),collapse=" x ")))
       }
       shape <- modelL[[ds.i]][[ds.j]][['shape']]
       if (1 == length(shape)) {
