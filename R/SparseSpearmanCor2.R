@@ -19,7 +19,10 @@ SparseSpearmanCor2 <- function(X, Y = NULL, cov = FALSE) {
     return (corSparse(X=rankX, cov=cov))
   }
   rankY <- SparsifiedRanks2(Y)
-  return(corSparse( X = rankX, Y = rankY, cov = cov))
+  CS <- corSparse( X = rankX, Y = rankY, cov = cov)
+  rownames(CS) <- colnames(X)
+  colnames(CS) <- colnames(Y)
+  return(CS)
 }
 
 # end of SparseSpearmanCor2.R
