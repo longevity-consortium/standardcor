@@ -26,7 +26,7 @@ standardizeFromModel <- function(modelL, analyteL, v.std = 32) {
     Analytes.i <- analyteL[[ds.i]]
     for (ds.j in names(modelL[[ds.i]])) {
       Analytes.j <- analyteL[[ds.j]]
-      dataSpec <- modelL[[ds.i]][[ds.j]][['cor']]
+      dataSpec <- modelL[[ ds.i ]][[ ds.j ]][[ 'cor' ]]
       ###
       #  dataSpec can be:
       #  -- a matrix of correlation coefficients
@@ -39,6 +39,7 @@ standardizeFromModel <- function(modelL, analyteL, v.std = 32) {
           cacheL[[dataSpec]] <- readRDS(dataSpec)
         }
         Zij <- cacheL[[dataSpec]]
+        print(class(Zij))
         print(paste("standardizeFromModel: file",dataSpec,"size",paste(dim(Zij),collapse=" x ")))
       } else {
         Zij <- dataSpec
