@@ -124,10 +124,13 @@ correlations. This example shows why the Method of Moments could not be used to 
 
 # Adjusted Step 1
 M2 <- M
+dim(M2)
 Altered <- round(Genes*pct/100) # The first Altered variables will be intercorrelated
 Bias <- matrix(rep(rnorm(Samples),Altered),nrow=Samples,ncol=Altered)
 
 M2[,c(1:Altered)] <- (1-corr) * M2[,c(1:Altered)] + corr*Bias
+length(rownames(M2))
+length(colnames(M2))
 Z2 <- SparseSpearmanCor2(M2)
 
 # Repeat Step 2
