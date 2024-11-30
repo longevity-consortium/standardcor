@@ -22,6 +22,7 @@ standardizeFromModel <- function(modelL, analyteL, v.std = 32) {
   Z <- matrix(0, nrow=N, ncol=N)
   rownames(Z) <- Analytes
   colnames(Z) <- Analytes
+  print(paste("Standardized matrix will be",N,"x",N))
   for (ds.i in names(modelL)) {
     Analytes.i <- analyteL[[ds.i]]
     stopifnot(length(intersect(Analytes,Analytes.i)) == length(Analytes.i))
@@ -46,24 +47,30 @@ standardizeFromModel <- function(modelL, analyteL, v.std = 32) {
         Zij <- cacheL[[dataSpec]]
       }
       stopifnot(is.matrix(Zij))
+      stopifnot(length(intersect(Analytes.i, rownames(Zij))) == length(Analytes.i))
+      stopifnot(length(intersect(Analytes.j, colnames(Zij))) == length(Analytes.j))
+
       shape <- modelL[[ds.i]][[ds.j]][['shape']]
       if (1 == length(shape)) {
         stopifnot(! (is.null(shape) | is.na(shape)))
         if ('none' == shape) { # Skip standardization
           Zc <- Zij[Analytes.i,Analytes.j]
           if (! is.matrix(Zc)) {
-            print("shape is 'none'")
+            print(class(Zc))
+            print(paste("shape is non-numeric,",shape))
           }
         } else {
           Zc <- centerBeta(Zij[Analytes.i,Analytes.j], shape[1], shape[1], v.std)
           if (! is.matrix(Zc)) {
-            print("shape has one value")
+            print(class(Zc))
+            print(paste("shape has one value,",shape))
           }
         }
       } else {
         Zc <- centerBeta(Zij[Analytes.i,Analytes.j], shape[1], shape[2], v.std)
         if (! is.matrix(Zc)) {
-          print("shape has two values")
+          print(class(Zc))
+          print("shape has two values,",paste(shape,collapse=", "))
         }
       }
       stopifnot(is.matrix(Zc))
