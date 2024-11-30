@@ -120,20 +120,23 @@ therefore correlated by the weight given to the Bias vector, in this case $r = `
 features, which are roughly $`r pct`\% \times `r pct`\% = `r pct*pct/100`\%$ of the unique, non-identical pairs, are a simulated "signal" relative to the remaining roughly $`r 100 - pct*pct/100`\%$ purely spurious
 correlations. This example shows why the Method of Moments could not be used to estimate the null model in the presence of outliers.
 
-```{r, fig.width=5.5, fig.height=5.5}
-
+```{r}
 # Adjusted Step 1
 M2 <- M
 dim(M2)
 Altered <- round(Genes*pct/100) # The first Altered variables will be intercorrelated
 Altered <- max(1,min(Genes,Altered))
 Bias <- matrix(rnorm(Samples*Altered),nrow=Samples,ncol=Altered)
+```
 
+```{r}
 M2[,c(1:Altered)] <- (1-corr) * M2[,c(1:Altered)] + corr*Bias
 length(rownames(M2))
 length(colnames(M2))
 Z2 <- SparseSpearmanCor2(M2)
+```
 
+```{r, fig.width=5.5, fig.height=5.5}
 # Repeat Step 2
 beta.shape <- estimateShape(Z2[row(Z2) < col(Z2)], plot=TRUE, ylim=c(0,7), fine=60,
                             main=c(paste(Samples,"samples,",Genes,"features"),
