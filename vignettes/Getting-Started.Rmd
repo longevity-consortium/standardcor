@@ -219,16 +219,20 @@ Prot <- as.matrix(synth_LC[['Proteomics']][,2:N])
 rownames(Prot) <- synth_LC[['Proteomics']]$subjectID
 ```
 
-```{r, fig.width=5.5, fig.height=5.5}
+```{r}
 par(mar = c(2, 2, 4, 2), mfrow=c(2,2))
 L <- multiOmicModel(list(met = Met, prot = Prot), plot=TRUE, annotate=TRUE, fine=30)
+```
 
+```{r}
 v.std <- 32
 Z <- standardizeFromModel(L$modelL, L$analyteL, v.std)
 adjTable1 <- nullModelAdjacencyTable(Z[row(Z) < col(Z)], v.std, scale=1)
 adjTable2 <- nullModelAdjacencyTable(Z[row(Z) < col(Z)], v.std)
 adjTable3 <- nullModelAdjacencyTable(Z[row(Z) < col(Z)], v.std, scale=3)
+```
 
+```{r, fig.width=5.5, fig.height=5.5}
 shape <- estimateShape(Z[row(Z) < col(Z)], plot=TRUE, main = "Standardized", fine=30)
 title(paste("Beta(",v.std,",",v.std,")",sep=''), line = 0.5)
 Bs <- c(-100:100)/100
