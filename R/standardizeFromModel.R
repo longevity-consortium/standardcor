@@ -24,7 +24,7 @@ standardizeFromModel <- function(modelL, analyteL, v.std = 32) {
   colnames(Z) <- Analytes
   for (ds.i in names(modelL)) {
     Analytes.i <- analyteL[[ds.i]]
-    stopifnot(length(intersect(Analytes,Analytes.j)) == length(Analytes.j))
+    stopifnot(length(intersect(Analytes,Analytes.i)) == length(Analytes.i))
     for (ds.j in names(modelL[[ds.i]])) {
       Analytes.j <- analyteL[[ds.j]]
       stopifnot(length(intersect(Analytes,Analytes.j)) == length(Analytes.j))
