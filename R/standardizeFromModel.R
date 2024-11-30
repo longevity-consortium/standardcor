@@ -24,8 +24,10 @@ standardizeFromModel <- function(modelL, analyteL, v.std = 32) {
   colnames(Z) <- Analytes
   for (ds.i in names(modelL)) {
     Analytes.i <- analyteL[[ds.i]]
+    stopifnot(length(intersect(Analytes,Analytes.j)) == length(Analytes.j))
     for (ds.j in names(modelL[[ds.i]])) {
       Analytes.j <- analyteL[[ds.j]]
+      stopifnot(length(intersect(Analytes,Analytes.j)) == length(Analytes.j))
       dataSpec <- modelL[[ ds.i ]][[ ds.j ]][[ 'cor' ]]
       ###
       #  dataSpec can be:
@@ -39,11 +41,8 @@ standardizeFromModel <- function(modelL, analyteL, v.std = 32) {
           cacheL[[dataSpec]] <- readRDS(dataSpec)
         }
         Zij <- cacheL[[dataSpec]]
-        print(class(Zij))
-        print(paste("standardizeFromModel: file",dataSpec,"size",paste(dim(Zij),collapse=" x ")))
       } else {
         Zij <- dataSpec
-        print(paste("standardizeFromModel: size",paste(dim(Zij),collapse=" x ")))
       }
       shape <- modelL[[ds.i]][[ds.j]][['shape']]
       if (1 == length(shape)) {
@@ -55,6 +54,8 @@ standardizeFromModel <- function(modelL, analyteL, v.std = 32) {
       } else {
         Zc <- centerBeta(Zij[Analytes.i,Analytes.j], shape[1], shape[2], v.std)
       }
+      rownames(Zc) <- Analytes.i
+      colnames(Zc) <- Analytes.j
       if (ds.i == ds.j) {
         Z[Analytes.i, Analytes.i] <- Zc
       } else {
@@ -64,6 +65,7 @@ standardizeFromModel <- function(modelL, analyteL, v.std = 32) {
     }
   }
   rm(cacheL)
+  Z[is.na(Z)] <- 0
   return(Z)
 }
 
