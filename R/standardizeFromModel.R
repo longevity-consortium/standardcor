@@ -25,16 +25,18 @@ standardizeFromModel <- function(modelL, analyteL, v.std = 32) {
   for (ds.i in names(modelL)) {
     Analytes.i <- analyteL[[ds.i]]
     stopifnot(length(intersect(Analytes,Analytes.i)) == length(Analytes.i))
+    
     for (ds.j in names(modelL[[ds.i]])) {
       Analytes.j <- analyteL[[ds.j]]
       stopifnot(length(intersect(Analytes,Analytes.j)) == length(Analytes.j))
-      dataSpec <- modelL[[ ds.i ]][[ ds.j ]][[ 'cor' ]]
+
       ###
       #  dataSpec can be:
       #  -- a matrix of correlation coefficients
       #  -- the name of an RDS file containing the correlation coefficients
       #  -- the analytes do not need to be all of the entries in the matrix
       ###
+      dataSpec <- modelL[[ ds.i ]][[ ds.j ]][[ 'cor' ]]
       if ('character' %in% class(dataSpec)) {
         print(paste("standardizeFromModel: file",dataSpec))
         if (! dataSpec %in% names(cacheL)) {
@@ -54,6 +56,7 @@ standardizeFromModel <- function(modelL, analyteL, v.std = 32) {
       } else {
         Zc <- centerBeta(Zij[Analytes.i,Analytes.j], shape[1], shape[2], v.std)
       }
+      stopifnot(is.matrix(Zc))
       rownames(Zc) <- Analytes.i
       colnames(Zc) <- Analytes.j
       if (ds.i == ds.j) {
