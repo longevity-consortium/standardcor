@@ -17,7 +17,7 @@
 #' @export
 standardizeFromModel <- function(modelL, analyteL, v.std = 32) {
   cacheL <- list()
-  Analytes <- unique(unlist(analyteL,use.names = FALSE))
+  Analytes <- unique(unlist(analyteL, use.names = FALSE))
   N <- length(Analytes)
   Z <- matrix(0, nrow=N, ncol=N)
   rownames(Z) <- Analytes
@@ -38,7 +38,6 @@ standardizeFromModel <- function(modelL, analyteL, v.std = 32) {
       ###
       dataSpec <- modelL[[ ds.i ]][[ ds.j ]][[ 'cor' ]]
       if ('character' %in% class(dataSpec)) {
-        print(paste("standardizeFromModel: file",dataSpec))
         if (! dataSpec %in% names(cacheL)) {
           cacheL[[dataSpec]] <- readRDS(dataSpec)
         }
@@ -59,10 +58,10 @@ standardizeFromModel <- function(modelL, analyteL, v.std = 32) {
       stopifnot(is.matrix(Zc))
       rownames(Zc) <- Analytes.i
       colnames(Zc) <- Analytes.j
-      if (ds.i == ds.j) {
-        Z[Analytes.i, Analytes.i] <- Zc
-      } else {
-        Z[Analytes.i, Analytes.j] <- Zc
+      Z[Analytes.i, Analytes.j] <- Zc
+      if (ds.i != ds.j) {
+        stopifnot(length(intersect(rownames(Z),Analytes.j)) == length(Analytes.j))
+        stopifnot(length(intersect(colnames(Z),Analytes.i)) == length(Analytes.i))
         Z[Analytes.j, Analytes.i] <- t(Zc)
       }
     }
