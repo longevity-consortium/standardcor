@@ -19,7 +19,6 @@
 #' @export
 multiOmicModel <- function(OmicsL, common = TRUE, min.samples = 5, annotate=FALSE, ...) {
   sampleNames <- function(M) {
-    external <-
     if (! is.matrix(M)) {
       M.in <- readRDS(M)
       names <- rownames(M.in)
@@ -57,14 +56,16 @@ multiOmicModel <- function(OmicsL, common = TRUE, min.samples = 5, annotate=FALS
       samples.i <- rownames(data.i)
     }
     stopifnot(min.samples <= length(samples.i))
+    analyte.L[[ds.i]] <- colnames(data.i)
 
     for (j in c(i:nSets)) {
       ds.j <- names(OmicsL)[j]
       model.L[[ds.i]][[ds.j]] <- list()
       if (j == i) {  # ---------- Self-correlation
-        if (1 == i) analyte.L[[ds.i]] <- colnames(data.i)
-        Z <- SparseSpearmanCor2(data.i[samples.i, ])
-        shape <- estimateShape(Z[row(Z) < col(Z)], main = paste(ds.i, ds.j, sep=" x "), ...)
+        Zij <- SparseSpearmanCor2(data.i[samples.i, ])
+        rownames(Zij) <- colnames(data.i)
+        colnames(Zij) <- colnames(data.i)
+        shape <- estimateShape(Zij[row(Zij) < col(Zij)], main = paste(ds.i, ds.j, sep=" x "), ...)
         if (annotate) title(paste(round(shape,1),collapse=", "),line=0.5)
       } else {       # ---------- Cross-correlation
         # Get the jth dataset
@@ -74,15 +75,16 @@ multiOmicModel <- function(OmicsL, common = TRUE, min.samples = 5, annotate=FALS
         } else { # internal dataset
           data.j <- OmicsL[[ds.j]]
         }
-        if (1 == i) analyte.L[[ds.j]] <- colnames(data.j)
         if (common) {
           samples.ij <- common.samples
         } else {
           samples.ij <- intersect(samples.i, rownames(data.j))
         }
         stopifnot(min.samples <= length(samples.ij))
-        Z <- SparseSpearmanCor2(data.i[samples.ij, ], data.j[samples.ij,])
-        shape <- estimateShape(Z, main = paste(ds.i, ds.j, sep=" x "), ...)
+        Zij <- SparseSpearmanCor2(data.i[samples.ij, ], data.j[samples.ij,])
+        rownames(Zij) <- colnames(data.i)
+        colnames(Zij) <- colnames(data.j)
+        shape <- estimateShape(Zij, main = paste(ds.i, ds.j, sep=" x "), ...)
         if (annotate) title(paste(round(shape,1),collapse=", "), line=0.5)
         if (external.j) { # external dataset
           rm(data.j)
