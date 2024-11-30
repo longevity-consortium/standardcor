@@ -48,13 +48,23 @@ standardizeFromModel <- function(modelL, analyteL, v.std = 32) {
       stopifnot(is.matrix(Zij))
       shape <- modelL[[ds.i]][[ds.j]][['shape']]
       if (1 == length(shape)) {
+        stopifnot(! (is.null(shape) | is.na(shape)))
         if ('none' == shape) { # Skip standardization
           Zc <- Zij[Analytes.i,Analytes.j]
+          if (! is.matrix(Zc)) {
+            print("shape is 'none'")
+          }
         } else {
           Zc <- centerBeta(Zij[Analytes.i,Analytes.j], shape[1], shape[1], v.std)
+          if (! is.matrix(Zc)) {
+            print("shape has one value")
+          }
         }
       } else {
         Zc <- centerBeta(Zij[Analytes.i,Analytes.j], shape[1], shape[2], v.std)
+        if (! is.matrix(Zc)) {
+          print("shape has two values")
+        }
       }
       stopifnot(is.matrix(Zc))
       rownames(Zc) <- Analytes.i
@@ -68,8 +78,9 @@ standardizeFromModel <- function(modelL, analyteL, v.std = 32) {
     }
   }
   rm(cacheL)
-  if (0 < length(is.na(Z))) {
-    print(paste("standardized matrix contains",length(is.na(Z)),"NA entries"))
+  nas <- length(which(is.na(Z)))
+  if (0 < nas) {
+    print(paste("standardized matrix contains",nas,"NA entries"))
   }
   return(Z)
 }
