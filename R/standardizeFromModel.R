@@ -37,14 +37,15 @@ standardizeFromModel <- function(modelL, analyteL, v.std = 32) {
       #  -- the analytes do not need to be all of the entries in the matrix
       ###
       dataSpec <- modelL[[ ds.i ]][[ ds.j ]][[ 'cor' ]]
-      if ('character' %in% class(dataSpec)) {
+      if (is.matrix(dataSpec)) {
+        Zij <- dataSpec
+      } else {
         if (! dataSpec %in% names(cacheL)) {
-          cacheL[[dataSpec]] <- readRDS(dataSpec)
+          cacheL[[dataSpec]] <- as.matrix(readRDS(dataSpec))
         }
         Zij <- cacheL[[dataSpec]]
-      } else {
-        Zij <- dataSpec
       }
+      stopifnot(is.matrix(Zij))
       shape <- modelL[[ds.i]][[ds.j]][['shape']]
       if (1 == length(shape)) {
         if ('none' == shape) { # Skip standardization
@@ -68,7 +69,7 @@ standardizeFromModel <- function(modelL, analyteL, v.std = 32) {
   }
   rm(cacheL)
   if (0 < length(is.na(Z))) {
-    print(length(is.na(Z)))
+    print(paste("standardized matrix contains",length(is.na(Z)),"NA entries"))
   }
   return(Z)
 }
