@@ -230,6 +230,9 @@ L <- multiOmicModel(list(met = Met, prot = Prot), plot=TRUE, annotate=TRUE, fine
 ```{r}
 v.std <- 32
 Z <- standardizeFromModel(L$modelL, L$analyteL, v.std)
+```
+
+```{r}
 adjTable1 <- nullModelAdjacencyTable(Z[row(Z) < col(Z)], v.std, scale=1)
 adjTable2 <- nullModelAdjacencyTable(Z[row(Z) < col(Z)], v.std)
 adjTable3 <- nullModelAdjacencyTable(Z[row(Z) < col(Z)], v.std, scale=3)
