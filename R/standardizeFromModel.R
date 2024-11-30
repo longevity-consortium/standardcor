@@ -68,7 +68,9 @@ standardizeFromModel <- function(modelL, analyteL, v.std = 32) {
     }
   }
   rm(cacheL)
-  Z[is.na(Z)] <- 0
+  if (0 < length(is.na(Z))) {
+    print(length(is.na(Z)))
+  }
   return(Z)
 }
 
