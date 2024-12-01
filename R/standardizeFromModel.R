@@ -52,10 +52,11 @@ standardizeFromModel <- function(modelL, analyteL, v.std = 32) {
       stopifnot(is.matrix(Zij))
       stopifnot(length(intersect(Analytes.i, rownames(Zij))) == length(Analytes.i))
       stopifnot(length(intersect(Analytes.j, colnames(Zij))) == length(Analytes.j))
-      print(paste("From ",dim(Zij),collapse=" x ",sep=" "))
+      print(paste("From ",paste(dim(Zij),collapse=" x "),sep=" "))
       print(paste("Using",length(Analytes.i),"x",length(Analytes.j)))
 
       shape <- modelL[[ds.i]][[ds.j]][['shape']]
+      stopifnot(length(shape) < 3)
       print(paste("shape",shape,collapse=" "))
       if (1 == length(shape)) {
         if ('none' == shape) { # Skip standardization
