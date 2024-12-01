@@ -215,16 +215,16 @@ title(paste('Protein correlations',paste(round(shape.prot,2),collapse=", ")),lin
 ```{r}
 N <- dim(synth_LC[['Metabolomics']])[2]
 Met <- as.matrix(synth_LC[['Metabolomics']][,2:N])
-rownames(Met) <- synth_LC[['Metabolomics']]$subjectID
+rownames(Met) <- paste('S',synth_LC[['Metabolomics']]$subjectID,sep='')
 
 N <- dim(synth_LC[['Proteomics']])[2]
 Prot <- as.matrix(synth_LC[['Proteomics']][,2:N])
-rownames(Prot) <- synth_LC[['Proteomics']]$subjectID
+rownames(Prot) <- paste('S',synth_LC[['Proteomics']]$subjectID,sep='')
 ```
 
 ```{r}
 par(mar = c(2, 2, 4, 2), mfrow=c(2,2))
-L <- multiOmicModel(list(met = Met, prot = Prot), plot=TRUE, annotate=TRUE, fine=30)
+L <- multiOmicModel(list(met = Met, prot = Prot), plot=TRUE, annotate=TRUE, common=TRUE, fine=30)
 ```
 
 ```{r}
