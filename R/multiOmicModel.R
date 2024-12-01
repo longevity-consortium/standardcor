@@ -22,9 +22,10 @@ multiOmicModel <- function(OmicsL, common = TRUE, min.samples = 5, annotate=FALS
   model.L <- list()
   analyte.L <- list()
   nSets <- length(OmicsL)
+  unset <- rnorm(1) # A value that common.samples will never be as the result of intersections
 
   # Build the list of analytes
-  common.samples <- NULL
+  common.samples <- unset
   for (ds in names(OmicsL)) {
     if (is.matrix(OmicsL[[ds]])) {
       cacheL[[ds]] <- OmicsL[[ds]]
@@ -36,12 +37,19 @@ multiOmicModel <- function(OmicsL, common = TRUE, min.samples = 5, annotate=FALS
     analytes <- unique(colnames(M))
     stopifnot(! is.null(samples))
     if (common) {
-      common.samples <- ifelse(is.null(common.samples), intersect(common.samples,samples), samples)
+      if (unset == common.samples) {
+        common.samples <- samples
+      } else {
+        common.samples <- intersect(common.samples,samples)
+      }
     }
     stopifnot(! is.null(analytes))
     analyte.L[[ds]] <- analytes
   }
   # Analytes <- unique(unlist(analyteL))
+  stopifnot( (! common) | 
+             ((common.samples != unset) &
+              (min.samples <= length(common.samples))))
 
   for (i in c(1:nSets)) {
     # Get the ith dataset
@@ -52,7 +60,6 @@ multiOmicModel <- function(OmicsL, common = TRUE, min.samples = 5, annotate=FALS
     } else {
       samples.i <- rownames(data.i)
     }
-    stopifnot(min.samples <= length(samples.i))
     analytes.i <- analyteL[[ds.i]]
     model.L[[ds.i]] <- list()
 
