@@ -52,7 +52,8 @@ standardizeFromModel <- function(modelL, analyteL, v.std = 32) {
       stopifnot(is.matrix(Zij))
       stopifnot(length(intersect(Analytes.i, rownames(Zij))) == length(Analytes.i))
       stopifnot(length(intersect(Analytes.j, colnames(Zij))) == length(Analytes.j))
-      print(paste(dim(Zij),collapse=" x "))
+      print(paste("From ",dim(Zij),collapse=" x ",sep=" "))
+      print(paste("Using",length(Analytes.i),"x",length(Analytes.j)))
 
       shape <- modelL[[ds.i]][[ds.j]][['shape']]
       print(paste("shape",shape,collapse=" "))
@@ -65,7 +66,10 @@ standardizeFromModel <- function(modelL, analyteL, v.std = 32) {
       } else {
         Zc <- centerBeta(Zij[Analytes.i,Analytes.j], shape[1], shape[2], v.std)
       }
-      if (! is.matrix(Zc)) print(class(Zc))
+      if (! is.matrix(Zc)) {
+        print(class(Zc))
+        print(paste(Analytes.j,collapse=", "))
+      }
       stopifnot(is.matrix(Zc))
       rownames(Zc) <- Analytes.i
       colnames(Zc) <- Analytes.j
