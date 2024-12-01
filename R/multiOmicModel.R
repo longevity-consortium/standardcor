@@ -47,9 +47,8 @@ multiOmicModel <- function(OmicsL, common = TRUE, min.samples = 5, annotate=FALS
     analyte.L[[ds]] <- analytes
   }
   # Analytes <- unique(unlist(analyteL))
-  stopifnot( (! common) | 
-             ((common.samples != unset) &
-              (min.samples <= length(common.samples))))
+  stopifnot((! common) | (! is.numeric(common.samples)))
+  stopifnot((! common) | (min.samples <= length(common.samples)))
 
   for (i in c(1:nSets)) {
     # Get the ith dataset
