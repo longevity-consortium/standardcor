@@ -24,10 +24,12 @@ standardizeFromModel <- function(modelL, analyteL, v.std = 32) {
   colnames(Z) <- Analytes
   print(paste("Standardized matrix will be",N,"x",N))
   for (ds.i in names(modelL)) {
+    print(ds.i)
     Analytes.i <- analyteL[[ds.i]]
     stopifnot(length(intersect(Analytes,Analytes.i)) == length(Analytes.i))
-    
+
     for (ds.j in names(modelL[[ds.i]])) {
+      print(paste(ds.i, ds.j))
       Analytes.j <- analyteL[[ds.j]]
       stopifnot(length(intersect(Analytes,Analytes.j)) == length(Analytes.j))
 
@@ -41,6 +43,7 @@ standardizeFromModel <- function(modelL, analyteL, v.std = 32) {
       if (is.matrix(dataSpec)) {
         Zij <- dataSpec
       } else {
+        print(paste('cor',dataSpec))
         if (! dataSpec %in% names(cacheL)) {
           cacheL[[dataSpec]] <- as.matrix(readRDS(dataSpec))
         }
@@ -49,34 +52,25 @@ standardizeFromModel <- function(modelL, analyteL, v.std = 32) {
       stopifnot(is.matrix(Zij))
       stopifnot(length(intersect(Analytes.i, rownames(Zij))) == length(Analytes.i))
       stopifnot(length(intersect(Analytes.j, colnames(Zij))) == length(Analytes.j))
+      print(paste(dim(Zij),collapse=" x "))
 
       shape <- modelL[[ds.i]][[ds.j]][['shape']]
+      print(paste("shape",shape,collapse=" "))
       if (1 == length(shape)) {
-        stopifnot(! (is.null(shape) | is.na(shape)))
         if ('none' == shape) { # Skip standardization
           Zc <- Zij[Analytes.i,Analytes.j]
-          if (! is.matrix(Zc)) {
-            print(class(Zc))
-            print(paste("shape is non-numeric,",shape))
-          }
         } else {
           Zc <- centerBeta(Zij[Analytes.i,Analytes.j], shape[1], shape[1], v.std)
-          if (! is.matrix(Zc)) {
-            print(class(Zc))
-            print(paste("shape has one value,",shape))
-          }
         }
       } else {
         Zc <- centerBeta(Zij[Analytes.i,Analytes.j], shape[1], shape[2], v.std)
-        if (! is.matrix(Zc)) {
-          print(class(Zc))
-          print("shape has two values,",paste(shape,collapse=", "))
-        }
       }
+      if (! is.matrix(Zc)) print(class(Zc))
       stopifnot(is.matrix(Zc))
       rownames(Zc) <- Analytes.i
       colnames(Zc) <- Analytes.j
       Z[Analytes.i, Analytes.j] <- Zc
+
       if (ds.i != ds.j) {
         stopifnot(length(intersect(rownames(Z),Analytes.j)) == length(Analytes.j))
         stopifnot(length(intersect(colnames(Z),Analytes.i)) == length(Analytes.i))
@@ -84,11 +78,9 @@ standardizeFromModel <- function(modelL, analyteL, v.std = 32) {
       }
     }
   }
-  rm(cacheL)
   nas <- length(which(is.na(Z)))
-  if (0 < nas) {
-    print(paste("standardized matrix contains",nas,"NA entries"))
-  }
+  if (0 < nas) print(paste("standardized matrix contains",nas,"NA entries"))
+
   return(Z)
 }
 
