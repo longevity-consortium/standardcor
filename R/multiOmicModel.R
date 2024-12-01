@@ -24,6 +24,7 @@ multiOmicModel <- function(OmicsL, common = TRUE, min.samples = 5, annotate=FALS
   nSets <- length(OmicsL)
 
   # Build the list of analytes
+  common.samples <- NULL
   for (ds in names(OmicsL)) {
     if (is.matrix(OmicsL[[ds]])) {
       cacheL[[ds]] <- OmicsL[[ds]]
@@ -35,7 +36,7 @@ multiOmicModel <- function(OmicsL, common = TRUE, min.samples = 5, annotate=FALS
     analytes <- unique(colnames(M))
     stopifnot(! is.null(samples))
     if (common) {
-      common.samples <- ifelse(is.null(common.samples), samples, intersect(common.samples,samples))
+      common.samples <- ifelse(is.null(common.samples), intersect(common.samples,samples), samples)
     }
     stopifnot(! is.null(analytes))
     analyte.L[[ds]] <- analytes
