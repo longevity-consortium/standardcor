@@ -26,11 +26,11 @@ multiOmicModel <- function(OmicsL, common = TRUE, min.samples = 5, annotate=FALS
   # Build the list of analytes
   for (ds in names(OmicsL)) {
     if (is.matrix(OmicsL[[ds]])) {
-      cacheL[[ds.i]] <- OmicsL[[ds]]
+      cacheL[[ds]] <- OmicsL[[ds]]
     } else {
-      cacheL[[ds.i]] <- as.matrix(readRDS(OmicsL[[ds]]))
+      cacheL[[ds]] <- as.matrix(readRDS(OmicsL[[ds]]))
     }
-    M <- cacheL[[ds.i]]
+    M <- cacheL[[ds]]
     samples <- unique(rownames(M))
     analytes <- unique(colnames(M))
     stopifnot(is.null(samples))
