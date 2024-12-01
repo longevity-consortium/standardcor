@@ -71,7 +71,7 @@ multiOmicModel <- function(OmicsL, common = TRUE, min.samples = 5, annotate=FALS
         if (annotate) title(paste(round(est.vw,2),collapse=", "),line=0.5)
 
       } else {       # ---------- Cross-correlation
-        data.j <- cache[[ds.j]]
+        data.j <- cacheL[[ds.j]]
         if (common) {
           samples.j <- common.samples
         } else {
