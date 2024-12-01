@@ -37,7 +37,7 @@ multiOmicModel <- function(OmicsL, common = TRUE, min.samples = 5, annotate=FALS
     if (common) {
       common.samples <- ifelse(is.null(common.samples), samples, intersect(common.samples,samples))
     }
-    stopifnot(is.null(analytes))
+    stopifnot(! is.null(analytes))
     analyte.L[[ds]] <- analytes
   }
   # Analytes <- unique(unlist(analyteL))
