@@ -18,85 +18,70 @@
 #'
 #' @export
 multiOmicModel <- function(OmicsL, common = TRUE, min.samples = 5, annotate=FALSE, ...) {
-  sampleNames <- function(M) {
-    if (! is.matrix(M)) {
-      M.in <- readRDS(M)
-      names <- rownames(M.in)
-      rm(M.in)
-    } else {
-      names <- rownames(M)
-    }
-    return(names)
-  }
+  cacheL <- list()
   model.L <- list()
-  nSets <- length(OmicsL)
-  if (common) { # Determine the (sub)set of samples common to all datasets
-    common.samples <- sampleNames(OmicsL[[1]])
-    for (i in c(1:nSets)) {
-      common.samples <- intersect(common.samples, sampleNames(OmicsL[[i]]))
-    }
-    stopifnot(min.samples <= length(common.samples))
-    gc("no")
-  }
-
   analyte.L <- list()
+  nSets <- length(OmicsL)
+
+  # Build the list of analytes
+  for (ds in names(OmicsL)) {
+    if (is.matrix(OmicsL[[ds]])) {
+      cacheL[[ds.i]] <- OmicsL[[ds]]
+    } else {
+      cacheL[[ds.i]] <- as.matrix(readRDS(OmicsL[[ds]]))
+    }
+    M <- cacheL[[ds.i]]
+    samples <- unique(rownames(M))
+    analytes <- unique(colnames(M))
+    stopifnot(is.null(samples))
+    if (common) {
+      common.samples <- ifelse(is.null(common.samples), samples, intersect(common.samples,samples))
+    }
+    stopifnot(is.null(analytes))
+    analyte.L[[ds]] <- analytes
+  }
+  # Analytes <- unique(unlist(analyteL))
+
   for (i in c(1:nSets)) {
     # Get the ith dataset
     ds.i <- names(OmicsL)[i]
-    model.L[[ds.i]] <- list()
-    external.i <- ! is.matrix(OmicsL[[ds.i]])
-    if (external.i) {
-      data.i <- readRDS(OmicsL[[ds.i]]) # need to try...catch this
-    } else { # dataset is in-memory
-      data.i <- OmicsL[[ds.i]]
-    }
+    data.i <- cacheL[[ds.i]]
     if (common) {
       samples.i <- common.samples
     } else {
       samples.i <- rownames(data.i)
     }
     stopifnot(min.samples <= length(samples.i))
-    analyte.L[[ds.i]] <- colnames(data.i)
+    analytes.i <- analyteL[[ds.i]]
+    model.L[[ds.i]] <- list()
 
     for (j in c(i:nSets)) {
       ds.j <- names(OmicsL)[j]
-      model.L[[ds.i]][[ds.j]] <- list()
+      analytes.j <- analyteL[[ds.j]]
+
       if (j == i) {  # ---------- Self-correlation
         Zij <- SparseSpearmanCor2(data.i[samples.i, ])
-        rownames(Zij) <- colnames(data.i)
-        colnames(Zij) <- colnames(data.i)
-        shape <- estimateShape(Zij[row(Zij) < col(Zij)], main = paste(ds.i, ds.j, sep=" x "), ...)
-        if (annotate) title(paste(round(shape,1),collapse=", "),line=0.5)
+        rownames(Zij) <- analytes.i
+        colnames(Zij) <- analytes.i
+        est.vw <- estimateShape(Zij[row(Zij) < col(Zij)], main = paste(ds.i, ds.j, sep=" x "), ...)
+        if (annotate) title(paste(round(est.vw,2),collapse=", "),line=0.5)
+
       } else {       # ---------- Cross-correlation
-        # Get the jth dataset
-        external.j <- ! is.matrix(OmicsL[[ds.j]])
-        if (external.j) {
-          data.j <- readRDS(OmicsL[[ds.j]]) # need to try...catch this
-        } else { # internal dataset
-          data.j <- OmicsL[[ds.j]]
-        }
+        data.j <- cache[[ds.j]]
         if (common) {
-          samples.ij <- common.samples
+          samples.j <- common.samples
         } else {
-          samples.ij <- intersect(samples.i, rownames(data.j))
+          samples.j <- rownames(data.j)
         }
+        samples.ij <- intersection(samples.i,samples.j)
         stopifnot(min.samples <= length(samples.ij))
         Zij <- SparseSpearmanCor2(data.i[samples.ij, ], data.j[samples.ij,])
-        rownames(Zij) <- colnames(data.i)
-        colnames(Zij) <- colnames(data.j)
-        shape <- estimateShape(Zij, main = paste(ds.i, ds.j, sep=" x "), ...)
-        if (annotate) title(paste(round(shape,1),collapse=", "), line=0.5)
-        if (external.j) { # external dataset
-          rm(data.j)
-          gc("no")
-        }
+        rownames(Zij) <- analytes.i
+        colnames(Zij) <- analytes.j
+        est.vw <- estimateShape(Zij, main = paste(ds.i, ds.j, sep=" x "), ...)
+        if (annotate) title(paste(round(est.vw,2),collapse=", "), line=0.5)
       }
-      model.L[[ds.i]][[ds.j]][['cor']]   <- Z
-      model.L[[ds.i]][[ds.j]][['shape']] <- shape # left = 0, right = 0
-    }
-    if (external.i) { # external dataset
-      rm(data.i)
-      gc("no")
+      model.L[[ds.i]][[ds.j]] <- list(cor = Zij, shape = est.vw)
     }
   }
   return(list(modelL = model.L, analyteL = analyte.L))
