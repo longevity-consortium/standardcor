@@ -24,6 +24,7 @@ multiOmicModel <- function(OmicsL, common = TRUE, min.samples = 5, annotate=FALS
   nSets <- length(OmicsL)
 
   # Build the list of analytes
+  common.samples <- c()
   for (ds in names(OmicsL)) {
     if (is.matrix(OmicsL[[ds]])) {
       cacheL[[ds]] <- OmicsL[[ds]]
