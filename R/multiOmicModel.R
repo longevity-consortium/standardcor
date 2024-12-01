@@ -77,7 +77,7 @@ multiOmicModel <- function(OmicsL, common = TRUE, min.samples = 5, annotate=FALS
         } else {
           samples.j <- rownames(data.j)
         }
-        samples.ij <- intersection(samples.i,samples.j)
+        samples.ij <- intersect(samples.i,samples.j)
         stopifnot(min.samples <= length(samples.ij))
         Zij <- SparseSpearmanCor2(data.i[samples.ij, ], data.j[samples.ij,])
         rownames(Zij) <- analytes.i
