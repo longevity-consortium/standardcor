@@ -56,12 +56,12 @@ multiOmicModel <- function(OmicsL, common = TRUE, min.samples = 5, annotate=FALS
       samples.i <- rownames(data.i)
     }
     stopifnot(min.samples <= length(samples.i))
-    analytes.i <- analyteL[[ds.i]]
+    analytes.i <- analyte.L[[ds.i]]
     model.L[[ds.i]] <- list()
 
     for (j in c(i:nSets)) {
       ds.j <- names(OmicsL)[j]
-      analytes.j <- analyteL[[ds.j]]
+      analytes.j <- analyte.L[[ds.j]]
 
       if (j == i) {  # ---------- Self-correlation
         Zij <- SparseSpearmanCor2(data.i[samples.i, ])
