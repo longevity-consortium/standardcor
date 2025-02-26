@@ -25,25 +25,46 @@ multiOmicModel <- function(OmicsL, common = TRUE, min.samples = 5, annotate=FALS
 
   # Build the list of analytes
   common.samples <- c()
+  okay <- TRUE
   for (ds in names(OmicsL)) {
     if (is.matrix(OmicsL[[ds]])) {
-      cacheL[[ds]] <- OmicsL[[ds]]
-    } else {
-      cacheL[[ds]] <- as.matrix(readRDS(OmicsL[[ds]]))
-    }
-    M <- cacheL[[ds]]
-    samples <- unique(rownames(M))
-    analytes <- unique(colnames(M))
-    stopifnot(! is.null(samples))
-    if (common) {
-      if (is.null(common.samples)) {
-        common.samples <- samples
+      if (is.numeric(OmicsL[[ds]])) {
+        cacheL[[ds]] <- OmicsL[[ds]]
       } else {
-        common.samples <- intersect(common.samples,samples)
+        cat(noquote("ERROR: matrices must be numeric.\n"))
+        okay <- FALSE
       }
+    } else if (is.data.frame(OmicsL[[ds]])) {
+      cat(noquote("ERROR: data frames are not allowed, convert to a numeric matrix.\n"))
+      okay <- FALSE
+    } else if (is.character(OmicsL[[ds]])) {
+      cacheL[[ds]] <- readRDS(OmicsL[[ds]])
+      if ((! is.matrix(cacheL[[ds]])) | (! is.numeric(cacheL[[ds]])))
+    } else {
+      okay <- FALSE
     }
-    stopifnot(! is.null(analytes))
-    analyte.L[[ds]] <- analytes
+    if (okay) {
+      M <- cacheL[[ds]]
+      samples <- unique(rownames(M))
+      analytes <- unique(colnames(M))
+      stopifnot(! is.null(samples))
+      if (common) {
+        if (is.null(common.samples)) {
+          common.samples <- samples
+        } else {
+          common.samples <- intersect(common.samples,samples)
+        }
+      }
+      stopifnot(! is.null(analytes))
+      analyte.L[[ds]] <- analytes
+    }
+  }
+  if (! okay) { # some of the input data was not understood
+    cat(noquote(paste(
+      "ERROR: provide a named list of internal and external datasets.\n",
+      "    internal datasets must be numerical matrices\n",
+      "    external datasets must be names of readable RDS files containing numerical matrices.\n")))
+    stopifnot(okay)
   }
 
   for (i in c(1:nSets)) {
