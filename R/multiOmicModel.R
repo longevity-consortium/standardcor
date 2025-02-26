@@ -39,7 +39,10 @@ multiOmicModel <- function(OmicsL, common = TRUE, min.samples = 5, annotate=FALS
       okay <- FALSE
     } else if (is.character(OmicsL[[ds]])) {
       cacheL[[ds]] <- readRDS(OmicsL[[ds]])
-      if ((! is.matrix(cacheL[[ds]])) | (! is.numeric(cacheL[[ds]])))
+      if ((! is.matrix(cacheL[[ds]])) | (! is.numeric(cacheL[[ds]]))) {
+        cat(noquote(paste("ERROR: file",OmicsL[[ds]],"must be an RDS format file containing a numeric matrix object.")))
+        okay <- FALSE
+      }
     } else {
       okay <- FALSE
     }
