@@ -17,6 +17,7 @@
 #' @export
 nullModelAdjacencyTable <- function(uniqueCor, v, scale = 2, bins=100) {
 
+  # return the position of x in the sorted array L
   quickSearch <- function(x,L,n) {
     lo <- 1
     hi <- n
@@ -42,20 +43,34 @@ nullModelAdjacencyTable <- function(uniqueCor, v, scale = 2, bins=100) {
     return(c(r.lo,r.hi))
   }
 
-  A <- sort(abs(uniqueCor))
-  n <- length(A)
-  IQR <- 2*qbeta(p=c(1,3)/4, v, v) - 1
+  ###
+  # Here is the logic for estimating the number of outliers (n.outliers) versus
+  # samples from the null model (n.bg):
+  #    n.obs   = n.bg     + n.outliers
+  #    outside = n.bg / 2 + n.outliers
+  # Therefore,
+  #    n.outliers = 2 (n.bg / 2 + n.outliers) - (n.bg + n.outliers)
+  #               = 2*outside - n.obs
+  ###
+  A       <- sort(abs(uniqueCor))
+  n.obs   <- length(A)
+  IQR     <- 2*qbeta(p=c(1,3)/4, v, v) - 1
   outside <- length(which(uniqueCor < IQR[1] | IQR[2] < uniqueCor))
-  est.outliers <- scale * (2*outside - n)
-  n.bg <- n - est.outliers
+  est.outliers <- scale * (2*outside - n.obs)
+  n.bg <- n.obs - est.outliers
+
   Bs   <- (c(1:bins)-1/2) / bins
   adj  <- rep(1,bins)
   for (i in c(1:bins)) {
-    k  <- mean(quickSearch(Bs[i], A, n))
-    P  <- 1 + n - k
-    k  <- round(k)
+    k <- round(mean(quickSearch(Bs[i], A, n.obs)))
     FP <- n.bg * pbeta((1 + A[k])/2, v, v, lower.tail=FALSE)
-    FN <- max(est.outliers - max(0, n - (k + FP)), 1)
+    if (signed) {
+      outside.high <- length(which(IQR[2] < uniqueCor))
+      est.high <- scale * (outside.high - n.bg / 4)
+      FN <- max(est.high - max(0, n.obs - (k + FP)), 1)
+    } else {
+      FN <- max(est.outliers - max(0, n.obs - 2*(k + FP)), 1)
+    }
     adj[i] <- FN / (FN + FP)
   }
   return(as.data.frame(cbind(x = c(-rev(Bs),Bs),y = c(rev(adj),adj))))
