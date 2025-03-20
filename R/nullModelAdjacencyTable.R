@@ -67,11 +67,12 @@ nullModelAdjacencyTable <- function(uniqueCor, v, scale = 2, signed=FALSE, bins=
     if (signed) {
       outside.high <- length(which(IQR[2] < uniqueCor))
       est.high <- scale * (outside.high - n.bg / 4)
-      FN <- max(est.high - max(0, n.obs - (k + FP)), 1)
+      FN <- max(est.high - max(0, n.obs - FP), 1)
+      adj[i] <- FN / (FN + FP)
     } else {
-      FN <- max(est.outliers - max(0, n.obs - 2*(k + FP)), 1)
+      FN <- max(est.outliers - max(0, n.obs - 2*FP), 1)
+      adj[i] <- FN / (FN + 2*FP)
     }
-    adj[i] <- FN / (FN + FP)
   }
   return(as.data.frame(cbind(x = c(-rev(Bs),Bs),y = c(rev(adj),adj))))
 }
