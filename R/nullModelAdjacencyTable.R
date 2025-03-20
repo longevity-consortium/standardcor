@@ -81,7 +81,7 @@ nullModelAdjacencyTable <- function(uniqueCor, v, scale = 2, signed=FALSE, bins=
       FN <- max(est.outliers - max(0, (n.obs-k) - FP), 1) # observations above Bs[i] - FP
       adj[i] <- FN / (FN + FP)
     }
-    AdjTable <- as.data.frame(cbind(x = c(-rev(Bs),Bs),y = c(rev(adj),adj)))) # Symmetric
+    AdjTable <- as.data.frame(cbind(x = c(-rev(Bs),Bs),y = c(rev(adj),adj))) # Symmetric
   }
   return(AdjTable)
 }
