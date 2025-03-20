@@ -59,22 +59,31 @@ nullModelAdjacencyTable <- function(uniqueCor, v, scale = 2, signed=FALSE, bins=
   est.outliers <- scale * (2*outside - n.obs)
   n.bg <- n.obs - est.outliers
 
-  Bs   <- (c(1:bins)-1/2) / bins
-  adj  <- rep(1,bins)
-  for (i in c(1:bins)) {
-    k <- round(mean(quickSearch(Bs[i], A, n.obs)))
-    FP <- n.bg * pbeta((1 + A[k])/2, v, v, lower.tail=FALSE)
-    if (signed) {
+  if (signed) { # Asymmetric, -1 < Bs[i] < 1
+    Bs   <- (c((1-bins):bins)-1/2) / bins
+    adj  <- rep(1,length(Bs))
+    for (i in c(1:length(Bs))) {
+      k <- round(mean(quickSearch(Bs[i], A, n.obs)))
+      FP <- n.bg * pbeta((1 + A[k])/2, v, v, lower.tail=FALSE)
       outside.high <- length(which(IQR[2] < uniqueCor))
       est.high <- scale * (outside.high - n.bg / 4)
-      FN <- max(est.high - max(0, n.obs - FP), 1)
+      FN <- max(est.high - max(0, (n.obs-k) - FP), 1) # observations above Bs[i] - FP
       adj[i] <- FN / (FN + FP)
-    } else {
-      FN <- max(est.outliers - max(0, n.obs - 2*FP), 1)
-      adj[i] <- FN / (FN + 2*FP)
     }
+    AdjTable <- as.data.frame(cbind(x = Bs,y = adj)) # Asymmetric
+
+  } else { # Symmetric, mirroring results for 0 < Bs[i] < 1
+    Bs   <- (c(1:bins)-1/2) / bins
+    adj  <- rep(1,length(Bs))
+    for (i in c(1:length(Bs))) {
+      k <- round(mean(quickSearch(Bs[i], A, n.obs)))
+      FP <- n.bg * pbeta((1 + A[k])/2, v, v, lower.tail=FALSE)
+      FN <- max(est.outliers - max(0, (n.obs-k) - FP), 1) # observations above Bs[i] - FP
+      adj[i] <- FN / (FN + FP)
+    }
+    AdjTable <- as.data.frame(cbind(x = c(-rev(Bs),Bs),y = c(rev(adj),adj)))) # Symmetric
   }
-  return(as.data.frame(cbind(x = c(-rev(Bs),Bs),y = c(rev(adj),adj))))
+  return(AdjTable)
 }
 
 # end of nullModelAdjacencyTable.R
