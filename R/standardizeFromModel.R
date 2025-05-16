@@ -58,6 +58,7 @@ standardizeFromModel <- function(modelL, analyteL, v.std = 32) {
       shape <- modelL[[ds.i]][[ds.j]][['shape']]
       stopifnot(length(shape) < 3)
       # print(paste("shape",shape,collapse=" "))
+      Zc <- matrix(0,nrow=length(Analytes.i),ncol=length(Analytes.j))
       if (1 == length(shape)) {
         if ('none' == shape) { # Skip standardization
           Zc <- Zij[Analytes.i,Analytes.j]
