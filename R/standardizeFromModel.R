@@ -42,10 +42,10 @@ standardizeFromModel <- function(modelL, analyteL, v.std = 32) {
       dataSpec <- modelL[[ ds.i ]][[ ds.j ]][[ 'cor' ]]
       # print(paste("cor is a",class(dataSpec),collapse=","))
       if (is.matrix(dataSpec)) {
-        print(paste("matrix",paste(dim(dataSpec),collapse=" x ")))
+        # print(paste("matrix",paste(dim(dataSpec),collapse=" x ")))
         Zij <- dataSpec
       } else {
-        print(paste('cor',dataSpec))
+        # print(paste('cor',dataSpec))
         if (! dataSpec %in% names(cacheL)) {
           cacheL[[dataSpec]] <- as.matrix(readRDS(dataSpec))
         }
