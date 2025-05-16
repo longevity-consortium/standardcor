@@ -22,14 +22,14 @@ standardizeFromModel <- function(modelL, analyteL, v.std = 32) {
   Z <- matrix(0, nrow=N, ncol=N)
   rownames(Z) <- Analytes
   colnames(Z) <- Analytes
-  # print(paste("Standardized matrix will be",N,"x",N))
+  print(paste("Standardized matrix will be",N,"x",N))
   for (ds.i in names(modelL)) {
-    # print(ds.i)
+    print(ds.i)
     Analytes.i <- analyteL[[ds.i]]
     stopifnot(length(intersect(Analytes,Analytes.i)) == length(Analytes.i))
 
     for (ds.j in names(modelL[[ds.i]])) {
-      # print(paste(ds.i, ds.j))
+      print(paste(ds.i, ds.j))
       Analytes.j <- analyteL[[ds.j]]
       stopifnot(length(intersect(Analytes,Analytes.j)) == length(Analytes.j))
 
@@ -40,10 +40,12 @@ standardizeFromModel <- function(modelL, analyteL, v.std = 32) {
       #  -- the analytes do not need to be all of the entries in the matrix
       ###
       dataSpec <- modelL[[ ds.i ]][[ ds.j ]][[ 'cor' ]]
+      print(paste("cor is a",class(dataSpec),collapse=","))
       if (is.matrix(dataSpec)) {
+        print("matrix",paste(dim(dataSpec),collapse=" x "))
         Zij <- dataSpec
       } else {
-        # print(paste('cor',dataSpec))
+        print(paste('cor',dataSpec))
         if (! dataSpec %in% names(cacheL)) {
           cacheL[[dataSpec]] <- as.matrix(readRDS(dataSpec))
         }
