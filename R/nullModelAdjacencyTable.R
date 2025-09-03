@@ -15,7 +15,7 @@
 #' @return A data frame with 2 columns, x and y, tabulating y as a function of x with -1 <= x <= 1 and 0 <= y <= 1.
 #'
 #' @export
-nullModelAdjacencyTable <- function(uniqueCor, v, scale = 2, signed=FALSE, bins=100) {
+nullModelAdjacencyTable <- function(uniqueCor, v, scale = 1, signed=FALSE, bins=100) {
 
   # return the position of x in the sorted array L
   quickSearch <- function(x,L,n) {
