@@ -11,7 +11,7 @@
 #'
 #' @param modelL A list-of-lists structure providing two inputs for each pair of 'Omics datasets A and B: a matrix modelL[[A]][[B]][['cor']] of raw Spearman correlation values, and shape parameters modelL[[A]][[B]][['shape']] == c(v,w) specifying a null model (1+r_raw)/2 ~ Beta(v,w) for the raw correlations.
 #' @param analtyeL For each 'Omics dataset A, analyteL[[A]] lists the analytes provided by dataset A. These analyte identifiers are required to be unique across all datasets.
-#' @param v.std 
+#' @param v.std Specifies that the standardized correlations will have null distribution rho.std ~ 2 Beta(v.std, v.std) - 1. So long as the same v.std is used when standardizing correlations as interpreting the standardized correlations, the exact value of v.std theoretically has no effect on the results. In a practical sense, v.std determines the "resolution" of the standardized correlation values across the range -1..1; a large value will confine the high-density region to a narrow band around zero, and a low value will spread the high density region across nearly the entire range. To provide room for discrimination of both high-density and low-density regions of the null distribution, we recommend a value in the range 20 <= v.std <= 40.
 #' @return A symmetric matrix containing standardized Spearman correlation coefficients for every pair of analytes across all datasets.
 #'
 #' @export
