@@ -19,15 +19,15 @@
 #' (squared) unsigned version.
 #' 
 #' @param r A matrix of correlation coefficients
-#' @param type The type of distance to calculate: 'unsigned' (Default) or 'signed'. The unsigned squared distance of independent samples is 1, and perfectly correlated and anticorrelated samples reach distance 0. For signed squared distances, perfectly anticorrelated samples have distance 1, uncorrelated samples have distance 1/2, and only perfectly correlated samples reach distance 0.
+#' @param signed If TRUE, computes distance from correlation (r) instead of association (|r|). Defaults to FALSE.
 #' @return A numeric (matrix, array, or scalar, depending on r) of distances
 #'
 #' @export
-squaredEuclidean <- function(r, type="unsigned") {
-  if (type == "unsigned") {
-    d <- 1 - abs(r)  # naturally 0 to 1
-  } else {
+squaredEuclidean <- function(r, signed=FALSE) {
+  if (signed) {
     d <- (1 - r) / 2 # naturally 0 to 2, scaled down to 0 to 1
+  } else {
+    d <- 1 - abs(r)  # naturally 0 to 1
   }
   return(d)
 }

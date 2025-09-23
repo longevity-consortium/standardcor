@@ -10,8 +10,10 @@
 #' we estimate that the number of false negatives equals the number of false positives.
 #'
 #' @param uniqueCor A numeric object containing the full set of non-self, unique correlation values to consider. If the analyte-analyte correlation matrix is Z, the non-self, unique correlations can be found using Z[row(Z) < col(Z)].
-#' @param v The parameter for the null model of random correlations, Pr{r | null model} = Pr{x <= Beta(v, v) | x = (1+r)/2}.
+#' @param v The parameter for the null model of random correlations, Pr{r | null model} = Pr{x <= Beta(v, v) | x = (1+r)/2}. If the correlations are standardized, v must be the v.std specified when the correlations were standardized.
 #' @param scale Center of the soft threshold relative to the estimated number of correlations beyond those that fit the null model. Defaults to 1; higher values increase the connectivity of the network model, lower values decrease it.
+#' @param signed If TRUE, computes distance from correlation (r) instead of association (|r|). Defaults to FALSE.
+#' @param bins Number of entries in the adjacency table; values will be linearly interpolated between entries.
 #' @return A data frame with 2 columns, x and y, tabulating y as a function of x with -1 <= x <= 1 and 0 <= y <= 1.
 #'
 #' @export

@@ -14,17 +14,17 @@
 #' @param v The first shape parameter of a 2-parameter Beta distribution
 #' @param w The second shape parameter of a 2-parameter Beta distribution
 #' @param mix The relative weight of squared Euclidean distance to the Beta distance penalty. When mix = 0, only the Beta distance is used and any correlation significantly beyond the null distribution is essentially at zero distance. When mix = 1, the only correlation corresponding to zero distance is +/-1, and the Beta distance acts as a penalty on top of the squared Euclidean distance. While intermediate values are allowed, they are not recommended.
-#' @param unsigned If TRUE (the default), computes distance from association (|r|) instead of correlation (r).
+#' @param signed If TRUE, computes distance from correlation (r) instead of association (|r|). Defaults to FALSE.
 #' @return A numeric object containing the dimensionally-adjusted distances
 #'
 #' @export
-betaDistance <- function(r, v=1, w=1, mix=1, unsigned=TRUE) {
-  if (unsigned) {
-    d = dbeta((1+abs(r))/2, v, v) 
-    d = (d + mix*(1-abs(r))) / (dbeta(1/2, v, v) + mix)
-  } else {
+betaDistance <- function(r, v=1, w=1, mix=1, signed=FALSE) {
+  if (signed) {
     d = pbeta((1+r)/2, v, w, lower.tail = FALSE)
     d = (d + mix*(1-r)/2) / (1 + mix)
+  } else {
+    d = dbeta((1+abs(r))/2, v, v) 
+    d = (d + mix*(1-abs(r))) / (dbeta(1/2, v, v) + mix)
   }
   return(d)
 }

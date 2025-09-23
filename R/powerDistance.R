@@ -6,14 +6,14 @@
 #'
 #' @param r Correlation coefficient(s), -1 <= r <= 1.
 #' @param k The power parameter. 
-#' @param unsigned If TRUE, this function computes distances based on unsigned associations (|r|), otherwise it computes distances based on signed correlations (r).
+#' @param signed If TRUE, computes distance from correlation (r) instead of association (|r|). Defaults to FALSE.
 #' @return A matrix of distances
 #' @export
-powerDistance <- function(r, k, unsigned=TRUE) {
-  if (unsigned) {
-    d = 1 - abs(r)^k
-  } else {
+powerDistance <- function(r, k, signed=FALSE) {
+  if (signed) {
     d = ((1 - r)/2)^k
+  } else {
+    d = 1 - abs(r)^k
   }
   return(d)
 }

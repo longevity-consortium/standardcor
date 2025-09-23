@@ -5,25 +5,25 @@
 #' @param r Correlation coefficient(s)
 #' @param alpha The alpha parameter of the sigmoid function (the log of the slope at tau0) 
 #' @param tau0 The tau0 parameter of the sigmoid function (the correlation value corresponding to distance = 0.5)
-#' @param type The interpretation of the correlation coefficient signed (correlation) or unsigned (association, default). Any value other than "unsigned" is interpreted as signed.
+#' @param signed If TRUE, computes distance from correlation (r) instead of association (|r|). Defaults to FALSE.
 #' @param stretch If TRUE, the distances are rescaled to the range 0..1. (default: stretch=FALSE)
 #' @return The distance(s) corresponding to the correlation coefficient(s)
 #'
 #' @export
-sigmoidDistance <- function(r, alpha, tau0, unsigned=TRUE, stretch=FALSE) {
+sigmoidDistance <- function(r, alpha, tau0, signed=FALSE, stretch=FALSE) {
   sigmoid <- function(r,alpha,tau0) { return (1 - (1 / (1 + exp(-alpha*(r - tau0))))) }
-  if (unsigned) {
-    s <- sigmoid(abs(r), alpha, tau0)
-  } else {
+  if (signed) {
     s <- sigmoid( r, alpha, tau0)
+  } else {
+    s <- sigmoid(abs(r), alpha, tau0)
   }
   if (stretch) {
-    if (unsigned) {
-      s.min <- sigmoid( 1 , alpha, tau0)
-      s.max <- sigmoid( 0 , alpha, tau0)
-    } else {
+    if (signed) {
       s.min <- sigmoid( 1, alpha, tau0)
       s.max <- sigmoid(-1, alpha, tau0)
+    } else {
+      s.min <- sigmoid( 1 , alpha, tau0)
+      s.max <- sigmoid( 0 , alpha, tau0)
     }
     if (abs(s.max - s.min) > 1.0e-7) {
       s <- (s - s.min) / (s.max - s.min)
