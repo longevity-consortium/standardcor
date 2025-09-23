@@ -18,13 +18,13 @@
 #' @return A numeric object containing the dimensionally-adjusted distances
 #'
 #' @export
-betaDistance <- function(r, v=1, w=1, mix=1, unsigned=TRUE) {
-  if (unsigned) {
-    d = dbeta((1+abs(r))/2, v, v) 
-    d = (d + mix*(1-abs(r))) / (dbeta(1/2, v, v) + mix)
-  } else {
+betaDistance <- function(r, v=1, w=1, mix=1, signed=FALSE) {
+  if (signed) {
     d = pbeta((1+r)/2, v, w, lower.tail = FALSE)
     d = (d + mix*(1-r)/2) / (1 + mix)
+  } else {
+    d = dbeta((1+abs(r))/2, v, v) 
+    d = (d + mix*(1-abs(r))) / (dbeta(1/2, v, v) + mix)
   }
   return(d)
 }
