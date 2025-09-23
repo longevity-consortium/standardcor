@@ -82,12 +82,12 @@ estimateShape <- function(corSet, left = 0, right = 0, outlier.f=0, plot=FALSE, 
   mu <- max(1.0e-7, min(mean(x[good]), 1-1.0e-7))
   s2 <- mad(x[good])^2
   z3 <- mu*(1-mu)/s2 - 1
-  v3   <-   mu  * z3 + right
-  w3   <- (1-mu)* z3 + left
+  v3   <-   mu  * z3
+  w3   <- (1-mu)* z3
 
   # Final estimate
-  v <- (v2 + v3) / 2
-  w <- (w2 + w3) / 2
+  v <- (v2 + v3) / 2 + right
+  w <- (w2 + w3) / 2 + left
 
   if (plot) {
     if (is.null(fine)) {
