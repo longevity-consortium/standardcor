@@ -23,11 +23,11 @@
 #' @return A numeric (matrix, array, or scalar, depending on r) of distances
 #'
 #' @export
-squaredEuclidean <- function(r, type="unsigned") {
-  if (type == "unsigned") {
-    d <- 1 - abs(r)  # naturally 0 to 1
-  } else {
+squaredEuclidean <- function(r, signed-FALSE) {
+  if (signed) {
     d <- (1 - r) / 2 # naturally 0 to 2, scaled down to 0 to 1
+  } else {
+    d <- 1 - abs(r)  # naturally 0 to 1
   }
   return(d)
 }
