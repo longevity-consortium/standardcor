@@ -87,8 +87,8 @@ estimateShape2 <- function(corSet, middle = 0, samples = 0, outlier.f=0, plot=FA
   w3   <- (1-mu)* z3
 
   # Final estimate
-  left  <- samples * (1+middle)/2
-  right <- samples * (1-middle)/2
+  left  <- samples * (1 - middle)/2
+  right <- samples * (1 + middle)/2
   v <- (v2 + v3) / 2 + right
   w <- (w2 + w3) / 2 + left
 
