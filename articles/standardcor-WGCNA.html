@@ -85,11 +85,11 @@
 <span><span class="co">#&gt;     cor</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/warning.html" class="external-link">suppressWarnings</a></span><span class="op">(</span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org" class="external-link">tidyverse</a></span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; ── <span style="font-weight: bold;">Attaching core tidyverse packages</span> ──────────────────────── tidyverse 2.0.0 ──</span></span>
-<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">dplyr    </span> 1.1.4     <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">readr    </span> 2.1.5</span></span>
-<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">forcats  </span> 1.0.0     <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">stringr  </span> 1.5.2</span></span>
-<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">ggplot2  </span> 4.0.0     <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">tibble   </span> 3.3.0</span></span>
+<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">dplyr    </span> 1.1.4     <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">readr    </span> 2.1.6</span></span>
+<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">forcats  </span> 1.0.1     <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">stringr  </span> 1.6.0</span></span>
+<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">ggplot2  </span> 4.0.1     <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">tibble   </span> 3.3.0</span></span>
 <span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">lubridate</span> 1.9.4     <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">tidyr    </span> 1.3.1</span></span>
-<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">purrr    </span> 1.1.0</span></span>
+<span><span class="co">#&gt; <span style="color: #00BB00;">✔</span> <span style="color: #0000BB;">purrr    </span> 1.2.0</span></span>
 <span><span class="co">#&gt; ── <span style="font-weight: bold;">Conflicts</span> ────────────────────────────────────────── tidyverse_conflicts() ──</span></span>
 <span><span class="co">#&gt; <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">tidyr</span>::<span style="color: #00BB00;">expand()</span> masks <span style="color: #0000BB;">Matrix</span>::expand()</span></span>
 <span><span class="co">#&gt; <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">filter()</span> masks <span style="color: #0000BB;">stats</span>::filter()</span></span>
@@ -290,7 +290,7 @@ from mean and std dev for each omic.</p>
 <span></span>
 <span><span class="va">r</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="va">fine</span><span class="op">:</span><span class="va">fine</span><span class="op">)</span><span class="op">/</span><span class="va">fine</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/lines.html" class="external-link">lines</a></span><span class="op">(</span><span class="va">r</span>, <span class="fu"><a href="https://rdrr.io/r/stats/Beta.html" class="external-link">dbeta</a></span><span class="op">(</span><span class="op">(</span><span class="fl">1</span><span class="op">+</span><span class="va">r</span><span class="op">)</span><span class="op">/</span><span class="fl">2</span>, <span class="va">v.pp</span>, <span class="va">w.pp</span><span class="op">)</span><span class="op">/</span><span class="fl">2</span>, lwd<span class="op">=</span><span class="fl">3</span>, col<span class="op">=</span><span class="st">"MediumBlue"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="standardcor-WGCNA_files/figure-html/unnamed-chunk-10-1.png" width="700"></p>
+<p><img src="standardcor-WGCNA_files/figure-html/unnamed-chunk-10-1.png" class="r-plt" width="700"></p>
 <p>The blue line shows the model distrubtion. We can see it fits the
 background distribution. We will repeat this process for all other
 omics</p>
@@ -312,7 +312,7 @@ omics</p>
 <span></span>
 <span><span class="va">r</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="va">fine</span><span class="op">:</span><span class="va">fine</span><span class="op">)</span><span class="op">/</span><span class="va">fine</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/lines.html" class="external-link">lines</a></span><span class="op">(</span><span class="va">r</span>, <span class="fu"><a href="https://rdrr.io/r/stats/Beta.html" class="external-link">dbeta</a></span><span class="op">(</span><span class="op">(</span><span class="fl">1</span><span class="op">+</span><span class="va">r</span><span class="op">)</span><span class="op">/</span><span class="fl">2</span>, <span class="va">v.mm</span>, <span class="va">w.mm</span><span class="op">)</span><span class="op">/</span><span class="fl">2</span>, lwd<span class="op">=</span><span class="fl">3</span>, col<span class="op">=</span><span class="st">"MediumBlue"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="standardcor-WGCNA_files/figure-html/unnamed-chunk-11-1.png" width="700"></p>
+<p><img src="standardcor-WGCNA_files/figure-html/unnamed-chunk-11-1.png" class="r-plt" width="700"></p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">### Lipid - Lipid</span></span>
 <span><span class="va">Z.unique</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/vector.html" class="external-link">as.vector</a></span><span class="op">(</span><span class="va">Z.ll</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/row.html" class="external-link">row</a></span><span class="op">(</span><span class="va">Z.ll</span><span class="op">)</span> <span class="op">&lt;</span> <span class="fu"><a href="https://rdrr.io/r/base/col.html" class="external-link">col</a></span><span class="op">(</span><span class="va">Z.ll</span><span class="op">)</span><span class="op">]</span><span class="op">)</span></span>
@@ -331,7 +331,7 @@ omics</p>
 <span></span>
 <span><span class="va">r</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="va">fine</span><span class="op">:</span><span class="va">fine</span><span class="op">)</span><span class="op">/</span><span class="va">fine</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/lines.html" class="external-link">lines</a></span><span class="op">(</span><span class="va">r</span>, <span class="fu"><a href="https://rdrr.io/r/stats/Beta.html" class="external-link">dbeta</a></span><span class="op">(</span><span class="op">(</span><span class="fl">1</span><span class="op">+</span><span class="va">r</span><span class="op">)</span><span class="op">/</span><span class="fl">2</span>, <span class="va">v.ll</span>, <span class="va">w.ll</span><span class="op">)</span><span class="op">/</span><span class="fl">2</span>, lwd<span class="op">=</span><span class="fl">3</span>, col<span class="op">=</span><span class="st">"MediumBlue"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="standardcor-WGCNA_files/figure-html/unnamed-chunk-12-1.png" width="700"></p>
+<p><img src="standardcor-WGCNA_files/figure-html/unnamed-chunk-12-1.png" class="r-plt" width="700"></p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">### Amine - Amine</span></span>
 <span><span class="va">Z.unique</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/vector.html" class="external-link">as.vector</a></span><span class="op">(</span><span class="va">Z.aa</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/row.html" class="external-link">row</a></span><span class="op">(</span><span class="va">Z.aa</span><span class="op">)</span> <span class="op">&lt;</span> <span class="fu"><a href="https://rdrr.io/r/base/col.html" class="external-link">col</a></span><span class="op">(</span><span class="va">Z.aa</span><span class="op">)</span><span class="op">]</span><span class="op">)</span></span>
@@ -350,7 +350,7 @@ omics</p>
 <span></span>
 <span><span class="va">r</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="va">fine</span><span class="op">:</span><span class="va">fine</span><span class="op">)</span><span class="op">/</span><span class="va">fine</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/lines.html" class="external-link">lines</a></span><span class="op">(</span><span class="va">r</span>, <span class="fu"><a href="https://rdrr.io/r/stats/Beta.html" class="external-link">dbeta</a></span><span class="op">(</span><span class="op">(</span><span class="fl">1</span><span class="op">+</span><span class="va">r</span><span class="op">)</span><span class="op">/</span><span class="fl">2</span>, <span class="va">vw</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, <span class="va">vw</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span><span class="op">/</span><span class="fl">2</span>, lwd<span class="op">=</span><span class="fl">3</span>, col<span class="op">=</span><span class="st">"MediumBlue"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="standardcor-WGCNA_files/figure-html/unnamed-chunk-13-1.png" width="700"></p>
+<p><img src="standardcor-WGCNA_files/figure-html/unnamed-chunk-13-1.png" class="r-plt" width="700"></p>
 </div>
 </div>
 </div>
@@ -380,7 +380,7 @@ combinations. consider.</p>
 <span></span>
 <span><span class="va">r</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="va">fine</span><span class="op">:</span><span class="va">fine</span><span class="op">)</span><span class="op">/</span><span class="va">fine</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/lines.html" class="external-link">lines</a></span><span class="op">(</span><span class="va">r</span>, <span class="fu"><a href="https://rdrr.io/r/stats/Beta.html" class="external-link">dbeta</a></span><span class="op">(</span><span class="op">(</span><span class="fl">1</span><span class="op">+</span><span class="va">r</span><span class="op">)</span><span class="op">/</span><span class="fl">2</span>, <span class="va">vw</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, <span class="va">vw</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span><span class="op">/</span><span class="fl">2</span>, lwd<span class="op">=</span><span class="fl">3</span>, col<span class="op">=</span><span class="st">"MediumBlue"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="standardcor-WGCNA_files/figure-html/unnamed-chunk-14-1.png" width="700"></p>
+<p><img src="standardcor-WGCNA_files/figure-html/unnamed-chunk-14-1.png" class="r-plt" width="700"></p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Modeling cross-category correlations: protein-lipid</span></span>
 <span><span class="va">Z.unique</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/vector.html" class="external-link">as.vector</a></span><span class="op">(</span><span class="va">Z.pl</span><span class="op">)</span> <span class="co"># there are no self-comparisons, nor are there repeats due to symmetry</span></span>
@@ -401,7 +401,7 @@ combinations. consider.</p>
 <span></span>
 <span><span class="va">r</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="va">fine</span><span class="op">:</span><span class="va">fine</span><span class="op">)</span><span class="op">/</span><span class="va">fine</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/lines.html" class="external-link">lines</a></span><span class="op">(</span><span class="va">r</span>, <span class="fu"><a href="https://rdrr.io/r/stats/Beta.html" class="external-link">dbeta</a></span><span class="op">(</span><span class="op">(</span><span class="fl">1</span><span class="op">+</span><span class="va">r</span><span class="op">)</span><span class="op">/</span><span class="fl">2</span>, <span class="va">vw</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, <span class="va">vw</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span><span class="op">/</span><span class="fl">2</span>, lwd<span class="op">=</span><span class="fl">3</span>, col<span class="op">=</span><span class="st">"MediumBlue"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="standardcor-WGCNA_files/figure-html/unnamed-chunk-15-1.png" width="700"></p>
+<p><img src="standardcor-WGCNA_files/figure-html/unnamed-chunk-15-1.png" class="r-plt" width="700"></p>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Modeling cross-category correlations: protein-amine</span></span>
 <span><span class="va">Z.unique</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/vector.html" class="external-link">as.vector</a></span><span class="op">(</span><span class="va">Z.pa</span><span class="op">)</span> <span class="co"># there are no self-comparisons, nor are there repeats due to symmetry</span></span>
@@ -422,7 +422,7 @@ combinations. consider.</p>
 <span></span>
 <span><span class="va">r</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="va">fine</span><span class="op">:</span><span class="va">fine</span><span class="op">)</span><span class="op">/</span><span class="va">fine</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/lines.html" class="external-link">lines</a></span><span class="op">(</span><span class="va">r</span>, <span class="fu"><a href="https://rdrr.io/r/stats/Beta.html" class="external-link">dbeta</a></span><span class="op">(</span><span class="op">(</span><span class="fl">1</span><span class="op">+</span><span class="va">r</span><span class="op">)</span><span class="op">/</span><span class="fl">2</span>, <span class="va">vw</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, <span class="va">vw</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span><span class="op">/</span><span class="fl">2</span>, lwd<span class="op">=</span><span class="fl">3</span>, col<span class="op">=</span><span class="st">"MediumBlue"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="standardcor-WGCNA_files/figure-html/unnamed-chunk-16-1.png" width="700"></p>
+<p><img src="standardcor-WGCNA_files/figure-html/unnamed-chunk-16-1.png" class="r-plt" width="700"></p>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Modeling cross-category correlations: primary-lipid</span></span>
 <span><span class="va">Z.unique</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/vector.html" class="external-link">as.vector</a></span><span class="op">(</span><span class="va">Z.ml</span><span class="op">)</span> <span class="co"># there are no self-comparisons, nor are there repeats due to symmetry</span></span>
@@ -443,7 +443,7 @@ combinations. consider.</p>
 <span></span>
 <span><span class="va">r</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="va">fine</span><span class="op">:</span><span class="va">fine</span><span class="op">)</span><span class="op">/</span><span class="va">fine</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/lines.html" class="external-link">lines</a></span><span class="op">(</span><span class="va">r</span>, <span class="fu"><a href="https://rdrr.io/r/stats/Beta.html" class="external-link">dbeta</a></span><span class="op">(</span><span class="op">(</span><span class="fl">1</span><span class="op">+</span><span class="va">r</span><span class="op">)</span><span class="op">/</span><span class="fl">2</span>, <span class="va">vw</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, <span class="va">vw</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span><span class="op">/</span><span class="fl">2</span>, lwd<span class="op">=</span><span class="fl">3</span>, col<span class="op">=</span><span class="st">"MediumBlue"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="standardcor-WGCNA_files/figure-html/unnamed-chunk-17-1.png" width="700"></p>
+<p><img src="standardcor-WGCNA_files/figure-html/unnamed-chunk-17-1.png" class="r-plt" width="700"></p>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Modeling cross-category correlations: primary-amine</span></span>
 <span><span class="va">Z.unique</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/vector.html" class="external-link">as.vector</a></span><span class="op">(</span><span class="va">Z.ma</span><span class="op">)</span> <span class="co"># there are no self-comparisons, nor are there repeats due to symmetry</span></span>
@@ -464,7 +464,7 @@ combinations. consider.</p>
 <span></span>
 <span><span class="va">r</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="va">fine</span><span class="op">:</span><span class="va">fine</span><span class="op">)</span><span class="op">/</span><span class="va">fine</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/lines.html" class="external-link">lines</a></span><span class="op">(</span><span class="va">r</span>, <span class="fu"><a href="https://rdrr.io/r/stats/Beta.html" class="external-link">dbeta</a></span><span class="op">(</span><span class="op">(</span><span class="fl">1</span><span class="op">+</span><span class="va">r</span><span class="op">)</span><span class="op">/</span><span class="fl">2</span>, <span class="va">vw</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, <span class="va">vw</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span><span class="op">/</span><span class="fl">2</span>, lwd<span class="op">=</span><span class="fl">3</span>, col<span class="op">=</span><span class="st">"MediumBlue"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="standardcor-WGCNA_files/figure-html/unnamed-chunk-18-1.png" width="700"></p>
+<p><img src="standardcor-WGCNA_files/figure-html/unnamed-chunk-18-1.png" class="r-plt" width="700"></p>
 <div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Modeling cross-category correlations: lipid-amine</span></span>
 <span><span class="va">Z.unique</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/vector.html" class="external-link">as.vector</a></span><span class="op">(</span><span class="va">Z.la</span><span class="op">)</span> <span class="co"># there are no self-comparisons, nor are there repeats due to symmetry</span></span>
@@ -485,7 +485,7 @@ combinations. consider.</p>
 <span></span>
 <span><span class="va">r</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="va">fine</span><span class="op">:</span><span class="va">fine</span><span class="op">)</span><span class="op">/</span><span class="va">fine</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/lines.html" class="external-link">lines</a></span><span class="op">(</span><span class="va">r</span>, <span class="fu"><a href="https://rdrr.io/r/stats/Beta.html" class="external-link">dbeta</a></span><span class="op">(</span><span class="op">(</span><span class="fl">1</span><span class="op">+</span><span class="va">r</span><span class="op">)</span><span class="op">/</span><span class="fl">2</span>, <span class="va">vw</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, <span class="va">vw</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span><span class="op">/</span><span class="fl">2</span>, lwd<span class="op">=</span><span class="fl">3</span>, col<span class="op">=</span><span class="st">"MediumBlue"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="standardcor-WGCNA_files/figure-html/unnamed-chunk-19-1.png" width="700"></p>
+<p><img src="standardcor-WGCNA_files/figure-html/unnamed-chunk-19-1.png" class="r-plt" width="700"></p>
 <div class="section level3">
 <h3 id="merging-correlations-from-disparate-data-subsets">Merging correlations from disparate data subsets<a class="anchor" aria-label="anchor" href="#merging-correlations-from-disparate-data-subsets"></a>
 </h3>
@@ -619,7 +619,7 @@ observations.</p>
 <span><span class="va">r</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="va">fine</span><span class="op">:</span><span class="va">fine</span><span class="op">)</span><span class="op">/</span><span class="va">fine</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/lines.html" class="external-link">lines</a></span><span class="op">(</span><span class="va">r</span>, <span class="fu"><a href="https://rdrr.io/r/stats/Beta.html" class="external-link">dbeta</a></span><span class="op">(</span><span class="op">(</span><span class="fl">1</span><span class="op">+</span><span class="va">r</span><span class="op">)</span><span class="op">/</span><span class="fl">2</span>, <span class="va">nu.std</span>, <span class="va">nu.std</span><span class="op">)</span><span class="op">/</span><span class="fl">2</span>, lwd<span class="op">=</span><span class="fl">3</span>, col<span class="op">=</span><span class="st">"orangered"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/lines.html" class="external-link">lines</a></span><span class="op">(</span><span class="va">r</span>, <span class="fu"><a href="https://rdrr.io/r/stats/Beta.html" class="external-link">dbeta</a></span><span class="op">(</span><span class="op">(</span><span class="fl">1</span><span class="op">+</span><span class="va">r</span><span class="op">)</span><span class="op">/</span><span class="fl">2</span>, <span class="va">v.c</span>, <span class="va">w.c</span><span class="op">)</span><span class="op">/</span><span class="fl">2</span>, lwd<span class="op">=</span><span class="fl">3</span>, col<span class="op">=</span><span class="st">"MediumBlue"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="standardcor-WGCNA_files/figure-html/unnamed-chunk-23-1.png" width="700"></p>
+<p><img src="standardcor-WGCNA_files/figure-html/unnamed-chunk-23-1.png" class="r-plt" width="700"></p>
 <p>These are now standardized correlations. The mean and variance of
 this distribution suggest a model (shown in blue) that fits less well
 than the standardizing model (in orange); this is a consequence of the
@@ -686,7 +686,7 @@ can be found here: <a href="https://peterlangfelder.com/2018/11/25/wgcna-resourc
 <span>     xlab<span class="op">=</span><span class="st">"Soft Threshold (power)"</span>, ylab<span class="op">=</span><span class="st">"Mean Connectivity"</span>, type<span class="op">=</span><span class="st">"n"</span>,</span>
 <span>     main<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="st">"Mean connectivity"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/text.html" class="external-link">text</a></span><span class="op">(</span><span class="va">sft</span><span class="op">$</span><span class="va">fitIndices</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span>, <span class="va">sft</span><span class="op">$</span><span class="va">fitIndices</span><span class="op">[</span>,<span class="fl">5</span><span class="op">]</span>, labels<span class="op">=</span><span class="va">powers</span>, cex<span class="op">=</span><span class="va">cex1</span>, col<span class="op">=</span><span class="st">"black"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="standardcor-WGCNA_files/figure-html/unnamed-chunk-25-1.png" width="700"></p>
+<p><img src="standardcor-WGCNA_files/figure-html/unnamed-chunk-25-1.png" class="r-plt" width="700"></p>
 <div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_c.html" class="external-link">str_c</a></span><span class="op">(</span><span class="st">"Estimated soft-thresholding power: "</span>, <span class="va">sft</span><span class="op">$</span><span class="va">powerEstimate</span><span class="op">)</span><span class="op">)</span></span>
@@ -726,7 +726,7 @@ can be found here: <a href="https://peterlangfelder.com/2018/11/25/wgcna-resourc
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">geneTree</span>, xlab<span class="op">=</span><span class="st">""</span>, sub<span class="op">=</span><span class="st">""</span>, main <span class="op">=</span> <span class="st">"Gene clustering on TOM-based dissimilarity"</span>,</span>
 <span>    labels <span class="op">=</span> <span class="cn">FALSE</span>, hang <span class="op">=</span> <span class="fl">0.04</span><span class="op">)</span>;</span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/box.html" class="external-link">box</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<p><img src="standardcor-WGCNA_files/figure-html/unnamed-chunk-27-1.png" width="700"></p>
+<p><img src="standardcor-WGCNA_files/figure-html/unnamed-chunk-27-1.png" class="r-plt" width="700"></p>
 <div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#Larger modules can be easier to interpret, so we set the minimum module size relatively high</span></span>
 <span><span class="va">minModuleSize</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html" class="external-link">max</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">20</span>, <span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">ncol</a></span><span class="op">(</span><span class="va">all_df</span><span class="op">)</span><span class="op">/</span><span class="fl">200</span>, digits<span class="op">=</span><span class="fl">0</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
@@ -765,7 +765,7 @@ can be found here: <a href="https://peterlangfelder.com/2018/11/25/wgcna-resourc
 <span>                    dendroLabels<span class="op">=</span><span class="cn">FALSE</span>, hang<span class="op">=</span><span class="fl">0.03</span>,</span>
 <span>                    addGuide<span class="op">=</span><span class="cn">TRUE</span>, guideHang<span class="op">=</span><span class="fl">0.05</span>,</span>
 <span>                    main<span class="op">=</span><span class="st">"Gene dendrogram and module colors"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="standardcor-WGCNA_files/figure-html/unnamed-chunk-28-1.png" width="700"></p>
+<p><img src="standardcor-WGCNA_files/figure-html/unnamed-chunk-28-1.png" class="r-plt" width="700"></p>
 <div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#Calculate eigengenes</span></span>
 <span><span class="va">MEList</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/WGCNA/man/moduleEigengenes.html" class="external-link">moduleEigengenes</a></span><span class="op">(</span><span class="va">all_df</span>, colors<span class="op">=</span><span class="va">dynamicColors</span>, impute<span class="op">=</span><span class="cn">TRUE</span>, nPC<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span>
@@ -814,7 +814,7 @@ can be found here: <a href="https://peterlangfelder.com/2018/11/25/wgcna-resourc
 <span>     xlab<span class="op">=</span><span class="st">""</span>, sub<span class="op">=</span><span class="st">""</span><span class="op">)</span></span>
 <span><span class="va">MEDissThres</span> <span class="op">&lt;-</span> <span class="fl">0.3</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html" class="external-link">abline</a></span><span class="op">(</span>h<span class="op">=</span><span class="va">MEDissThres</span>, col<span class="op">=</span><span class="st">"red"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="standardcor-WGCNA_files/figure-html/unnamed-chunk-29-1.png" width="700"></p>
+<p><img src="standardcor-WGCNA_files/figure-html/unnamed-chunk-29-1.png" class="r-plt" width="700"></p>
 <div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#Call an automatic merging function</span></span>
 <span><span class="va">merge</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/WGCNA/man/mergeCloseModules.html" class="external-link">mergeCloseModules</a></span><span class="op">(</span><span class="va">all_df</span>, <span class="va">dynamicColors</span>, cutHeight<span class="op">=</span><span class="va">MEDissThres</span>, verbose<span class="op">=</span><span class="fl">0</span><span class="op">)</span></span>
@@ -840,7 +840,7 @@ can be found here: <a href="https://peterlangfelder.com/2018/11/25/wgcna-resourc
 <span>                    dendroLabels<span class="op">=</span><span class="cn">FALSE</span>, hang<span class="op">=</span><span class="fl">0.03</span>,</span>
 <span>                    addGuide<span class="op">=</span><span class="cn">TRUE</span>, guideHang<span class="op">=</span><span class="fl">0.05</span>,</span>
 <span>                    main<span class="op">=</span><span class="st">"Gene dendrogram and module colors"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="standardcor-WGCNA_files/figure-html/unnamed-chunk-30-1.png" width="700"></p>
+<p><img src="standardcor-WGCNA_files/figure-html/unnamed-chunk-30-1.png" class="r-plt" width="700"></p>
 <div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="co">#Rename</span></span>
@@ -964,7 +964,7 @@ can be found here: <a href="https://peterlangfelder.com/2018/11/25/wgcna-resourc
 <span>               cex.text<span class="op">=</span><span class="fl">1</span>,</span>
 <span>               zlim<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span>,</span>
 <span>               main<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="st">"Module–trait relationships"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="standardcor-WGCNA_files/figure-html/unnamed-chunk-34-1.png" width="576"></p>
+<p><img src="standardcor-WGCNA_files/figure-html/unnamed-chunk-34-1.png" class="r-plt" width="576"></p>
 <p>Now that we have identified modules asssociated with a phenotype, we
 can take the analysis in many other directions. Please refer to the
 WGCNA documentation for more information.</p>
@@ -980,7 +980,7 @@ WGCNA documentation for more information.</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
 </div>
 
     </footer>
