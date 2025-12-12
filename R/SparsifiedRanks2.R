@@ -20,8 +20,8 @@
 #' @export
 SparsifiedRanks2 <- function(X) {
   X <- as(X, "sparseMatrix")
-  if (class(X)[1] != "dgCMatrix") {
-    X <- as(object = X, Class = "dgCMatrix")
+  if (class(X)[1] != "generalMatrix") {
+    X <- as(object = X, Class = "generalMatrix")
   }
   non_zeros_per_col <- diff(x = X@p)
   n_zeros_per_col <- nrow(x = X) - non_zeros_per_col
