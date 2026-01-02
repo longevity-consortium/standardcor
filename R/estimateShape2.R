@@ -60,6 +60,7 @@ estimateShape2 <- function(corSet, middle = 0, samples = 0, outlier.f=0, plot=FA
     v <- 1 + max(mode*(z2-2),0)
     zest.dens <- dbeta(mode, v, max(z2 - v, 1))
     f <- zest.dens / mode.density
+    println("Try" ,tries, "mode =", mode, "mode.density =", mode.density, "v =", v, "zest.dens =", zest.dens, "f =", f)
     if (abs(f-1) < 0.01) break
     z2 <- max(z2/f,2)
     if (10 == tries) { # optimization failed
