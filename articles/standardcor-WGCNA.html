@@ -279,7 +279,7 @@ from mean and std dev for each omic.</p>
 <span><span class="va">v.pp</span> <span class="op">&lt;-</span> <span class="va">vw</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span></span>
 <span><span class="va">w.pp</span> <span class="op">&lt;-</span> <span class="va">vw</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="st">"Protein pairs: rho_ij ~ Beta(v ="</span>,<span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="va">v.pp</span>,<span class="fl">3</span><span class="op">)</span>,<span class="st">",w ="</span>,<span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="va">w.pp</span>,<span class="fl">3</span><span class="op">)</span>,<span class="st">")"</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "Protein pairs: rho_ij ~ Beta(v = 34.98 ,w = 34.002 )"</span></span>
+<span><span class="co">#&gt; [1] "Protein pairs: rho_ij ~ Beta(v = 36.482 ,w = 34.418 )"</span></span>
 <span></span>
 <span><span class="va">fine</span> <span class="op">&lt;-</span> <span class="fl">40</span></span>
 <span><span class="va">Bs</span> <span class="op">&lt;-</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="va">fine</span><span class="op">:</span><span class="op">(</span><span class="fl">1</span><span class="op">+</span><span class="va">fine</span><span class="op">)</span><span class="op">)</span><span class="op">-</span><span class="fl">0.5</span><span class="op">)</span><span class="op">/</span><span class="va">fine</span></span>
@@ -301,7 +301,7 @@ omics</p>
 <span><span class="va">v.mm</span> <span class="op">&lt;-</span> <span class="va">vw</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span></span>
 <span><span class="va">w.mm</span> <span class="op">&lt;-</span> <span class="va">vw</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="st">"Metabolite Pairs: rho_ij ~ Beta(v ="</span>,<span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="va">v.mm</span>,<span class="fl">3</span><span class="op">)</span>,<span class="st">",w ="</span>,<span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="va">w.mm</span>,<span class="fl">3</span><span class="op">)</span>,<span class="st">")"</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "Metabolite Pairs: rho_ij ~ Beta(v = 98.489 ,w = 98.706 )"</span></span>
+<span><span class="co">#&gt; [1] "Metabolite Pairs: rho_ij ~ Beta(v = 102.351 ,w = 101.913 )"</span></span>
 <span></span>
 <span><span class="va">fine</span> <span class="op">&lt;-</span> <span class="fl">40</span></span>
 <span><span class="va">Bs</span> <span class="op">&lt;-</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="va">fine</span><span class="op">:</span><span class="op">(</span><span class="fl">1</span><span class="op">+</span><span class="va">fine</span><span class="op">)</span><span class="op">)</span><span class="op">-</span><span class="fl">0.5</span><span class="op">)</span><span class="op">/</span><span class="va">fine</span></span>
@@ -320,7 +320,7 @@ omics</p>
 <span><span class="va">v.ll</span> <span class="op">&lt;-</span> <span class="va">vw</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span></span>
 <span><span class="va">w.ll</span> <span class="op">&lt;-</span> <span class="va">vw</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="st">"Lipid Pairs: rho_ij ~ Beta(v ="</span>,<span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="va">v.ll</span>,<span class="fl">3</span><span class="op">)</span>,<span class="st">",w ="</span>,<span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="va">w.ll</span>,<span class="fl">3</span><span class="op">)</span>,<span class="st">")"</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "Lipid Pairs: rho_ij ~ Beta(v = 27.938 ,w = 25.131 )"</span></span>
+<span><span class="co">#&gt; [1] "Lipid Pairs: rho_ij ~ Beta(v = 28.808 ,w = 25.44 )"</span></span>
 <span></span>
 <span><span class="va">fine</span> <span class="op">&lt;-</span> <span class="fl">40</span></span>
 <span><span class="va">Bs</span> <span class="op">&lt;-</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="va">fine</span><span class="op">:</span><span class="op">(</span><span class="fl">1</span><span class="op">+</span><span class="va">fine</span><span class="op">)</span><span class="op">)</span><span class="op">-</span><span class="fl">0.5</span><span class="op">)</span><span class="op">/</span><span class="va">fine</span></span>
@@ -339,7 +339,7 @@ omics</p>
 <span><span class="va">v.aa</span> <span class="op">&lt;-</span> <span class="va">vw</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span></span>
 <span><span class="va">w.aa</span> <span class="op">&lt;-</span> <span class="va">vw</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="st">"Amine Pairs: rho_ij ~ Beta(v ="</span>,<span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="va">vw</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,<span class="fl">3</span><span class="op">)</span>,<span class="st">",w ="</span>,<span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="va">vw</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span>,<span class="fl">3</span><span class="op">)</span>,<span class="st">")"</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "Amine Pairs: rho_ij ~ Beta(v = 112.787 ,w = 109.907 )"</span></span>
+<span><span class="co">#&gt; [1] "Amine Pairs: rho_ij ~ Beta(v = 116.617 ,w = 110.49 )"</span></span>
 <span></span>
 <span><span class="va">fine</span> <span class="op">&lt;-</span> <span class="fl">40</span></span>
 <span><span class="va">Bs</span> <span class="op">&lt;-</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="va">fine</span><span class="op">:</span><span class="op">(</span><span class="fl">1</span><span class="op">+</span><span class="va">fine</span><span class="op">)</span><span class="op">)</span><span class="op">-</span><span class="fl">0.5</span><span class="op">)</span><span class="op">/</span><span class="va">fine</span></span>
@@ -367,7 +367,7 @@ combinations. consider.</p>
 <span><span class="va">v.pm</span> <span class="op">&lt;-</span> <span class="va">vw</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span></span>
 <span><span class="va">w.pm</span> <span class="op">&lt;-</span> <span class="va">vw</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="st">"Protein-metabolite: rho_ij ~ Beta(v ="</span>,<span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="va">vw</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,<span class="fl">3</span><span class="op">)</span>,<span class="st">",w ="</span>,<span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="va">vw</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span>,<span class="fl">3</span><span class="op">)</span>,<span class="st">")"</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "Protein-metabolite: rho_ij ~ Beta(v = 174.852 ,w = 173.513 )"</span></span>
+<span><span class="co">#&gt; [1] "Protein-metabolite: rho_ij ~ Beta(v = 177.718 ,w = 174.852 )"</span></span>
 <span></span>
 <span><span class="co"># The distribution of these cross-correlations is</span></span>
 <span><span class="co"># markedly narrower than either of the contributing 'omics</span></span>
@@ -388,7 +388,7 @@ combinations. consider.</p>
 <span><span class="va">v.pl</span> <span class="op">&lt;-</span> <span class="va">vw</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span></span>
 <span><span class="va">w.pl</span> <span class="op">&lt;-</span> <span class="va">vw</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="st">"Protein-metabolite: rho_ij ~ Beta(v ="</span>,<span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="va">vw</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,<span class="fl">3</span><span class="op">)</span>,<span class="st">",w ="</span>,<span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="va">vw</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span>,<span class="fl">3</span><span class="op">)</span>,<span class="st">")"</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "Protein-metabolite: rho_ij ~ Beta(v = 87.319 ,w = 89.012 )"</span></span>
+<span><span class="co">#&gt; [1] "Protein-metabolite: rho_ij ~ Beta(v = 89.235 ,w = 89.5 )"</span></span>
 <span></span>
 <span><span class="co"># The distribution of these cross-correlations is</span></span>
 <span><span class="co"># markedly narrower than either of the contributing 'omics</span></span>
@@ -409,7 +409,7 @@ combinations. consider.</p>
 <span><span class="va">v.pa</span> <span class="op">&lt;-</span> <span class="va">vw</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span></span>
 <span><span class="va">w.pa</span> <span class="op">&lt;-</span> <span class="va">vw</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="st">"Protein-metabolite: rho_ij ~ Beta(v ="</span>,<span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="va">vw</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,<span class="fl">3</span><span class="op">)</span>,<span class="st">",w ="</span>,<span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="va">vw</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span>,<span class="fl">3</span><span class="op">)</span>,<span class="st">")"</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "Protein-metabolite: rho_ij ~ Beta(v = 136.503 ,w = 136.271 )"</span></span>
+<span><span class="co">#&gt; [1] "Protein-metabolite: rho_ij ~ Beta(v = 138.697 ,w = 137.27 )"</span></span>
 <span></span>
 <span><span class="co"># The distribution of these cross-correlations is</span></span>
 <span><span class="co"># markedly narrower than either of the contributing 'omics</span></span>
@@ -430,7 +430,7 @@ combinations. consider.</p>
 <span><span class="va">v.ml</span> <span class="op">&lt;-</span> <span class="va">vw</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span></span>
 <span><span class="va">w.ml</span> <span class="op">&lt;-</span> <span class="va">vw</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="st">"Protein-lipid: rho_ij ~ Beta(v ="</span>,<span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="va">vw</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,<span class="fl">3</span><span class="op">)</span>,<span class="st">",w ="</span>,<span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="va">vw</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span>,<span class="fl">3</span><span class="op">)</span>,<span class="st">")"</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "Protein-lipid: rho_ij ~ Beta(v = 184.501 ,w = 185.53 )"</span></span>
+<span><span class="co">#&gt; [1] "Protein-lipid: rho_ij ~ Beta(v = 189.953 ,w = 186.133 )"</span></span>
 <span></span>
 <span><span class="co"># The distribution of these cross-correlations is</span></span>
 <span><span class="co"># markedly narrower than either of the contributing 'omics</span></span>
@@ -451,7 +451,7 @@ combinations. consider.</p>
 <span><span class="va">v.ma</span> <span class="op">&lt;-</span> <span class="va">vw</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span></span>
 <span><span class="va">w.ma</span> <span class="op">&lt;-</span> <span class="va">vw</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="st">"Protein-amine: rho_ij ~ Beta(v ="</span>,<span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="va">vw</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,<span class="fl">3</span><span class="op">)</span>,<span class="st">",w ="</span>,<span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="va">vw</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span>,<span class="fl">3</span><span class="op">)</span>,<span class="st">")"</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "Protein-amine: rho_ij ~ Beta(v = 184.687 ,w = 184.458 )"</span></span>
+<span><span class="co">#&gt; [1] "Protein-amine: rho_ij ~ Beta(v = 190.21 ,w = 186.059 )"</span></span>
 <span></span>
 <span><span class="co"># The distribution of these cross-correlations is</span></span>
 <span><span class="co"># markedly narrower than either of the contributing 'omics</span></span>
@@ -472,7 +472,7 @@ combinations. consider.</p>
 <span><span class="va">v.la</span> <span class="op">&lt;-</span> <span class="va">vw</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span></span>
 <span><span class="va">w.la</span> <span class="op">&lt;-</span> <span class="va">vw</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="st">"Lipid-amine: rho_ij ~ Beta(v ="</span>,<span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="va">vw</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,<span class="fl">3</span><span class="op">)</span>,<span class="st">",w ="</span>,<span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="va">vw</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span>,<span class="fl">3</span><span class="op">)</span>,<span class="st">")"</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "Lipid-amine: rho_ij ~ Beta(v = 125.539 ,w = 125.208 )"</span></span>
+<span><span class="co">#&gt; [1] "Lipid-amine: rho_ij ~ Beta(v = 131.107 ,w = 129.04 )"</span></span>
 <span></span>
 <span><span class="co"># The distribution of these cross-correlations is</span></span>
 <span><span class="co"># markedly narrower than either of the contributing 'omics</span></span>
@@ -588,12 +588,12 @@ observations.</p>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_c.html" class="external-link">str_c</a></span><span class="op">(</span><span class="st">"nrow: "</span>, <span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">Zc</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "nrow: 1465"</span></span>
 <span><span class="va">Zc</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span>,<span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">]</span></span>
-<span><span class="co">#&gt;              1433Z        A1AG2        A1AT         A1BG        A2AP</span></span>
-<span><span class="co">#&gt; 1433Z  1.000000000  0.005707413  0.02901604 -0.006209182 -0.28999711</span></span>
-<span><span class="co">#&gt; A1AG2  0.005707413  1.000000000  0.12406421  0.087104661 -0.17529426</span></span>
-<span><span class="co">#&gt; A1AT   0.029016044  0.124064205  1.00000000  0.101222530 -0.29220877</span></span>
-<span><span class="co">#&gt; A1BG  -0.006209182  0.087104661  0.10122253  1.000000000 -0.03940435</span></span>
-<span><span class="co">#&gt; A2AP  -0.289997110 -0.175294264 -0.29220877 -0.039404352  1.00000000</span></span></code></pre></div>
+<span><span class="co">#&gt;              1433Z        A1AG2        A1AT        A1BG       A2AP</span></span>
+<span><span class="co">#&gt; 1433Z  1.000000000 -0.009608999  0.01402562 -0.02168788 -0.3082587</span></span>
+<span><span class="co">#&gt; A1AG2 -0.009608999  1.000000000  0.11051047  0.07297294 -0.1927106</span></span>
+<span><span class="co">#&gt; A1AT   0.014025625  0.110510466  1.00000000  0.08730883 -0.3104823</span></span>
+<span><span class="co">#&gt; A1BG  -0.021687883  0.072972937  0.08730883  1.00000000 -0.0553188</span></span>
+<span><span class="co">#&gt; A2AP  -0.308258749 -0.192710596 -0.31048227 -0.05531880  1.0000000</span></span></code></pre></div>
 <div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">Z.unique</span> <span class="op">&lt;-</span> <span class="va">Zc</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/row.html" class="external-link">row</a></span><span class="op">(</span><span class="va">Zc</span><span class="op">)</span> <span class="op">&lt;</span> <span class="fu"><a href="https://rdrr.io/r/base/col.html" class="external-link">col</a></span><span class="op">(</span><span class="va">Zc</span><span class="op">)</span><span class="op">]</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="st">"Target: rho_ij ~ Beta(v ="</span>,<span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="va">nu.std</span>,<span class="fl">3</span><span class="op">)</span>,<span class="st">",w ="</span>,<span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="va">nu.std</span>,<span class="fl">3</span><span class="op">)</span>,<span class="st">")"</span><span class="op">)</span><span class="op">)</span></span>
@@ -605,7 +605,7 @@ observations.</p>
 <span><span class="va">v.c</span> <span class="op">&lt;-</span> <span class="va">mZ</span><span class="op">*</span><span class="op">(</span><span class="va">mZ</span><span class="op">*</span><span class="op">(</span><span class="fl">1</span><span class="op">-</span><span class="va">mZ</span><span class="op">)</span><span class="op">/</span><span class="va">s2Z</span> <span class="op">-</span> <span class="fl">1</span><span class="op">)</span></span>
 <span><span class="va">w.c</span> <span class="op">&lt;-</span> <span class="op">(</span><span class="fl">1</span><span class="op">-</span><span class="va">mZ</span><span class="op">)</span><span class="op">*</span><span class="op">(</span><span class="va">mZ</span><span class="op">*</span><span class="op">(</span><span class="fl">1</span><span class="op">-</span><span class="va">mZ</span><span class="op">)</span><span class="op">/</span><span class="va">s2Z</span> <span class="op">-</span> <span class="fl">1</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="st">"Method of moments: rho_ij ~ Beta(v ="</span>,<span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="va">v.c</span>,<span class="fl">3</span><span class="op">)</span>,<span class="st">",w ="</span>,<span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="va">w.c</span>,<span class="fl">3</span><span class="op">)</span>,<span class="st">")"</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "Method of moments: rho_ij ~ Beta(v = 22.515 ,w = 21.686 )"</span></span>
+<span><span class="co">#&gt; [1] "Method of moments: rho_ij ~ Beta(v = 21.514 ,w = 21.308 )"</span></span>
 <span></span>
 <span></span>
 <span><span class="va">fine</span> <span class="op">&lt;-</span> <span class="fl">100</span></span>
@@ -653,21 +653,21 @@ can be found here: <a href="https://peterlangfelder.com/2018/11/25/wgcna-resourc
 <span><span class="co">#&gt;    ..working on genes 1 through 1465 of 1465</span></span>
 <span><span class="co">#&gt; Warning: executing %dopar% sequentially: no parallel backend registered</span></span>
 <span><span class="co">#&gt;    Power SFT.R.sq  slope truncated.R.sq mean.k. median.k. max.k.</span></span>
-<span><span class="co">#&gt; 1      1 0.167000 12.400          0.944  746.00   745.000  806.0</span></span>
-<span><span class="co">#&gt; 2      2 0.172000  5.280          0.950  388.00   385.000  459.0</span></span>
-<span><span class="co">#&gt; 3      3 0.000524  0.143          0.772  206.00   202.000  276.0</span></span>
-<span><span class="co">#&gt; 4      4 0.305000 -2.210          0.730  113.00   108.000  181.0</span></span>
-<span><span class="co">#&gt; 5      5 0.705000 -2.770          0.816   63.10    58.700  126.0</span></span>
-<span><span class="co">#&gt; 6      6 0.910000 -2.870          0.918   36.60    32.600   94.2</span></span>
-<span><span class="co">#&gt; 7      7 0.957000 -2.590          0.948   22.00    18.300   74.3</span></span>
-<span><span class="co">#&gt; 8      8 0.936000 -2.350          0.918   13.80    10.500   61.3</span></span>
-<span><span class="co">#&gt; 9      9 0.963000 -2.060          0.952    9.15     6.140   52.5</span></span>
-<span><span class="co">#&gt; 10    10 0.965000 -1.850          0.955    6.38     3.660   46.4</span></span>
-<span><span class="co">#&gt; 11    11 0.960000 -1.710          0.948    4.70     2.250   41.9</span></span>
-<span><span class="co">#&gt; 12    12 0.954000 -1.600          0.942    3.65     1.420   38.5</span></span>
-<span><span class="co">#&gt; 13    13 0.963000 -1.500          0.955    2.97     0.895   35.9</span></span>
-<span><span class="co">#&gt; 14    14 0.974000 -1.430          0.970    2.52     0.581   33.9</span></span>
-<span><span class="co">#&gt; 15    15 0.963000 -1.390          0.957    2.21     0.380   32.4</span></span>
+<span><span class="co">#&gt; 1      1  0.13800 10.800          0.949  736.00   735.000  797.0</span></span>
+<span><span class="co">#&gt; 2      2  0.13000  4.190          0.917  378.00   375.000  450.0</span></span>
+<span><span class="co">#&gt; 3      3  0.00102 -0.188          0.731  199.00   195.000  270.0</span></span>
+<span><span class="co">#&gt; 4      4  0.34300 -2.250          0.722  107.00   103.000  176.0</span></span>
+<span><span class="co">#&gt; 5      5  0.77800 -2.830          0.859   59.80    55.300  124.0</span></span>
+<span><span class="co">#&gt; 6      6  0.91600 -2.820          0.919   34.50    30.400   92.5</span></span>
+<span><span class="co">#&gt; 7      7  0.96200 -2.510          0.952   20.70    17.000   73.1</span></span>
+<span><span class="co">#&gt; 8      8  0.93900 -2.260          0.922   13.00     9.640   60.6</span></span>
+<span><span class="co">#&gt; 9      9  0.96400 -2.000          0.954    8.64     5.620   52.0</span></span>
+<span><span class="co">#&gt; 10    10  0.96300 -1.810          0.953    6.06     3.300   46.0</span></span>
+<span><span class="co">#&gt; 11    11  0.96000 -1.670          0.949    4.49     2.040   41.6</span></span>
+<span><span class="co">#&gt; 12    12  0.97100 -1.550          0.963    3.52     1.290   38.4</span></span>
+<span><span class="co">#&gt; 13    13  0.97600 -1.460          0.970    2.89     0.808   35.8</span></span>
+<span><span class="co">#&gt; 14    14  0.97800 -1.400          0.975    2.47     0.526   33.9</span></span>
+<span><span class="co">#&gt; 15    15  0.96900 -1.360          0.965    2.18     0.339   32.3</span></span>
 <span></span>
 <span><span class="co">#Plot the results</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">options</a></span><span class="op">(</span>repr.plot.width<span class="op">=</span><span class="fl">9</span>, repr.plot.height<span class="op">=</span><span class="fl">5</span><span class="op">)</span></span>
@@ -737,27 +737,29 @@ can be found here: <a href="https://peterlangfelder.com/2018/11/25/wgcna-resourc
 <span><span class="va">dynamicMods</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/dynamicTreeCut/man/cutreeDynamic.html" class="external-link">cutreeDynamic</a></span><span class="op">(</span>dendro<span class="op">=</span><span class="va">geneTree</span>, distM<span class="op">=</span><span class="va">dissTOM</span>,</span>
 <span>                             deepSplit<span class="op">=</span><span class="fl">4</span>, pamStage<span class="op">=</span><span class="cn">TRUE</span>, pamRespectsDendro<span class="op">=</span><span class="cn">FALSE</span>,</span>
 <span>                             minClusterSize<span class="op">=</span><span class="va">minModuleSize</span><span class="op">)</span></span>
-<span><span class="co">#&gt;  ..cutHeight not given, setting it to 4.94  ===&gt;  99% of the (truncated) height range in dendro.</span></span>
+<span><span class="co">#&gt;  ..cutHeight not given, setting it to 5.17  ===&gt;  99% of the (truncated) height range in dendro.</span></span>
 <span><span class="co">#&gt;  ..done.</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="va">dynamicMods</span><span class="op">)</span></span>
 <span><span class="co">#&gt; dynamicMods</span></span>
 <span><span class="co">#&gt;   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19  20 </span></span>
-<span><span class="co">#&gt; 499 104  94  78  72  63  60  54  48  47  43  39  32  30  29  28  26  26  25  25 </span></span>
-<span><span class="co">#&gt;  21  22 </span></span>
-<span><span class="co">#&gt;  22  21</span></span>
+<span><span class="co">#&gt; 431 183 105  79  60  56  53  40  40  38  36  36  34  32  31  30  30  28  28  27 </span></span>
+<span><span class="co">#&gt;  21  22  23 </span></span>
+<span><span class="co">#&gt;  25  22  21</span></span>
 <span></span>
 <span><span class="co">#Convert numeric lables into colors</span></span>
 <span><span class="va">dynamicColors</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/WGCNA/man/labels2colors.html" class="external-link">labels2colors</a></span><span class="op">(</span><span class="va">dynamicMods</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="va">dynamicColors</span><span class="op">)</span></span>
 <span><span class="co">#&gt; dynamicColors</span></span>
-<span><span class="co">#&gt;        black         blue        brown         cyan    darkgreen      darkred </span></span>
-<span><span class="co">#&gt;           60          104           94           30           21           22 </span></span>
-<span><span class="co">#&gt;        green  greenyellow       grey60    lightcyan   lightgreen  lightyellow </span></span>
-<span><span class="co">#&gt;           72           43           26           28           26           25 </span></span>
-<span><span class="co">#&gt;      magenta midnightblue         pink       purple          red    royalblue </span></span>
-<span><span class="co">#&gt;           48           29           54           47           63           25 </span></span>
-<span><span class="co">#&gt;       salmon          tan    turquoise       yellow </span></span>
-<span><span class="co">#&gt;           32           39          499           78</span></span>
+<span><span class="co">#&gt;         black          blue         brown          cyan     darkgreen </span></span>
+<span><span class="co">#&gt;            53           183           105            32            22 </span></span>
+<span><span class="co">#&gt;       darkred darkturquoise         green   greenyellow        grey60 </span></span>
+<span><span class="co">#&gt;            25            21            60            36            30 </span></span>
+<span><span class="co">#&gt;     lightcyan    lightgreen   lightyellow       magenta  midnightblue </span></span>
+<span><span class="co">#&gt;            30            28            28            40            31 </span></span>
+<span><span class="co">#&gt;          pink        purple           red     royalblue        salmon </span></span>
+<span><span class="co">#&gt;            40            38            56            27            34 </span></span>
+<span><span class="co">#&gt;           tan     turquoise        yellow </span></span>
+<span><span class="co">#&gt;            36           431            79</span></span>
 <span></span>
 <span><span class="co">#Plot the dendrogram and colors underneath</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">options</a></span><span class="op">(</span>repr.plot.width<span class="op">=</span><span class="fl">12</span>, repr.plot.height<span class="op">=</span><span class="fl">6</span><span class="op">)</span></span>
@@ -773,34 +775,41 @@ can be found here: <a href="https://peterlangfelder.com/2018/11/25/wgcna-resourc
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_c.html" class="external-link">str_c</a></span><span class="op">(</span><span class="st">"nrow: "</span>, <span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">MEs</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "nrow: 500"</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">MEs</span><span class="op">)</span></span>
-<span><span class="co">#&gt;       MEblack       MEblue      MEbrown       MEcyan  MEdarkgreen     MEdarkred</span></span>
-<span><span class="co">#&gt; 1 -0.04250164 -0.006137058 -0.061119212 -0.017963073  0.083685677  2.766099e-02</span></span>
-<span><span class="co">#&gt; 2  0.07743639  0.062143054 -0.024485473  0.030683603 -0.021758338 -4.796828e-05</span></span>
-<span><span class="co">#&gt; 3  0.03539161  0.026002054 -0.073829551  0.011904043  0.006682852  2.677434e-02</span></span>
-<span><span class="co">#&gt; 4 -0.01816194 -0.021918239  0.006197687 -0.005365383 -0.030132389  1.233884e-02</span></span>
-<span><span class="co">#&gt; 5  0.01788601  0.014131597 -0.090108419  0.041251157  0.012587136 -6.189113e-02</span></span>
-<span><span class="co">#&gt; 6  0.02603770  0.001758729 -0.043114754  0.024930105  0.001555772 -1.455030e-02</span></span>
-<span><span class="co">#&gt;       MEgreen MEgreenyellow     MEgrey60 MElightcyan  MElightgreen</span></span>
-<span><span class="co">#&gt; 1  0.09667654    0.04224804 -0.011219413  0.02270412 -0.0009493078</span></span>
-<span><span class="co">#&gt; 2  0.01144213    0.06930301  0.011247960  0.03394327  0.0926655585</span></span>
-<span><span class="co">#&gt; 3  0.03526924    0.04939254  0.005733386  0.02926117  0.0418565133</span></span>
-<span><span class="co">#&gt; 4 -0.02069531    0.02095189  0.032070655 -0.00474506 -0.0296049856</span></span>
-<span><span class="co">#&gt; 5  0.06652515   -0.01577464 -0.105567516  0.02761338  0.0080213115</span></span>
-<span><span class="co">#&gt; 6  0.06117528    0.01558672 -0.039090274  0.02622454 -0.0552738630</span></span>
-<span><span class="co">#&gt;   MElightyellow    MEmagenta MEmidnightblue       MEpink     MEpurple</span></span>
-<span><span class="co">#&gt; 1   0.054813453  0.017014383   -0.060639183 -0.041704707  0.015084532</span></span>
-<span><span class="co">#&gt; 2   0.006505377  0.021206367    0.041181322  0.016637743  0.070252083</span></span>
-<span><span class="co">#&gt; 3   0.028960827  0.004705876   -0.013260868 -0.049713898  0.067356769</span></span>
-<span><span class="co">#&gt; 4   0.010579150  0.037737960   -0.009881932  0.001515955 -0.039509676</span></span>
-<span><span class="co">#&gt; 5   0.012931648 -0.018482246    0.068292959 -0.094043994 -0.038940804</span></span>
-<span><span class="co">#&gt; 6  -0.021155760  0.039405631    0.053630301 -0.039897490  0.002201621</span></span>
-<span><span class="co">#&gt;          MEred  MEroyalblue   MEsalmon         MEtan MEturquoise     MEyellow</span></span>
-<span><span class="co">#&gt; 1  0.004533408  0.056728907 0.01880385  0.0104194410 -0.03167811 -0.007773314</span></span>
-<span><span class="co">#&gt; 2  0.022852213 -0.027008752 0.04014007 -0.0451096975  0.01457797 -0.013980877</span></span>
-<span><span class="co">#&gt; 3  0.065539735  0.034050318 0.03833421 -0.0105466068 -0.05322893 -0.037205440</span></span>
-<span><span class="co">#&gt; 4  0.005094828  0.003775484 0.01594035 -0.0039805473  0.01949922 -0.013305095</span></span>
-<span><span class="co">#&gt; 5 -0.056656398 -0.091232433 0.01890705 -0.0649936854 -0.02318406 -0.118914485</span></span>
-<span><span class="co">#&gt; 6  0.055026948 -0.008089793 0.04426588 -0.0002465442 -0.06392858 -0.075245659</span></span>
+<span><span class="co">#&gt;       MEblack       MEblue      MEbrown     MEcyan  MEdarkgreen    MEdarkred</span></span>
+<span><span class="co">#&gt; 1  0.01769292 -0.051160929 -0.044378898 0.01880385  0.026300750  0.056728907</span></span>
+<span><span class="co">#&gt; 2  0.04529345 -0.027186301  0.081716559 0.04014007 -0.065170342 -0.027008752</span></span>
+<span><span class="co">#&gt; 3  0.03116145 -0.064842191  0.050969124 0.03833421 -0.027185755  0.034050318</span></span>
+<span><span class="co">#&gt; 4 -0.01276477 -0.011334389 -0.024473474 0.01594035  0.005975657  0.003775484</span></span>
+<span><span class="co">#&gt; 5  0.02255580 -0.108910882  0.020253466 0.01890705 -0.087284917 -0.091232433</span></span>
+<span><span class="co">#&gt; 6  0.01620370 -0.008809908  0.006610517 0.04426588  0.015338840 -0.008089793</span></span>
+<span><span class="co">#&gt;   MEdarkturquoise      MEgreen MEgreenyellow     MEgrey60  MElightcyan</span></span>
+<span><span class="co">#&gt; 1    -0.054838015  0.007742242  -0.006937975  0.023279528 -0.025568891</span></span>
+<span><span class="co">#&gt; 2     0.081574426  0.027353168   0.037621498  0.003638059  0.031146586</span></span>
+<span><span class="co">#&gt; 3    -0.024189996  0.075929834  -0.010496068  0.028760979  0.011325765</span></span>
+<span><span class="co">#&gt; 4     0.001072615  0.026527175  -0.040967189  0.020079862 -0.003064056</span></span>
+<span><span class="co">#&gt; 5     0.028547619 -0.042833872  -0.050583886 -0.053727660  0.044451861</span></span>
+<span><span class="co">#&gt; 6     0.067679731  0.052427209   0.029833876 -0.008533758  0.029449067</span></span>
+<span><span class="co">#&gt;    MElightgreen MElightyellow    MEmagenta MEmidnightblue      MEpink</span></span>
+<span><span class="co">#&gt; 1  0.0831709906   0.054407199 -0.011885640    -0.02318667 -0.05903108</span></span>
+<span><span class="co">#&gt; 2 -0.0223851354   0.054747059  0.002597031    -0.01508430  0.04217619</span></span>
+<span><span class="co">#&gt; 3  0.0063840596   0.041592726 -0.014797012    -0.04415341 -0.01475084</span></span>
+<span><span class="co">#&gt; 4 -0.0280092308   0.008061438  0.010143341     0.00139921 -0.01220036</span></span>
+<span><span class="co">#&gt; 5  0.0120321816  -0.018502448 -0.124222277    -0.09145141  0.06847406</span></span>
+<span><span class="co">#&gt; 6 -0.0004212465  -0.021378014 -0.060088746    -0.07637588  0.05340293</span></span>
+<span><span class="co">#&gt;       MEpurple        MEred  MEroyalblue     MEsalmon        MEtan MEturquoise</span></span>
+<span><span class="co">#&gt; 1  0.001787618 -0.044040999  0.051904178  0.001376754 -0.045764356 0.095295608</span></span>
+<span><span class="co">#&gt; 2  0.066292815 -0.015444106  0.009153908  0.035193925  0.009062544 0.002543363</span></span>
+<span><span class="co">#&gt; 3  0.046233328 -0.042038230  0.029811076  0.013927902 -0.055651008 0.010488607</span></span>
+<span><span class="co">#&gt; 4 -0.019138426 -0.002514375  0.009501255  0.040701101  0.010042727 0.016468088</span></span>
+<span><span class="co">#&gt; 5 -0.006243943 -0.121599175  0.012112474 -0.013905834 -0.100395931 0.064945152</span></span>
+<span><span class="co">#&gt; 6 -0.056277156 -0.066816892 -0.019450368  0.024405079 -0.042246700 0.052961943</span></span>
+<span><span class="co">#&gt;       MEyellow</span></span>
+<span><span class="co">#&gt; 1  0.021543695</span></span>
+<span><span class="co">#&gt; 2  0.048948253</span></span>
+<span><span class="co">#&gt; 3  0.056389149</span></span>
+<span><span class="co">#&gt; 4 -0.024116585</span></span>
+<span><span class="co">#&gt; 5 -0.023709852</span></span>
+<span><span class="co">#&gt; 6  0.005627724</span></span>
 <span></span>
 <span><span class="co">#Calculate dissimilarity of module eigengenes</span></span>
 <span><span class="va">MEDiss</span> <span class="op">&lt;-</span> <span class="fl">1</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/pkg/WGCNA/man/cor.html" class="external-link">cor</a></span><span class="op">(</span><span class="va">MEs</span>, use<span class="op">=</span><span class="st">"pairwise.complete.obs"</span><span class="op">)</span></span>
@@ -826,12 +835,14 @@ can be found here: <a href="https://peterlangfelder.com/2018/11/25/wgcna-resourc
 <span><span class="va">mergedColors</span> <span class="op">&lt;-</span> <span class="va">merge</span><span class="op">$</span><span class="va">colors</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="va">mergedColors</span><span class="op">)</span></span>
 <span><span class="co">#&gt; mergedColors</span></span>
-<span><span class="co">#&gt;        blue       brown   darkgreen     darkred       green greenyellow </span></span>
-<span><span class="co">#&gt;         223          94          46          22          72          43 </span></span>
-<span><span class="co">#&gt;      grey60   lightcyan  lightgreen     magenta        pink      purple </span></span>
-<span><span class="co">#&gt;          26          60          26          48          54          47 </span></span>
-<span><span class="co">#&gt;         red   royalblue         tan   turquoise      yellow </span></span>
-<span><span class="co">#&gt;          63          25          39         499          78</span></span>
+<span><span class="co">#&gt;          blue         brown          cyan     darkgreen darkturquoise </span></span>
+<span><span class="co">#&gt;           219           283            32            47            21 </span></span>
+<span><span class="co">#&gt;         green   greenyellow        grey60   lightyellow       magenta </span></span>
+<span><span class="co">#&gt;            60            36            30            28            40 </span></span>
+<span><span class="co">#&gt;  midnightblue        purple           red        salmon     turquoise </span></span>
+<span><span class="co">#&gt;            31            38            56            34           431 </span></span>
+<span><span class="co">#&gt;        yellow </span></span>
+<span><span class="co">#&gt;            79</span></span>
 <span></span>
 <span><span class="co">#Plot the dendrogram and module colors</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">options</a></span><span class="op">(</span>repr.plot.width<span class="op">=</span><span class="fl">12</span>, repr.plot.height<span class="op">=</span><span class="fl">6</span><span class="op">)</span></span>
@@ -862,34 +873,27 @@ can be found here: <a href="https://peterlangfelder.com/2018/11/25/wgcna-resourc
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_c.html" class="external-link">str_c</a></span><span class="op">(</span><span class="st">"- nrow: "</span>, <span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">eigengene_df</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "- nrow: 500"</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">eigengene_df</span><span class="op">)</span></span>
-<span><span class="co">#&gt;   public_client_id       Green   Turquoise Greenyellow   Lightcyan        Blue</span></span>
-<span><span class="co">#&gt; 1                1  0.09667654 -0.03167811  0.04224804 0.021016558 -0.03960362</span></span>
-<span><span class="co">#&gt; 2                2  0.01144213  0.01457797  0.06930301 0.038385247  0.05453270</span></span>
-<span><span class="co">#&gt; 3                3  0.03526924 -0.05322893  0.04939254 0.035184316  0.01207804</span></span>
-<span><span class="co">#&gt; 4                4 -0.02069531  0.01949922  0.02095189 0.005809384 -0.01353862</span></span>
-<span><span class="co">#&gt; 5                5  0.06652515 -0.02318406 -0.01577464 0.024391282  0.04479661</span></span>
-<span><span class="co">#&gt; 6                6  0.06117528 -0.06392858  0.01558672 0.038461457  0.03384631</span></span>
-<span><span class="co">#&gt;      Darkgreen       Darkred    Royalblue           Tan          Red</span></span>
-<span><span class="co">#&gt; 1  0.072203330  2.766099e-02  0.056728907  0.0104194410  0.004533408</span></span>
-<span><span class="co">#&gt; 2 -0.007447819 -4.796828e-05 -0.027008752 -0.0451096975  0.022852213</span></span>
-<span><span class="co">#&gt; 3  0.018880591  2.677434e-02  0.034050318 -0.0105466068  0.065539735</span></span>
-<span><span class="co">#&gt; 4 -0.009537316  1.233884e-02  0.003775484 -0.0039805473  0.005094828</span></span>
-<span><span class="co">#&gt; 5  0.013223197 -6.189113e-02 -0.091232433 -0.0649936854 -0.056656398</span></span>
-<span><span class="co">#&gt; 6 -0.010730048 -1.455030e-02 -0.008089793 -0.0002465442  0.055026948</span></span>
-<span><span class="co">#&gt;        Magenta    Lightgreen       Purple        Brown         Pink</span></span>
-<span><span class="co">#&gt; 1  0.017014383 -0.0009493078  0.015084532 -0.061119212 -0.041704707</span></span>
-<span><span class="co">#&gt; 2  0.021206367  0.0926655585  0.070252083 -0.024485473  0.016637743</span></span>
-<span><span class="co">#&gt; 3  0.004705876  0.0418565133  0.067356769 -0.073829551 -0.049713898</span></span>
-<span><span class="co">#&gt; 4  0.037737960 -0.0296049856 -0.039509676  0.006197687  0.001515955</span></span>
-<span><span class="co">#&gt; 5 -0.018482246  0.0080213115 -0.038940804 -0.090108419 -0.094043994</span></span>
-<span><span class="co">#&gt; 6  0.039405631 -0.0552738630  0.002201621 -0.043114754 -0.039897490</span></span>
-<span><span class="co">#&gt;         Grey60       Yellow</span></span>
-<span><span class="co">#&gt; 1 -0.011219413 -0.007773314</span></span>
-<span><span class="co">#&gt; 2  0.011247960 -0.013980877</span></span>
-<span><span class="co">#&gt; 3  0.005733386 -0.037205440</span></span>
-<span><span class="co">#&gt; 4  0.032070655 -0.013305095</span></span>
-<span><span class="co">#&gt; 5 -0.105567516 -0.118914485</span></span>
-<span><span class="co">#&gt; 6 -0.039090274 -0.075245659</span></span></code></pre></div>
+<span><span class="co">#&gt;   public_client_id   Turquoise         Blue          Red      Magenta</span></span>
+<span><span class="co">#&gt; 1                1 0.095295608 -0.052219663 -0.044040999 -0.011885640</span></span>
+<span><span class="co">#&gt; 2                2 0.002543363 -0.001818211 -0.015444106  0.002597031</span></span>
+<span><span class="co">#&gt; 3                3 0.010488607 -0.063797679 -0.042038230 -0.014797012</span></span>
+<span><span class="co">#&gt; 4                4 0.016468088  0.005857586 -0.002514375  0.010143341</span></span>
+<span><span class="co">#&gt; 5                5 0.064945152 -0.107111127 -0.121599175 -0.124222277</span></span>
+<span><span class="co">#&gt; 6                6 0.052961943 -0.040473960 -0.066816892 -0.060088746</span></span>
+<span><span class="co">#&gt;   Midnightblue        Brown Darkturquoise  Lightyellow       Cyan        Green</span></span>
+<span><span class="co">#&gt; 1  -0.02318667  0.003551357  -0.054838015  0.054407199 0.01880385  0.007742242</span></span>
+<span><span class="co">#&gt; 2  -0.01508430  0.035070077   0.081574426  0.054747059 0.04014007  0.027353168</span></span>
+<span><span class="co">#&gt; 3  -0.04415341  0.020193625  -0.024189996  0.041592726 0.03833421  0.075929834</span></span>
+<span><span class="co">#&gt; 4   0.00139921 -0.011460655   0.001072615  0.008061438 0.01594035  0.026527175</span></span>
+<span><span class="co">#&gt; 5  -0.09145141  0.035817706   0.028547619 -0.018502448 0.01890705 -0.042833872</span></span>
+<span><span class="co">#&gt; 6  -0.07637588  0.018605726   0.067679731 -0.021378014 0.04426588  0.052427209</span></span>
+<span><span class="co">#&gt;         Grey60    Darkgreen  Greenyellow       Salmon       Purple       Yellow</span></span>
+<span><span class="co">#&gt; 1  0.023279528  0.046261983 -0.006937975  0.001376754  0.001787618  0.021543695</span></span>
+<span><span class="co">#&gt; 2  0.003638059 -0.046143879  0.037621498  0.035193925  0.066292815  0.048948253</span></span>
+<span><span class="co">#&gt; 3  0.028760979  0.007247343 -0.010496068  0.013927902  0.046233328  0.056389149</span></span>
+<span><span class="co">#&gt; 4  0.020079862  0.006183944 -0.040967189  0.040701101 -0.019138426 -0.024116585</span></span>
+<span><span class="co">#&gt; 5 -0.053727660 -0.095823745 -0.050583886 -0.013905834 -0.006243943 -0.023709852</span></span>
+<span><span class="co">#&gt; 6 -0.008533758  0.003092429  0.029833876  0.024405079 -0.056277156  0.005627724</span></span></code></pre></div>
 <div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">##Sample metadata</span></span>
 <span><span class="va">sample_tbl</span> <span class="op">&lt;-</span> <span class="va">pheno</span><span class="op">[</span><span class="va">pheno</span><span class="op">$</span><span class="va">subjectID</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">rownames</a></span><span class="op">(</span><span class="va">MEs</span><span class="op">)</span>,<span class="op">]</span></span>
@@ -920,7 +924,7 @@ can be found here: <a href="https://peterlangfelder.com/2018/11/25/wgcna-resourc
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="st">"Module–trait relationship table"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "Module–trait relationship table"</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_c.html" class="external-link">str_c</a></span><span class="op">(</span><span class="st">"nrow: "</span>, <span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">moduleTraitCor</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "nrow: 17"</span></span>
+<span><span class="co">#&gt; [1] "nrow: 16"</span></span>
 <span></span>
 <span><span class="co">#Calculate statisitcal significance of module–trait relationship</span></span>
 <span><span class="va">MTRpval</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html" class="external-link">as.data.frame</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/WGCNA/man/corPvalueStudent.html" class="external-link">corPvalueStudent</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">as.matrix</a></span><span class="op">(</span><span class="va">moduleTraitCor</span><span class="op">)</span>, <span class="va">nSamples</span><span class="op">)</span><span class="op">)</span></span>
@@ -928,7 +932,7 @@ can be found here: <a href="https://peterlangfelder.com/2018/11/25/wgcna-resourc
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="st">"Module–trait relationship p-value table"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "Module–trait relationship p-value table"</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_c.html" class="external-link">str_c</a></span><span class="op">(</span><span class="st">"- nrow: "</span>, <span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">MTRpval</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "- nrow: 17"</span></span>
+<span><span class="co">#&gt; [1] "- nrow: 16"</span></span>
 <span></span>
 <span><span class="co">#Eliminate the dummy module (Grey)</span></span>
 <span><span class="va">moduleTraitCor</span> <span class="op">&lt;-</span> <span class="va">moduleTraitCor</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">rownames</a></span><span class="op">(</span><span class="va">moduleTraitCor</span><span class="op">)</span><span class="op">!=</span><span class="st">"Grey"</span>,<span class="op">]</span></span>
@@ -939,7 +943,7 @@ can be found here: <a href="https://peterlangfelder.com/2018/11/25/wgcna-resourc
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="st">"Module–trait relationship adjusted p-value table"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "Module–trait relationship adjusted p-value table"</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_c.html" class="external-link">str_c</a></span><span class="op">(</span><span class="st">"- nrow: "</span>, <span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">MTRpval_adj</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "- nrow: 17"</span></span>
+<span><span class="co">#&gt; [1] "- nrow: 16"</span></span>
 <span></span>
 <span><span class="co">#Prepare text labels as matrix</span></span>
 <span><span class="va">textMatrix</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="st">"r = "</span>,<span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">signif</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">as.matrix</a></span><span class="op">(</span><span class="va">moduleTraitCor</span><span class="op">)</span>, <span class="fl">3</span><span class="op">)</span>,<span class="st">"\n(P = "</span>,</span>

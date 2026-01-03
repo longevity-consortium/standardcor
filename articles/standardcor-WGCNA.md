@@ -234,7 +234,7 @@ vw <- estimateShape(Z.pp)
 v.pp <- vw[1]
 w.pp <- vw[2]
 print(paste("Protein pairs: rho_ij ~ Beta(v =",round(v.pp,3),",w =",round(w.pp,3),")"))
-#> [1] "Protein pairs: rho_ij ~ Beta(v = 34.98 ,w = 34.002 )"
+#> [1] "Protein pairs: rho_ij ~ Beta(v = 36.482 ,w = 34.418 )"
 
 fine <- 40
 Bs <- (c(-fine:(1+fine))-0.5)/fine
@@ -259,7 +259,7 @@ vw <- estimateShape(Z.mm)
 v.mm <- vw[1]
 w.mm <- vw[2]
 print(paste("Metabolite Pairs: rho_ij ~ Beta(v =",round(v.mm,3),",w =",round(w.mm,3),")"))
-#> [1] "Metabolite Pairs: rho_ij ~ Beta(v = 98.489 ,w = 98.706 )"
+#> [1] "Metabolite Pairs: rho_ij ~ Beta(v = 102.351 ,w = 101.913 )"
 
 fine <- 40
 Bs <- (c(-fine:(1+fine))-0.5)/fine
@@ -281,7 +281,7 @@ vw <- estimateShape(Z.ll)
 v.ll <- vw[1]
 w.ll <- vw[2]
 print(paste("Lipid Pairs: rho_ij ~ Beta(v =",round(v.ll,3),",w =",round(w.ll,3),")"))
-#> [1] "Lipid Pairs: rho_ij ~ Beta(v = 27.938 ,w = 25.131 )"
+#> [1] "Lipid Pairs: rho_ij ~ Beta(v = 28.808 ,w = 25.44 )"
 
 fine <- 40
 Bs <- (c(-fine:(1+fine))-0.5)/fine
@@ -303,7 +303,7 @@ vw <- estimateShape(Z.aa)
 v.aa <- vw[1]
 w.aa <- vw[2]
 print(paste("Amine Pairs: rho_ij ~ Beta(v =",round(vw[1],3),",w =",round(vw[2],3),")"))
-#> [1] "Amine Pairs: rho_ij ~ Beta(v = 112.787 ,w = 109.907 )"
+#> [1] "Amine Pairs: rho_ij ~ Beta(v = 116.617 ,w = 110.49 )"
 
 fine <- 40
 Bs <- (c(-fine:(1+fine))-0.5)/fine
@@ -331,7 +331,7 @@ vw <- estimateShape(Z.pm)
 v.pm <- vw[1]
 w.pm <- vw[2]
 print(paste("Protein-metabolite: rho_ij ~ Beta(v =",round(vw[1],3),",w =",round(vw[2],3),")"))
-#> [1] "Protein-metabolite: rho_ij ~ Beta(v = 174.852 ,w = 173.513 )"
+#> [1] "Protein-metabolite: rho_ij ~ Beta(v = 177.718 ,w = 174.852 )"
 
 # The distribution of these cross-correlations is
 # markedly narrower than either of the contributing 'omics
@@ -355,7 +355,7 @@ vw <- estimateShape(Z.pl)
 v.pl <- vw[1]
 w.pl <- vw[2]
 print(paste("Protein-metabolite: rho_ij ~ Beta(v =",round(vw[1],3),",w =",round(vw[2],3),")"))
-#> [1] "Protein-metabolite: rho_ij ~ Beta(v = 87.319 ,w = 89.012 )"
+#> [1] "Protein-metabolite: rho_ij ~ Beta(v = 89.235 ,w = 89.5 )"
 
 # The distribution of these cross-correlations is
 # markedly narrower than either of the contributing 'omics
@@ -379,7 +379,7 @@ vw <- estimateShape(Z.pa)
 v.pa <- vw[1]
 w.pa <- vw[2]
 print(paste("Protein-metabolite: rho_ij ~ Beta(v =",round(vw[1],3),",w =",round(vw[2],3),")"))
-#> [1] "Protein-metabolite: rho_ij ~ Beta(v = 136.503 ,w = 136.271 )"
+#> [1] "Protein-metabolite: rho_ij ~ Beta(v = 138.697 ,w = 137.27 )"
 
 # The distribution of these cross-correlations is
 # markedly narrower than either of the contributing 'omics
@@ -403,7 +403,7 @@ vw <- estimateShape(Z.ml)
 v.ml <- vw[1]
 w.ml <- vw[2]
 print(paste("Protein-lipid: rho_ij ~ Beta(v =",round(vw[1],3),",w =",round(vw[2],3),")"))
-#> [1] "Protein-lipid: rho_ij ~ Beta(v = 184.501 ,w = 185.53 )"
+#> [1] "Protein-lipid: rho_ij ~ Beta(v = 189.953 ,w = 186.133 )"
 
 # The distribution of these cross-correlations is
 # markedly narrower than either of the contributing 'omics
@@ -427,7 +427,7 @@ vw <- estimateShape(Z.ma)
 v.ma <- vw[1]
 w.ma <- vw[2]
 print(paste("Protein-amine: rho_ij ~ Beta(v =",round(vw[1],3),",w =",round(vw[2],3),")"))
-#> [1] "Protein-amine: rho_ij ~ Beta(v = 184.687 ,w = 184.458 )"
+#> [1] "Protein-amine: rho_ij ~ Beta(v = 190.21 ,w = 186.059 )"
 
 # The distribution of these cross-correlations is
 # markedly narrower than either of the contributing 'omics
@@ -451,7 +451,7 @@ vw <- estimateShape(Z.la)
 v.la <- vw[1]
 w.la <- vw[2]
 print(paste("Lipid-amine: rho_ij ~ Beta(v =",round(vw[1],3),",w =",round(vw[2],3),")"))
-#> [1] "Lipid-amine: rho_ij ~ Beta(v = 125.539 ,w = 125.208 )"
+#> [1] "Lipid-amine: rho_ij ~ Beta(v = 131.107 ,w = 129.04 )"
 
 # The distribution of these cross-correlations is
 # markedly narrower than either of the contributing 'omics
@@ -558,12 +558,12 @@ Zc[cat.amines, cat.lipid]  <- t(Zc.la)
 print(str_c("nrow: ", nrow(Zc)))
 #> [1] "nrow: 1465"
 Zc[1:5,1:5]
-#>              1433Z        A1AG2        A1AT         A1BG        A2AP
-#> 1433Z  1.000000000  0.005707413  0.02901604 -0.006209182 -0.28999711
-#> A1AG2  0.005707413  1.000000000  0.12406421  0.087104661 -0.17529426
-#> A1AT   0.029016044  0.124064205  1.00000000  0.101222530 -0.29220877
-#> A1BG  -0.006209182  0.087104661  0.10122253  1.000000000 -0.03940435
-#> A2AP  -0.289997110 -0.175294264 -0.29220877 -0.039404352  1.00000000
+#>              1433Z        A1AG2        A1AT        A1BG       A2AP
+#> 1433Z  1.000000000 -0.009608999  0.01402562 -0.02168788 -0.3082587
+#> A1AG2 -0.009608999  1.000000000  0.11051047  0.07297294 -0.1927106
+#> A1AT   0.014025625  0.110510466  1.00000000  0.08730883 -0.3104823
+#> A1BG  -0.021687883  0.072972937  0.08730883  1.00000000 -0.0553188
+#> A2AP  -0.308258749 -0.192710596 -0.31048227 -0.05531880  1.0000000
 ```
 
 ``` r
@@ -577,7 +577,7 @@ s2Z <- var(x)
 v.c <- mZ*(mZ*(1-mZ)/s2Z - 1)
 w.c <- (1-mZ)*(mZ*(1-mZ)/s2Z - 1)
 print(paste("Method of moments: rho_ij ~ Beta(v =",round(v.c,3),",w =",round(w.c,3),")"))
-#> [1] "Method of moments: rho_ij ~ Beta(v = 22.515 ,w = 21.686 )"
+#> [1] "Method of moments: rho_ij ~ Beta(v = 21.514 ,w = 21.308 )"
 
 
 fine <- 100
@@ -630,21 +630,21 @@ sft <- pickSoftThreshold.fromSimilarity(Zc_signed, RsquaredCut=cutoff, powerVect
 #>    ..working on genes 1 through 1465 of 1465
 #> Warning: executing %dopar% sequentially: no parallel backend registered
 #>    Power SFT.R.sq  slope truncated.R.sq mean.k. median.k. max.k.
-#> 1      1 0.167000 12.400          0.944  746.00   745.000  806.0
-#> 2      2 0.172000  5.280          0.950  388.00   385.000  459.0
-#> 3      3 0.000524  0.143          0.772  206.00   202.000  276.0
-#> 4      4 0.305000 -2.210          0.730  113.00   108.000  181.0
-#> 5      5 0.705000 -2.770          0.816   63.10    58.700  126.0
-#> 6      6 0.910000 -2.870          0.918   36.60    32.600   94.2
-#> 7      7 0.957000 -2.590          0.948   22.00    18.300   74.3
-#> 8      8 0.936000 -2.350          0.918   13.80    10.500   61.3
-#> 9      9 0.963000 -2.060          0.952    9.15     6.140   52.5
-#> 10    10 0.965000 -1.850          0.955    6.38     3.660   46.4
-#> 11    11 0.960000 -1.710          0.948    4.70     2.250   41.9
-#> 12    12 0.954000 -1.600          0.942    3.65     1.420   38.5
-#> 13    13 0.963000 -1.500          0.955    2.97     0.895   35.9
-#> 14    14 0.974000 -1.430          0.970    2.52     0.581   33.9
-#> 15    15 0.963000 -1.390          0.957    2.21     0.380   32.4
+#> 1      1  0.13800 10.800          0.949  736.00   735.000  797.0
+#> 2      2  0.13000  4.190          0.917  378.00   375.000  450.0
+#> 3      3  0.00102 -0.188          0.731  199.00   195.000  270.0
+#> 4      4  0.34300 -2.250          0.722  107.00   103.000  176.0
+#> 5      5  0.77800 -2.830          0.859   59.80    55.300  124.0
+#> 6      6  0.91600 -2.820          0.919   34.50    30.400   92.5
+#> 7      7  0.96200 -2.510          0.952   20.70    17.000   73.1
+#> 8      8  0.93900 -2.260          0.922   13.00     9.640   60.6
+#> 9      9  0.96400 -2.000          0.954    8.64     5.620   52.0
+#> 10    10  0.96300 -1.810          0.953    6.06     3.300   46.0
+#> 11    11  0.96000 -1.670          0.949    4.49     2.040   41.6
+#> 12    12  0.97100 -1.550          0.963    3.52     1.290   38.4
+#> 13    13  0.97600 -1.460          0.970    2.89     0.808   35.8
+#> 14    14  0.97800 -1.400          0.975    2.47     0.526   33.9
+#> 15    15  0.96900 -1.360          0.965    2.18     0.339   32.3
 
 #Plot the results
 options(repr.plot.width=9, repr.plot.height=5)
@@ -724,27 +724,29 @@ print(str_c("minClusterSize = ", minModuleSize))
 dynamicMods <- cutreeDynamic(dendro=geneTree, distM=dissTOM,
                              deepSplit=4, pamStage=TRUE, pamRespectsDendro=FALSE,
                              minClusterSize=minModuleSize)
-#>  ..cutHeight not given, setting it to 4.94  ===>  99% of the (truncated) height range in dendro.
+#>  ..cutHeight not given, setting it to 5.17  ===>  99% of the (truncated) height range in dendro.
 #>  ..done.
 table(dynamicMods)
 #> dynamicMods
 #>   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19  20 
-#> 499 104  94  78  72  63  60  54  48  47  43  39  32  30  29  28  26  26  25  25 
-#>  21  22 
-#>  22  21
+#> 431 183 105  79  60  56  53  40  40  38  36  36  34  32  31  30  30  28  28  27 
+#>  21  22  23 
+#>  25  22  21
 
 #Convert numeric lables into colors
 dynamicColors <- labels2colors(dynamicMods)
 table(dynamicColors)
 #> dynamicColors
-#>        black         blue        brown         cyan    darkgreen      darkred 
-#>           60          104           94           30           21           22 
-#>        green  greenyellow       grey60    lightcyan   lightgreen  lightyellow 
-#>           72           43           26           28           26           25 
-#>      magenta midnightblue         pink       purple          red    royalblue 
-#>           48           29           54           47           63           25 
-#>       salmon          tan    turquoise       yellow 
-#>           32           39          499           78
+#>         black          blue         brown          cyan     darkgreen 
+#>            53           183           105            32            22 
+#>       darkred darkturquoise         green   greenyellow        grey60 
+#>            25            21            60            36            30 
+#>     lightcyan    lightgreen   lightyellow       magenta  midnightblue 
+#>            30            28            28            40            31 
+#>          pink        purple           red     royalblue        salmon 
+#>            40            38            56            27            34 
+#>           tan     turquoise        yellow 
+#>            36           431            79
 
 #Plot the dendrogram and colors underneath
 options(repr.plot.width=12, repr.plot.height=6)
@@ -763,34 +765,41 @@ MEs <- MEList$eigengenes
 print(str_c("nrow: ", nrow(MEs)))
 #> [1] "nrow: 500"
 head(MEs)
-#>       MEblack       MEblue      MEbrown       MEcyan  MEdarkgreen     MEdarkred
-#> 1 -0.04250164 -0.006137058 -0.061119212 -0.017963073  0.083685677  2.766099e-02
-#> 2  0.07743639  0.062143054 -0.024485473  0.030683603 -0.021758338 -4.796828e-05
-#> 3  0.03539161  0.026002054 -0.073829551  0.011904043  0.006682852  2.677434e-02
-#> 4 -0.01816194 -0.021918239  0.006197687 -0.005365383 -0.030132389  1.233884e-02
-#> 5  0.01788601  0.014131597 -0.090108419  0.041251157  0.012587136 -6.189113e-02
-#> 6  0.02603770  0.001758729 -0.043114754  0.024930105  0.001555772 -1.455030e-02
-#>       MEgreen MEgreenyellow     MEgrey60 MElightcyan  MElightgreen
-#> 1  0.09667654    0.04224804 -0.011219413  0.02270412 -0.0009493078
-#> 2  0.01144213    0.06930301  0.011247960  0.03394327  0.0926655585
-#> 3  0.03526924    0.04939254  0.005733386  0.02926117  0.0418565133
-#> 4 -0.02069531    0.02095189  0.032070655 -0.00474506 -0.0296049856
-#> 5  0.06652515   -0.01577464 -0.105567516  0.02761338  0.0080213115
-#> 6  0.06117528    0.01558672 -0.039090274  0.02622454 -0.0552738630
-#>   MElightyellow    MEmagenta MEmidnightblue       MEpink     MEpurple
-#> 1   0.054813453  0.017014383   -0.060639183 -0.041704707  0.015084532
-#> 2   0.006505377  0.021206367    0.041181322  0.016637743  0.070252083
-#> 3   0.028960827  0.004705876   -0.013260868 -0.049713898  0.067356769
-#> 4   0.010579150  0.037737960   -0.009881932  0.001515955 -0.039509676
-#> 5   0.012931648 -0.018482246    0.068292959 -0.094043994 -0.038940804
-#> 6  -0.021155760  0.039405631    0.053630301 -0.039897490  0.002201621
-#>          MEred  MEroyalblue   MEsalmon         MEtan MEturquoise     MEyellow
-#> 1  0.004533408  0.056728907 0.01880385  0.0104194410 -0.03167811 -0.007773314
-#> 2  0.022852213 -0.027008752 0.04014007 -0.0451096975  0.01457797 -0.013980877
-#> 3  0.065539735  0.034050318 0.03833421 -0.0105466068 -0.05322893 -0.037205440
-#> 4  0.005094828  0.003775484 0.01594035 -0.0039805473  0.01949922 -0.013305095
-#> 5 -0.056656398 -0.091232433 0.01890705 -0.0649936854 -0.02318406 -0.118914485
-#> 6  0.055026948 -0.008089793 0.04426588 -0.0002465442 -0.06392858 -0.075245659
+#>       MEblack       MEblue      MEbrown     MEcyan  MEdarkgreen    MEdarkred
+#> 1  0.01769292 -0.051160929 -0.044378898 0.01880385  0.026300750  0.056728907
+#> 2  0.04529345 -0.027186301  0.081716559 0.04014007 -0.065170342 -0.027008752
+#> 3  0.03116145 -0.064842191  0.050969124 0.03833421 -0.027185755  0.034050318
+#> 4 -0.01276477 -0.011334389 -0.024473474 0.01594035  0.005975657  0.003775484
+#> 5  0.02255580 -0.108910882  0.020253466 0.01890705 -0.087284917 -0.091232433
+#> 6  0.01620370 -0.008809908  0.006610517 0.04426588  0.015338840 -0.008089793
+#>   MEdarkturquoise      MEgreen MEgreenyellow     MEgrey60  MElightcyan
+#> 1    -0.054838015  0.007742242  -0.006937975  0.023279528 -0.025568891
+#> 2     0.081574426  0.027353168   0.037621498  0.003638059  0.031146586
+#> 3    -0.024189996  0.075929834  -0.010496068  0.028760979  0.011325765
+#> 4     0.001072615  0.026527175  -0.040967189  0.020079862 -0.003064056
+#> 5     0.028547619 -0.042833872  -0.050583886 -0.053727660  0.044451861
+#> 6     0.067679731  0.052427209   0.029833876 -0.008533758  0.029449067
+#>    MElightgreen MElightyellow    MEmagenta MEmidnightblue      MEpink
+#> 1  0.0831709906   0.054407199 -0.011885640    -0.02318667 -0.05903108
+#> 2 -0.0223851354   0.054747059  0.002597031    -0.01508430  0.04217619
+#> 3  0.0063840596   0.041592726 -0.014797012    -0.04415341 -0.01475084
+#> 4 -0.0280092308   0.008061438  0.010143341     0.00139921 -0.01220036
+#> 5  0.0120321816  -0.018502448 -0.124222277    -0.09145141  0.06847406
+#> 6 -0.0004212465  -0.021378014 -0.060088746    -0.07637588  0.05340293
+#>       MEpurple        MEred  MEroyalblue     MEsalmon        MEtan MEturquoise
+#> 1  0.001787618 -0.044040999  0.051904178  0.001376754 -0.045764356 0.095295608
+#> 2  0.066292815 -0.015444106  0.009153908  0.035193925  0.009062544 0.002543363
+#> 3  0.046233328 -0.042038230  0.029811076  0.013927902 -0.055651008 0.010488607
+#> 4 -0.019138426 -0.002514375  0.009501255  0.040701101  0.010042727 0.016468088
+#> 5 -0.006243943 -0.121599175  0.012112474 -0.013905834 -0.100395931 0.064945152
+#> 6 -0.056277156 -0.066816892 -0.019450368  0.024405079 -0.042246700 0.052961943
+#>       MEyellow
+#> 1  0.021543695
+#> 2  0.048948253
+#> 3  0.056389149
+#> 4 -0.024116585
+#> 5 -0.023709852
+#> 6  0.005627724
 
 #Calculate dissimilarity of module eigengenes
 MEDiss <- 1 - cor(MEs, use="pairwise.complete.obs")
@@ -819,12 +828,14 @@ mergedMEs <- merge$newMEs
 mergedColors <- merge$colors
 table(mergedColors)
 #> mergedColors
-#>        blue       brown   darkgreen     darkred       green greenyellow 
-#>         223          94          46          22          72          43 
-#>      grey60   lightcyan  lightgreen     magenta        pink      purple 
-#>          26          60          26          48          54          47 
-#>         red   royalblue         tan   turquoise      yellow 
-#>          63          25          39         499          78
+#>          blue         brown          cyan     darkgreen darkturquoise 
+#>           219           283            32            47            21 
+#>         green   greenyellow        grey60   lightyellow       magenta 
+#>            60            36            30            28            40 
+#>  midnightblue        purple           red        salmon     turquoise 
+#>            31            38            56            34           431 
+#>        yellow 
+#>            79
 
 #Plot the dendrogram and module colors
 options(repr.plot.width=12, repr.plot.height=6)
@@ -860,34 +871,27 @@ print("Module eigengene table")
 print(str_c("- nrow: ", nrow(eigengene_df)))
 #> [1] "- nrow: 500"
 head(eigengene_df)
-#>   public_client_id       Green   Turquoise Greenyellow   Lightcyan        Blue
-#> 1                1  0.09667654 -0.03167811  0.04224804 0.021016558 -0.03960362
-#> 2                2  0.01144213  0.01457797  0.06930301 0.038385247  0.05453270
-#> 3                3  0.03526924 -0.05322893  0.04939254 0.035184316  0.01207804
-#> 4                4 -0.02069531  0.01949922  0.02095189 0.005809384 -0.01353862
-#> 5                5  0.06652515 -0.02318406 -0.01577464 0.024391282  0.04479661
-#> 6                6  0.06117528 -0.06392858  0.01558672 0.038461457  0.03384631
-#>      Darkgreen       Darkred    Royalblue           Tan          Red
-#> 1  0.072203330  2.766099e-02  0.056728907  0.0104194410  0.004533408
-#> 2 -0.007447819 -4.796828e-05 -0.027008752 -0.0451096975  0.022852213
-#> 3  0.018880591  2.677434e-02  0.034050318 -0.0105466068  0.065539735
-#> 4 -0.009537316  1.233884e-02  0.003775484 -0.0039805473  0.005094828
-#> 5  0.013223197 -6.189113e-02 -0.091232433 -0.0649936854 -0.056656398
-#> 6 -0.010730048 -1.455030e-02 -0.008089793 -0.0002465442  0.055026948
-#>        Magenta    Lightgreen       Purple        Brown         Pink
-#> 1  0.017014383 -0.0009493078  0.015084532 -0.061119212 -0.041704707
-#> 2  0.021206367  0.0926655585  0.070252083 -0.024485473  0.016637743
-#> 3  0.004705876  0.0418565133  0.067356769 -0.073829551 -0.049713898
-#> 4  0.037737960 -0.0296049856 -0.039509676  0.006197687  0.001515955
-#> 5 -0.018482246  0.0080213115 -0.038940804 -0.090108419 -0.094043994
-#> 6  0.039405631 -0.0552738630  0.002201621 -0.043114754 -0.039897490
-#>         Grey60       Yellow
-#> 1 -0.011219413 -0.007773314
-#> 2  0.011247960 -0.013980877
-#> 3  0.005733386 -0.037205440
-#> 4  0.032070655 -0.013305095
-#> 5 -0.105567516 -0.118914485
-#> 6 -0.039090274 -0.075245659
+#>   public_client_id   Turquoise         Blue          Red      Magenta
+#> 1                1 0.095295608 -0.052219663 -0.044040999 -0.011885640
+#> 2                2 0.002543363 -0.001818211 -0.015444106  0.002597031
+#> 3                3 0.010488607 -0.063797679 -0.042038230 -0.014797012
+#> 4                4 0.016468088  0.005857586 -0.002514375  0.010143341
+#> 5                5 0.064945152 -0.107111127 -0.121599175 -0.124222277
+#> 6                6 0.052961943 -0.040473960 -0.066816892 -0.060088746
+#>   Midnightblue        Brown Darkturquoise  Lightyellow       Cyan        Green
+#> 1  -0.02318667  0.003551357  -0.054838015  0.054407199 0.01880385  0.007742242
+#> 2  -0.01508430  0.035070077   0.081574426  0.054747059 0.04014007  0.027353168
+#> 3  -0.04415341  0.020193625  -0.024189996  0.041592726 0.03833421  0.075929834
+#> 4   0.00139921 -0.011460655   0.001072615  0.008061438 0.01594035  0.026527175
+#> 5  -0.09145141  0.035817706   0.028547619 -0.018502448 0.01890705 -0.042833872
+#> 6  -0.07637588  0.018605726   0.067679731 -0.021378014 0.04426588  0.052427209
+#>         Grey60    Darkgreen  Greenyellow       Salmon       Purple       Yellow
+#> 1  0.023279528  0.046261983 -0.006937975  0.001376754  0.001787618  0.021543695
+#> 2  0.003638059 -0.046143879  0.037621498  0.035193925  0.066292815  0.048948253
+#> 3  0.028760979  0.007247343 -0.010496068  0.013927902  0.046233328  0.056389149
+#> 4  0.020079862  0.006183944 -0.040967189  0.040701101 -0.019138426 -0.024116585
+#> 5 -0.053727660 -0.095823745 -0.050583886 -0.013905834 -0.006243943 -0.023709852
+#> 6 -0.008533758  0.003092429  0.029833876  0.024405079 -0.056277156  0.005627724
 ```
 
 ``` r
@@ -922,7 +926,7 @@ rownames(moduleTraitCor) <- str_to_title(modNames)
 print("Module–trait relationship table")
 #> [1] "Module–trait relationship table"
 print(str_c("nrow: ", nrow(moduleTraitCor)))
-#> [1] "nrow: 17"
+#> [1] "nrow: 16"
 
 #Calculate statisitcal significance of module–trait relationship
 MTRpval <- as.data.frame(corPvalueStudent(as.matrix(moduleTraitCor), nSamples))
@@ -930,7 +934,7 @@ rownames(MTRpval) <- str_to_title(modNames)
 print("Module–trait relationship p-value table")
 #> [1] "Module–trait relationship p-value table"
 print(str_c("- nrow: ", nrow(MTRpval)))
-#> [1] "- nrow: 17"
+#> [1] "- nrow: 16"
 
 #Eliminate the dummy module (Grey)
 moduleTraitCor <- moduleTraitCor[rownames(moduleTraitCor)!="Grey",]
@@ -941,7 +945,7 @@ MTRpval_adj <- as.data.frame(apply(MTRpval, 2, function(x){p.adjust(x, length(x)
 print("Module–trait relationship adjusted p-value table")
 #> [1] "Module–trait relationship adjusted p-value table"
 print(str_c("- nrow: ", nrow(MTRpval_adj)))
-#> [1] "- nrow: 17"
+#> [1] "- nrow: 16"
 
 #Prepare text labels as matrix
 textMatrix <- paste("r = ",signif(as.matrix(moduleTraitCor), 3),"\n(P = ",
